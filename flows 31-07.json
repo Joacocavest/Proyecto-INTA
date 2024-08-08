@@ -1,0 +1,200 @@
+[
+    {
+        "id": "21cf5151b24bf387",
+        "type": "tab",
+        "label": "Lector TTS",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c8d68c71d8896524",
+        "type": "mqtt in",
+        "z": "21cf5151b24bf387",
+        "name": "msg",
+        "topic": "#",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "b7bc4ec36d3ac33f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "a79d4768e170e289",
+                "78a003f9e6d90d48"
+            ]
+        ]
+    },
+    {
+        "id": "a79d4768e170e289",
+        "type": "function",
+        "z": "21cf5151b24bf387",
+        "name": "convertir datos",
+        "func": "let msjTTS = msg.payload;\n//console.log(msjTTS);\n//identifico a partir de que caracter empieza el dato en base64.\nlet cadenaAuxiliar = '\"frm_payload\":\"';\nlet cadenaControl = msjTTS.indexOf(cadenaAuxiliar)+15; //320. Aca empieza el msj codificado en base64\n//console.log(cadenaControl);\n\n//identifico la cantidad de caracteres del mensaje en base64\nlet caracterDondeEmpiezaElMsj = cadenaControl;\nlet cantidadCaracteresDelMsjBase64 = 0;\nlet caracter;\ndo{\n\tcaracter = msjTTS[cadenaControl];\n\t//console.log(caracter);\n\tcadenaControl = cadenaControl+1;\n\tcantidadCaracteresDelMsjBase64 = cantidadCaracteresDelMsjBase64+1;\n}while(msjTTS[cadenaControl]!='\"');\n//console.log(cantidadCaracteresDelMsjBase64);\n\n//extraemos el mensaje en base64 desde caracterDondeEmpiezaElMsj hasta cantidadCaracteresDelMsjBasse64.\nlet cadenaEnBase64 = msjTTS.slice(caracterDondeEmpiezaElMsj, caracterDondeEmpiezaElMsj+cantidadCaracteresDelMsjBase64);\n//console.log(cadenaEnBase64);\n\n//Transformamos el mensaje en Base64 a texto legible.\n//let cadenaDecodificada = atob(cadenaEnBase64);\n//Transformamos el mensaje en Base64 a texto legible. Para un entorno de Node.JS\nlet cadenaBuffer = Buffer.from(cadenaEnBase64, 'base64').toString('utf-8');\nlet cadenaDecodificada = cadenaBuffer;\n//console.log(cadenaDecodificada);\n\n//Colocamos en Variables los datos decodificados:\nlet id_animal;\nlet fecha;\nlet hora;\nlet latitud;\nlet longitud;\nlet nro_paquete;\n//variables para controlar lo que extraemos del mensaje decodificado.\nlet caracterLeido = 0;\nlet cantidadCaracterDecodificado = 0;\ndo{//aca obtenemos la id_animal.\n\tcadenaDecodificada[cantidadCaracterDecodificado];\n\tcantidadCaracterDecodificado = cantidadCaracterDecodificado+1;\n}while(cadenaDecodificada[cantidadCaracterDecodificado] != ';');\nid_animal = {payload: cadenaDecodificada.slice(caracterLeido, cantidadCaracterDecodificado)};\n//console.log(id_animal);\ncaracterLeido = cantidadCaracterDecodificado+1;\ndo{//aca obtenemos la fecha.\n\tcadenaDecodificada[cantidadCaracterDecodificado];\n\tcantidadCaracterDecodificado = cantidadCaracterDecodificado+1;\n}while(cadenaDecodificada[cantidadCaracterDecodificado] != ';');\nfecha = {payload: cadenaDecodificada.slice(caracterLeido, cantidadCaracterDecodificado)};\n//console.log(fecha);\ncaracterLeido = cantidadCaracterDecodificado+1;\ndo{//aca obtenemos la hora.\n\tcadenaDecodificada[cantidadCaracterDecodificado];\n\tcantidadCaracterDecodificado = cantidadCaracterDecodificado+1;\n}while(cadenaDecodificada[cantidadCaracterDecodificado] != ';');\nhora = {payload: cadenaDecodificada.slice(caracterLeido, cantidadCaracterDecodificado)};\n//console.log(hora);\ncaracterLeido = cantidadCaracterDecodificado+1;\ndo{//aca obtenemos la latitud.\n\tcadenaDecodificada[cantidadCaracterDecodificado];\n\tcantidadCaracterDecodificado = cantidadCaracterDecodificado+1;\n}while(cadenaDecodificada[cantidadCaracterDecodificado] != ';');\nlatitud = {payload:cadenaDecodificada.slice(caracterLeido, cantidadCaracterDecodificado)};\n//console.log(latitud);\ncaracterLeido = cantidadCaracterDecodificado+1;\ndo{//aca obtenemos la longitud.\n\tcadenaDecodificada[cantidadCaracterDecodificado];\n\tcantidadCaracterDecodificado = cantidadCaracterDecodificado+1;\n}while(cadenaDecodificada[cantidadCaracterDecodificado] != ';');\nlongitud = {payload: cadenaDecodificada.slice(caracterLeido, cantidadCaracterDecodificado)};\n//console.log(posicion);\ncaracterLeido = cantidadCaracterDecodificado+1;\ndo{//aca obtenemos la nro_paquete.\n\tcadenaDecodificada[cantidadCaracterDecodificado];\n\tcantidadCaracterDecodificado = cantidadCaracterDecodificado+1;\n}while(cadenaDecodificada[cantidadCaracterDecodificado] != ';');\nnro_paquete= {payload: cadenaDecodificada.slice(caracterLeido, cantidadCaracterDecodificado)};\n//console.log(nro_paquete);\ncaracterLeido = cantidadCaracterDecodificado+1;2\nlet paqueteDatos =  {\"id_animal\":id_animal, \"fecha\": fecha,\"hora\": hora,\"latitud\": latitud,\"longitud\": longitud,\"nro_paquete\": nro_paquete};\n//for (let i=0; i<= paqueteDatos.length;i++ ){\n\treturn paqueteDatos;\n//}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 280,
+        "wires": [
+            [
+                "d6f9a541a2b175a5",
+                "74669a2b0fe31aba"
+            ]
+        ]
+    },
+    {
+        "id": "78a003f9e6d90d48",
+        "type": "debug",
+        "z": "21cf5151b24bf387",
+        "name": "dato original",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "c3f1f7c35e1f089c",
+        "type": "inject",
+        "z": "21cf5151b24bf387",
+        "d": true,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 170,
+        "y": 120,
+        "wires": [
+            [
+                "1ad832099db2f613"
+            ]
+        ]
+    },
+    {
+        "id": "d6f9a541a2b175a5",
+        "type": "debug",
+        "z": "21cf5151b24bf387",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "1ad832099db2f613",
+        "type": "debug",
+        "z": "21cf5151b24bf387",
+        "d": true,
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "74669a2b0fe31aba",
+        "type": "function",
+        "z": "21cf5151b24bf387",
+        "name": "convertir hora",
+        "func": "let fecha = msg.fecha;\nlet hora= msg.hora;\nlet fechaHora ={\n    \"fecha\": fecha,\n    \"hora\": hora\n};\n\nreturn [fechaHora];\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 340,
+        "wires": [
+            [
+                "cb965bdeccdc8715"
+            ]
+        ]
+    },
+    {
+        "id": "cb965bdeccdc8715",
+        "type": "debug",
+        "z": "21cf5151b24bf387",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "b7bc4ec36d3ac33f",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "au1.cloud.thethings.network",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]

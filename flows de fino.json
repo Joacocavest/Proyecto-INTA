@@ -1,0 +1,682 @@
+[
+    {
+        "id": "b699143f.2be4a8",
+        "type": "tab",
+        "label": "Nodo 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "2f8c61a9.e10f9e",
+        "type": "mqtt in",
+        "z": "b699143f.2be4a8",
+        "name": "",
+        "topic": "dragino-1baf14/78901/data",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "a99ea777.353998",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 110,
+        "y": 320,
+        "wires": [
+            [
+                "21bc97f3.3581a8",
+                "b9a64950.0dbe48",
+                "b48bd677.2e00c8",
+                "59de3e55.c48bc",
+                "17e1b314.83a0fd"
+            ]
+        ]
+    },
+    {
+        "id": "21bc97f3.3581a8",
+        "type": "debug",
+        "z": "b699143f.2be4a8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 440,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "dd0c30ce.ee4e5",
+        "type": "ui_gauge",
+        "z": "b699143f.2be4a8",
+        "name": "",
+        "group": "c207461c.6571f8",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "Bateria",
+        "label": "Voltios",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "4.2",
+        "colors": [
+            "#ca1212",
+            "#e6e600",
+            "#51cc24"
+        ],
+        "seg1": "2.0",
+        "seg2": "3.7",
+        "className": "",
+        "x": 680,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "c349c4dc.728578",
+        "type": "ui_text",
+        "z": "b699143f.2be4a8",
+        "group": "fd7cb9f0.1d0258",
+        "order": 1,
+        "width": 3,
+        "height": 1,
+        "name": "",
+        "label": "CUIG :",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 670,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "b9a64950.0dbe48",
+        "type": "function",
+        "z": "b699143f.2be4a8",
+        "name": "CUIG",
+        "func": "/*var cuig1= msg.payload[6];\nvar cuig2= msg.payload[7];\nvar cuig3= msg.payload[8];\nvar cuig4= msg.payload[9];\nvar cuig5= msg.payload[10];*/\nvar cuig=\"\";\nfor(var i = 6; i <= 10; i++){\n    //Concatenamos la variable y una coma\n   cuig += msg.payload[i];\n  }\nvar resultado = {payload:cuig};\nreturn[resultado];\n/*var result = temp1+temp2 + temp3+temp4+temp5; \nresult = result;\nvar result1 = {payload:result};\nreturn[result1];*/",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 370,
+        "y": 160,
+        "wires": [
+            [
+                "c349c4dc.728578"
+            ]
+        ]
+    },
+    {
+        "id": "365c9e9a.300002",
+        "type": "ui_text",
+        "z": "b699143f.2be4a8",
+        "group": "fd7cb9f0.1d0258",
+        "order": 2,
+        "width": 3,
+        "height": 1,
+        "name": "",
+        "label": "IDAnimal :",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 690,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "b48bd677.2e00c8",
+        "type": "function",
+        "z": "b699143f.2be4a8",
+        "name": "IDAnimal",
+        "func": "var id_animal=\"\";\nfor(var i = 21; i <= 24; i++){\n    //Concatenamos la variable y una coma\n   id_animal += msg.payload[i];\n  }\nvar resultado = {payload:id_animal};\nreturn[resultado];\n\n/*var temp1= msg.payload[21];\nvar temp2= msg.payload[22];\nvar temp3= msg.payload[23];\nvar temp4= msg.payload[24];\n\n\nvar result = temp1+temp2 + temp3+temp4; \nresult = result;\nvar result1 = {payload:result};\nreturn[result1];*/",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 380,
+        "y": 220,
+        "wires": [
+            [
+                "365c9e9a.300002"
+            ]
+        ]
+    },
+    {
+        "id": "8a868c55.c4efa",
+        "type": "mysql",
+        "z": "b699143f.2be4a8",
+        "mydb": "d1c70c563ee51c8d",
+        "name": "DB",
+        "x": 570,
+        "y": 580,
+        "wires": [
+            [
+                "64b081f4.4b2f8"
+            ]
+        ]
+    },
+    {
+        "id": "17e1b314.83a0fd",
+        "type": "function",
+        "z": "b699143f.2be4a8",
+        "name": "SQL INSERT ",
+        "func": "var i=0;\nvar j =0;\nvar contador = 0;\nvar temp1= 0;\nvar temp2= 0;\nvar temp3= 0;\nvar result = 0;\nvar cuig=\"\";\nvar id_animal=\"\";\n\nfor(i = 6; i <= 10; i++){\n    //Concatenamos la variable y una coma\n   cuig += msg.payload[i];\n  }\n\nfor(i = 21; i <= 24; i++){\n    //Concatenamos la variable y una coma\n   id_animal += msg.payload[i];\n  }\n\ni = 0;\nj = 26;\nvar aux1 = [];\nvar aux2 = [];\nvar aux3 = [];\nvar aux4 = [];\nvar aux5 = [];\nvar aux6 = [];\nvar aux7 = [];\nvar aux8 = [];\nwhile (msg.payload[j] != '/'){\n\n   aux1 [i] = msg.payload[j];\n   i++;\n   j++;\n   \n}\n\nvar fecha = aux1.join('');\n\n//return[resultado1];\nj++;\ni=0;\nwhile (msg.payload[j] != '/'){\n    \n    //Concatenamos la variable y una coma\n   \n   \n    aux2[i]= msg.payload[j];\n    \n    i++;\n    j++;\n    \n  }\n  \nvar hora = aux2.join('');\n\n\nj++;\ni=0;\nwhile (msg.payload[j] != '/'){\n    \n    //Concatenamos la variable y una coma\n   \n   \n    aux3[i]= msg.payload[j];\n    \n    i++;\n    j++;\n    \n  }\n/*var temp1= msg.payload[j];\nvar temp2= msg.payload[j++];\nvar temp3= msg.payload[j+=3];\nvar result = (temp1*100)+ (temp2*10) + (temp3*1); \nvar temp_amb = result/10;*/\nvar temp_amb = aux3.join('');\n\n\n\nj++;\ni=0;\nwhile (msg.payload[j] != '/'){\n    \n    //Concatenamos la variable y una coma\n   \n   \n    aux4[i]= msg.payload[j];\n    \n    i++;\n    j++;\n    \n  }\n  \nvar temp_corp = aux4.join(''); \n \n\nj++;\ni=0;\nwhile (msg.payload[j] != '/'){\n    \n    //Concatenamos la variable y una coma\n   \n   \n    aux5[i]= msg.payload[j];\n    \n    i++;\n    j++;\n    \n  }\n\nvar humedad = aux5.join('');\n \n\nj++;\ni=0;\nwhile (msg.payload[j] != '/'){\n    \n    //Concatenamos la variable y una coma\n   \n   \n    aux6[i]= msg.payload[j];\n    \n    i++;\n    j++;\n    \n  }\n  \nvar latitud = aux6.join('');\n\n\nj++;\ni=0;\nwhile (msg.payload[j] != '/'){\n    \n    //Concatenamos la variable y una coma\n   \n   \n    aux7[i]= msg.payload[j];\n    \n    i++;\n    j++;\n    \n  }\n  \nvar longitud = aux7.join('');\n\nj++;\ni=0;\nwhile (i<3){\n    \n    //Concatenamos la variable y una coma\n   \n   \n    aux8[i]= msg.payload[j];\n    \n    i++;\n    j++;\n    \n  }\n  \nvar bateria = aux8.join('');\n\n\nmsg.topic = \"INSERT INTO Prueba (CUIG,IDAnimal,Fecha,Hora,Temp_Ambiente,Temp_Corporal,Humedad,Latitud,Longitud,Bateria) VALUES ('\"+cuig+\"','\"+id_animal+\"','\"+fecha+\"','\"+hora+\"','\"+temp_amb+' º C'+\"','\"+temp_corp+' º C'+\"','\"+humedad+' % '+\"','\"+latitud+\"','\"+longitud+\"','\"+bateria+' V'+\"')\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 580,
+        "wires": [
+            [
+                "8a868c55.c4efa"
+            ]
+        ]
+    },
+    {
+        "id": "64b081f4.4b2f8",
+        "type": "debug",
+        "z": "b699143f.2be4a8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 760,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "59de3e55.c48bc",
+        "type": "function",
+        "z": "b699143f.2be4a8",
+        "name": "Paquete",
+        "func": "var i = 0;\nvar j = 26;\nvar aux1 = [];\nvar aux2 = [];\nvar aux3 = [];\nvar aux4 = [];\nvar aux5 = [];\nvar aux6 = [];\nvar aux7 = [];\nvar aux8 = [];\nwhile (msg.payload[j] != '/'){\n\n   aux1 [i] = msg.payload[j];\n   i++;\n   j++;\n   \n}\n\nvar fecha = aux1.join('');\nvar resultado1 = {payload:fecha};\n//return[resultado1];\nj++;\ni=0;\nwhile (msg.payload[j] != '/'){\n    \n    //Concatenamos la variable y una coma\n   \n   \n    aux2[i]= msg.payload[j];\n    \n    i++;\n    j++;\n    \n  }\n  \nvar hora = aux2.join('');\nvar resultado2 = {payload:hora};\n\nj++;\ni=0;\nwhile (msg.payload[j] != '/'){\n    \n    //Concatenamos la variable y una coma\n   \n   \n    aux3[i]= msg.payload[j];\n    \n    i++;\n    j++;\n    \n  }\n/*var temp1= msg.payload[j];\nvar temp2= msg.payload[j++];\nvar temp3= msg.payload[j+=3];\nvar result = (temp1*100)+ (temp2*10) + (temp3*1); \nvar temp_amb = result/10;*/\nvar temp_amb = aux3.join('');\nvar acumulador = acumulador + parseFloat(temp_amb);\nvar dato1 = {payload:acumulador}; \nvar resultado3 = {payload:temp_amb};\n\n\nj++;\ni=0;\nwhile (msg.payload[j] != '/'){\n    \n    //Concatenamos la variable y una coma\n   \n   \n    aux4[i]= msg.payload[j];\n    \n    i++;\n    j++;\n    \n  }\n  \nvar temp_corp = aux4.join(''); \nvar resultado4 = {payload:temp_corp}; \n\nj++;\ni=0;\nwhile (msg.payload[j] != '/'){\n    \n    //Concatenamos la variable y una coma\n   \n   \n    aux5[i]= msg.payload[j];\n    \n    i++;\n    j++;\n    \n  }\n\nvar humedad = aux5.join('');\nvar resultado5 = {payload:humedad}; \n\nj++;\ni=0;\nwhile (msg.payload[j] != '/'){\n    \n    //Concatenamos la variable y una coma\n   \n   \n    aux6[i]= msg.payload[j];\n    \n    i++;\n    j++;\n    \n  }\n  \nvar latitud = aux6.join('');\nvar resultado6 = {payload:latitud};\n\nj++;\ni=0;\nwhile (msg.payload[j] != '/'){\n    \n    //Concatenamos la variable y una coma\n   \n   \n    aux7[i]= msg.payload[j];\n    \n    i++;\n    j++;\n    \n  }\n  \nvar longitud = aux7.join('');\nvar resultado7 = {payload:longitud};\nj++;\ni=0;\nwhile (i<3){\n    \n    //Concatenamos la variable y una coma\n   \n   \n    aux8[i]= msg.payload[j];\n    \n    i++;\n    j++;\n    \n  }\n  \nvar bateria = aux8.join('');\nvar resultado8 = {payload:bateria};\nreturn[resultado1,resultado2,resultado3,resultado4,resultado5,resultado6,resultado7,resultado8,dato1];\n\n",
+        "outputs": 9,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 320,
+        "wires": [
+            [
+                "2af8e230.018d6e"
+            ],
+            [
+                "c9f37775.e131a8"
+            ],
+            [
+                "76e08591.9d10ec"
+            ],
+            [
+                "c09de329.6d7eb"
+            ],
+            [
+                "f65eda80.516f88"
+            ],
+            [
+                "9c8360ff.7484c"
+            ],
+            [
+                "22ea42f0.1215ae"
+            ],
+            [
+                "dd0c30ce.ee4e5"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2af8e230.018d6e",
+        "type": "ui_text",
+        "z": "b699143f.2be4a8",
+        "group": "fd7cb9f0.1d0258",
+        "order": 3,
+        "width": 3,
+        "height": 1,
+        "name": "",
+        "label": "Fecha :",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 680,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "c9f37775.e131a8",
+        "type": "ui_text",
+        "z": "b699143f.2be4a8",
+        "group": "fd7cb9f0.1d0258",
+        "order": 4,
+        "width": 3,
+        "height": 1,
+        "name": "",
+        "label": "Hora :",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 670,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "9c8360ff.7484c",
+        "type": "ui_text",
+        "z": "b699143f.2be4a8",
+        "group": "fd7cb9f0.1d0258",
+        "order": 5,
+        "width": 3,
+        "height": 1,
+        "name": "",
+        "label": "Latitud:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 680,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "22ea42f0.1215ae",
+        "type": "ui_text",
+        "z": "b699143f.2be4a8",
+        "group": "fd7cb9f0.1d0258",
+        "order": 6,
+        "width": 3,
+        "height": 1,
+        "name": "",
+        "label": "Longitud:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 680,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "76e08591.9d10ec",
+        "type": "ui_chart",
+        "z": "b699143f.2be4a8",
+        "name": "",
+        "group": "7b1fd03c.d6d5",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "label": "Temperatura Ambiente",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "50",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#2d952d",
+            "#aec7e8",
+            "#ff7f0e",
+            "#1f77b4",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 720,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c09de329.6d7eb",
+        "type": "ui_chart",
+        "z": "b699143f.2be4a8",
+        "name": "",
+        "group": "7b1fd03c.d6d5",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Temperatura Animal",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "50",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 720,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f65eda80.516f88",
+        "type": "ui_chart",
+        "z": "b699143f.2be4a8",
+        "name": "",
+        "group": "c207461c.6571f8",
+        "order": 1,
+        "width": "6",
+        "height": "4",
+        "label": "Húmedad",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#ff7f0e",
+            "#aec7e8",
+            "#1f77b4",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 680,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f5112d87.af0db",
+        "type": "debug",
+        "z": "b699143f.2be4a8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "1c051c3f.79d024",
+        "type": "worldmap in",
+        "z": "b699143f.2be4a8",
+        "name": "",
+        "path": "/worldmap",
+        "events": "all",
+        "x": 260,
+        "y": 780,
+        "wires": [
+            [
+                "83ea748c.2da178",
+                "675591d2.2b115"
+            ]
+        ]
+    },
+    {
+        "id": "da37ce66.6cded",
+        "type": "worldmap",
+        "z": "b699143f.2be4a8",
+        "name": "Mapa - Ganadería de Presición",
+        "lat": "-28461902",
+        "lon": "-65763640",
+        "zoom": "",
+        "layer": "Esri Satellite",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "false",
+        "coords": "deg",
+        "showgrid": "false",
+        "allowFileDrop": "false",
+        "path": "/worldmap",
+        "x": 930,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "83ea748c.2da178",
+        "type": "function",
+        "z": "b699143f.2be4a8",
+        "d": true,
+        "name": "",
+        "func": "var i = 0;\nvar j=0;\nvar aux6 = [];\nvar aux7 = [];\nvar latitud\nwhile (msg.payload[j] != '/'){\n    \n    //Concatenamos la variable y una coma\n   \n   \n    aux6[i]= msg.payload[j];\n    \n    i++;\n    j++;\n    \n  }\nlatitud = aux6.join('');\n\n\nj++;\ni=0;\n\nwhile (i < 8){\n    \n    //Concatenamos la variable y una coma\n   \n    aux7[i]= msg.payload[j];\n  \n    i++;\n    j++;\n    \n  }\n\n\nlongitud = aux7.join('');\n\n\nvar dato1 = parseInt(latitud);\nvar dato2 = parseInt(longitud);\n\nvar conversion_latitud = -1 * (dato1/1000000);\nvar conversion_longitud = -1 * (dato2/1000000);\n\n\n\nreturn {\n    payload: {\n        \"name\": \"INTA\",\n       // \"lat\": msg.payload,\n       \"lat\": conversion_latitud,\n        //\"lon\": -65.781372,\n        \"lon\": conversion_longitud,\n     // \"lat\": latitud,\n      \n        \"icon\": 'user-circle-o'\n     \n    }\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 500,
+        "y": 800,
+        "wires": [
+            [
+                "2f169eee.66faf2",
+                "da37ce66.6cded",
+                "f5112d87.af0db"
+            ]
+        ]
+    },
+    {
+        "id": "2f169eee.66faf2",
+        "type": "worldmap-tracks",
+        "z": "b699143f.2be4a8",
+        "name": "",
+        "depth": 20,
+        "layer": "combined",
+        "smooth": true,
+        "x": 670,
+        "y": 680,
+        "wires": [
+            [
+                "da37ce66.6cded"
+            ]
+        ]
+    },
+    {
+        "id": "a50ee614.3fa518",
+        "type": "function",
+        "z": "b699143f.2be4a8",
+        "d": true,
+        "name": "Conversión Latitud",
+        "func": "var i = 0;\nvar j = 26;\nvar aux1 = [];\nvar aux2 = [];\nvar aux3 = [];\nvar aux4 = [];\nvar aux5 = [];\nvar aux6 = [];\nvar aux7 = [];\nvar aux8 = [];\nwhile (msg.payload[j] != '/'){\n\n  \n   j++;\n   \n}\n\nj++;\n\nwhile (msg.payload[j] != '/'){\n    \n   j++;\n    \n  }\n  \nj++;\n\nwhile (msg.payload[j] != '/'){\n    \n    j++;\n    \n  }\n\nj++;\ni=0;\nwhile (msg.payload[j] != '/'){\n\n    j++;\n    \n  }\n  \nj++;\n\nwhile (msg.payload[j] != '/'){\n    \n   \n    j++;\n    \n  }\n\n\nj++;\n\nwhile (msg.payload[j] != '/'){\n    \n    //Concatenamos la variable y una coma\n   \n   \n    aux6[i]= msg.payload[j];\n    \n    i++;\n    j++;\n    \n  }\n  \n\n\nj++;\n//i++;\nvar bandera = 1;\nwhile (msg.payload[j] != '/'){\n    \n    //Concatenamos la variable y una coma\n   if (bandera == 1){\n       aux6[i]= '/';\n       bandera = 0;\n       j--;\n   }\n   else{\n    aux6[i]= msg.payload[j];\n   }\n    i++;\n    j++;\n    \n  }\n\nvar latitud = aux6.join('');\nvar resultado = {payload:latitud};\n//var longitud = aux7.join('');\n//var resultado7 = {payload:longitud};\n\n//return[resultado6,resultado7];\nreturn resultado;\n\n\n\n/*var dato1 = parseInt(msg.payload);\n//var dato2 = parseInt(msg.payload);\n\nvar conversion_latitud = -1 * (dato1/1000000);\n//var longitud = -1 * (dato2/1000000);\n\nvar latitud = {payload:conversion_latitud};\n//var msg2 = {payload:longitud};\nreturn latitud;*/",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 310,
+        "y": 680,
+        "wires": [
+            [
+                "83ea748c.2da178"
+            ]
+        ]
+    },
+    {
+        "id": "44b451d.a2a63b",
+        "type": "inject",
+        "z": "b699143f.2be4a8",
+        "d": true,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "'CUIG=AB002/IDAnimal=A002/11-5-21/9:34/18.9/18.7/51/28460323/65781372/3.8'",
+        "payloadType": "str",
+        "x": 90,
+        "y": 680,
+        "wires": [
+            [
+                "a50ee614.3fa518"
+            ]
+        ]
+    },
+    {
+        "id": "675591d2.2b115",
+        "type": "function",
+        "z": "b699143f.2be4a8",
+        "name": "",
+        "func": "return {\n    payload: {\n        \"name\": \"INTA\",\n        \"lat\": -28.234556,\n       //\"lat\": conversion_latitud,\n        \"lon\": -65.781372,\n       // \"lon\": conversion_longitud,\n     // \"lat\": latitud,\n      \n        \"icon\": 'user-circle-o'\n     \n    }\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 500,
+        "y": 840,
+        "wires": [
+            [
+                "2f169eee.66faf2",
+                "da37ce66.6cded",
+                "f5112d87.af0db"
+            ]
+        ]
+    },
+    {
+        "id": "7481e797.4c11a8",
+        "type": "comment",
+        "z": "b699143f.2be4a8",
+        "name": "IoT aplicado a la ganaderia extensiva - Dragino Indoor",
+        "info": "",
+        "x": 240,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "a99ea777.353998",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "compatmode": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "c207461c.6571f8",
+        "type": "ui_group",
+        "name": "",
+        "tab": "c1f572e.653b29",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "fd7cb9f0.1d0258",
+        "type": "ui_group",
+        "name": "Nodo 1",
+        "tab": "c1f572e.653b29",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "d1c70c563ee51c8d",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "iot",
+        "tz": "",
+        "charset": ""
+    },
+    {
+        "id": "7b1fd03c.d6d5",
+        "type": "ui_group",
+        "name": "Mediciones",
+        "tab": "c1f572e.653b29",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "c1f572e.653b29",
+        "type": "ui_tab",
+        "name": "Ganaderia de Presición - INTA - UNCA",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": true,
+        "hidden": false
+    }
+]

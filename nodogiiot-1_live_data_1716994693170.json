@@ -1,0 +1,4321 @@
+[
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:57:15.230164870Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2DNX8AX77Q608E4RSX2E0S"
+      ],
+      "received_at": "2024-05-29T14:57:15.227951653Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 171,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE2OTsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:57:14.824224Z",
+            "timestamp": 2068035315,
+            "rssi": -27,
+            "channel_rssi": -27,
+            "snr": 7.2,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EPPtjtoHGgsIy4TdsgYQ6uXkByC4yoqEmLYC",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:57:14.815296529Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 2068035315,
+          "time": "2024-05-29T14:57:14.824224Z"
+        },
+        "received_at": "2024-05-29T14:57:15.019564395Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2DNX8AX77Q608E4RSX2E0S"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2DNXEYZB1D2S5VENWWCT7E"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:55:53.954858633Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2DKDWF8DBZVQVK8RNX6VRH"
+      ],
+      "received_at": "2024-05-29T14:55:53.952475239Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 170,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE2ODsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:55:53.550664Z",
+            "timestamp": 1986753155,
+            "rssi": -23,
+            "channel_rssi": -23,
+            "snr": 7,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EIPlrbMHGgwI+YPdsgYQvJ3F4QIguJ/dnemzAg==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:55:53.540436722Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 1986753155,
+          "time": "2024-05-29T14:55:53.550664Z"
+        },
+        "received_at": "2024-05-29T14:55:53.744042754Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2DKDWF8DBZVQVK8RNX6VRH"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2DKE328FDP4MYCNBAF381T"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:54:48.639510979Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2DHE3BT39CE6DQ41DN4B8P"
+      ],
+      "received_at": "2024-05-29T14:54:48.637067424Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 169,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE2NzsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:54:48.229965Z",
+            "timestamp": 1921432707,
+            "rssi": -24,
+            "channel_rssi": -24,
+            "snr": 6.5,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EIP5mpQHGgwIuIPdsgYQ4ubhygEguL/B8vWxAg==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:54:48.224234904Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 1921432707,
+          "time": "2024-05-29T14:54:48.229965Z"
+        },
+        "received_at": "2024-05-29T14:54:48.427961147Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2DHE3BT39CE6DQ41DN4B8P"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2DHE9ZX9ZWKABEM71MPHDP"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:53:27.347761488Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2DEYQ24QF27HZ3HM3RDB76"
+      ],
+      "received_at": "2024-05-29T14:53:27.345219216Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 168,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE2NjsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:53:26.943112Z",
+            "timestamp": 1840152803,
+            "rssi": -25,
+            "channel_rssi": -25,
+            "snr": 7,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EOOBuu0GGgsI54LdsgYQqc+pQSC47Z2Nx68C",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:53:26.936004575Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 1840152803,
+          "time": "2024-05-29T14:53:26.943112Z"
+        },
+        "received_at": "2024-05-29T14:53:27.139857014Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2DEYQ24QF27HZ3HM3RDB76"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2DEYXK56HAZYAK2YTSKPDN"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:52:06.078568649Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2DCFBBAV70B7VMRPYAEENM"
+      ],
+      "received_at": "2024-05-29T14:52:06.074024154Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 167,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE2NTsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:52:05.675121Z",
+            "timestamp": 1758872211,
+            "rssi": -27,
+            "channel_rssi": -27,
+            "snr": 7.5,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EJOF2cYGGgwIlYLdsgYQ1bH7nAMguJzQp5itAg==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:52:05.665056011Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 1758872211,
+          "time": "2024-05-29T14:52:05.675121Z"
+        },
+        "received_at": "2024-05-29T14:52:05.868479735Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2DCFBBAV70B7VMRPYAEENM"
+    ],
+    "origin": "ip-10-102-4-58.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2DCFHYT2BJZCWYCM7TRP3Q"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:50:44.794741175Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2D9ZZ5GX0HBNH1522HDWX2"
+      ],
+      "received_at": "2024-05-29T14:50:44.790505656Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 166,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE2NDsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:50:44.386658Z",
+            "timestamp": 1677590211,
+            "rssi": -24,
+            "channel_rssi": -24,
+            "snr": 7.2,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EMP9958GGgwIxIHdsgYQn669lAIguNOswemqAg==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:50:44.378827093Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 1677590211,
+          "time": "2024-05-29T14:50:44.386658Z"
+        },
+        "received_at": "2024-05-29T14:50:44.582558575Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2D9ZZ5GX0HBNH1522HDWX2"
+    ],
+    "origin": "ip-10-102-4-58.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2DA05TWNQKZ642G0J6ERT2"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:49:23.505656376Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2D7GJYPEKSFP8H9JGVTTZV"
+      ],
+      "received_at": "2024-05-29T14:49:23.503055092Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 165,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE2MzsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:49:23.101503Z",
+            "timestamp": 1596310147,
+            "rssi": -27,
+            "channel_rssi": -27,
+            "snr": 7.2,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EIOFl/kFGgwI84DdsgYQ0ZzFiwEguJ//27qoAg==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:49:23.091646087Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 1596310147,
+          "time": "2024-05-29T14:49:23.101503Z"
+        },
+        "received_at": "2024-05-29T14:49:23.295065210Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2D7GJYPEKSFP8H9JGVTTZV"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2D7GSH0GJ1EWZFP1HSYNYG"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:48:02.235972293Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2D51784PADAM1F8X8JHGSX"
+      ],
+      "received_at": "2024-05-29T14:48:02.233657454Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 164,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE2MjsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:48:01.830455Z",
+            "timestamp": 1515029611,
+            "rssi": -29,
+            "channel_rssi": -29,
+            "snr": 7.5,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EOuIttIFGgsIooDdsgYQo/vYCiD4g7X2i6YC",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:48:01.821492773Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 1515029611,
+          "time": "2024-05-29T14:48:01.830455Z"
+        },
+        "received_at": "2024-05-29T14:48:02.025341450Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2D51784PADAM1F8X8JHGSX"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2D51DV2PHCNRS1WYFWRCA7"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:46:40.943343958Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2D2HTSKYEQ1HSCMMHC0SZS"
+      ],
+      "received_at": "2024-05-29T14:46:40.939035659Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 163,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE2MTsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:46:40.536116Z",
+            "timestamp": 1433746563,
+            "rssi": -25,
+            "channel_rssi": -25,
+            "snr": 7.2,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EIP51KsFGgwI0P/csgYQsa3+2gIguL/Rj92jAg==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:46:40.526748467Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 1433746563,
+          "time": "2024-05-29T14:46:40.536116Z"
+        },
+        "received_at": "2024-05-29T14:46:40.730395578Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2D2HTSKYEQ1HSCMMHC0SZS"
+    ],
+    "origin": "ip-10-102-4-58.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2D2J1FTNYWTWQ5PJBTDZZH"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:45:19.655834753Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2D02ENJS44SMG3KV0YJMQ4"
+      ],
+      "received_at": "2024-05-29T14:45:19.651536694Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 162,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE2MDsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:45:19.251921Z",
+            "timestamp": 1352461667,
+            "rssi": -27,
+            "channel_rssi": -27,
+            "snr": 8.2,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EOPa84QFGgwI//7csgYQ9Oe+0wEguJX9p66hAg==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:45:19.243002757Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 1352461667,
+          "time": "2024-05-29T14:45:19.251921Z"
+        },
+        "received_at": "2024-05-29T14:45:19.446642258Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2D02ENJS44SMG3KV0YJMQ4"
+    ],
+    "origin": "ip-10-102-4-58.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2D02N7JMF0RDTRVRQ9ME00"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:43:58.387551003Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2CXK2YX9H8AEAVTPP0NK7D"
+      ],
+      "received_at": "2024-05-29T14:43:58.383348855Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 161,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE1OTsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:43:57.980873Z",
+            "timestamp": 1271177803,
+            "rssi": -27,
+            "channel_rssi": -27,
+            "snr": 6.8,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EMvEkt4EGgsIrv7csgYQr+yaUiD46efA/54C",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:43:57.971797716Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 1271177803,
+          "time": "2024-05-29T14:43:57.980873Z"
+        },
+        "received_at": "2024-05-29T14:43:58.175409295Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2CXK2YX9H8AEAVTPP0NK7D"
+    ],
+    "origin": "ip-10-102-4-58.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2CXK9KPNGDFDY8R6SQBA81"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:42:37.098901662Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2CV3PPZEPH6Y2E8K0KC8VX"
+      ],
+      "received_at": "2024-05-29T14:42:37.096162646Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 160,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE1ODsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:42:36.693023Z",
+            "timestamp": 1189897427,
+            "rssi": -27,
+            "channel_rssi": -27,
+            "snr": 8.5,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8ENPJsbcEGgwI3P3csgYQkandpQMguLCn29CcAg==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:42:36.683821366Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 1189897427,
+          "time": "2024-05-29T14:42:36.693023Z"
+        },
+        "received_at": "2024-05-29T14:42:36.887078226Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2CV3PPZEPH6Y2E8K0KC8VX"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2CV3XA11WZE98MTB2A74S8"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:41:15.813750753Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2CRMAGMTWBQSE4HPCAR77F"
+      ],
+      "received_at": "2024-05-29T14:41:15.809509500Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 159,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE1NzsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:41:15.406847Z",
+            "timestamp": 1108616323,
+            "rssi": -23,
+            "channel_rssi": -23,
+            "snr": 7.5,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EIPJ0JAEGgwIi/3csgYQ7cHFnQIguL+69aGaAg==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:41:15.398289373Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 1108616323,
+          "time": "2024-05-29T14:41:15.406847Z"
+        },
+        "received_at": "2024-05-29T14:41:15.601417129Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2CRMAGMTWBQSE4HPCAR77F"
+    ],
+    "origin": "ip-10-102-4-58.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2CRMH54ATBD4GM93BXKGKK"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:39:54.532060322Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2CP4YFZWNA0SM29F7H60F7"
+      ],
+      "received_at": "2024-05-29T14:39:54.529548279Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 158,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE1NjsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:39:54.125290Z",
+            "timestamp": 1027335363,
+            "rssi": -27,
+            "channel_rssi": -27,
+            "snr": 7.2,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EMPJ7+kDGgwIuvzcsgYQ+8WilwEguLPWj/OXAg==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:39:54.116829326Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 1027335363,
+          "time": "2024-05-29T14:39:54.125290Z"
+        },
+        "received_at": "2024-05-29T14:39:54.321116894Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2CP4YFZWNA0SM29F7H60F7"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2CP554NR52PJ354HM4FCJA"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:38:33.255763397Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2CKNJKJX3STG07DGY6DNKP"
+      ],
+      "received_at": "2024-05-29T14:38:33.251642299Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 157,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE1NTsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:38:32.850068Z",
+            "timestamp": 946056019,
+            "rssi": -27,
+            "channel_rssi": -27,
+            "snr": 6.8,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8ENPWjsMDGgsI6fvcsgYQ/5HKEyC4+NSqxJUC",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:38:32.840653970Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 946056019,
+          "time": "2024-05-29T14:38:32.850068Z"
+        },
+        "received_at": "2024-05-29T14:38:33.044012379Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2CKNJKJX3STG07DGY6DNKP"
+    ],
+    "origin": "ip-10-102-4-58.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2CKNS7ANYJANNE3NE5J457"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:37:11.976047525Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2CH66J39RSF338Q0N2N3P4"
+      ],
+      "received_at": "2024-05-29T14:37:11.970943380Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 156,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE1NDsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:37:11.568236Z",
+            "timestamp": 864779859,
+            "rssi": -27,
+            "channel_rssi": -27,
+            "snr": 7.2,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8ENP8rZwDGgwIl/vcsgYQ7fjD6gIguOiVx5WTAg==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:37:11.559924444Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 864779859,
+          "time": "2024-05-29T14:37:11.568236Z"
+        },
+        "received_at": "2024-05-29T14:37:11.763035980Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2CH66J39RSF338Q0N2N3P4"
+    ],
+    "origin": "ip-10-102-4-58.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2CH6D8H0C1B922P7GFZJ1J"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:35:50.699182407Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2CEPTSTBHEH5N4JH3ZYQVN"
+      ],
+      "received_at": "2024-05-29T14:35:50.696464385Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 155,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE1MzsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:35:50.296555Z",
+            "timestamp": 783504579,
+            "rssi": -23,
+            "channel_rssi": -23,
+            "snr": 7.5,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EMOpzfUCGgwIxvrcsgYQ0PvX6AEguLOM5OaQAg==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:35:50.287622719Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 783504579,
+          "time": "2024-05-29T14:35:50.296555Z"
+        },
+        "received_at": "2024-05-29T14:35:50.490944544Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2CEPTSTBHEH5N4JH3ZYQVN"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2CEQ1BEBVS6WQQ6RA7GDHB"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:34:29.425844597Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2CC7EYS21TQPRVDTVCVG3S"
+      ],
+      "received_at": "2024-05-29T14:34:29.423365474Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 154,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE1MjsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:34:29.019585Z",
+            "timestamp": 702229291,
+            "rssi": -26,
+            "channel_rssi": -26,
+            "snr": 7.5,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EKvW7M4CGgsI9fncsgYQiPuWZSD4v4KBuI4C",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:34:29.011830775Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 702229291,
+          "time": "2024-05-29T14:34:29.019585Z"
+        },
+        "received_at": "2024-05-29T14:34:29.214964997Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2CC7EYS21TQPRVDTVCVG3S"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2CC7NH85ZKEWHWRJG8N8VE"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:33:08.154449675Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2C9R34E6DZTZ0JNEAYR5BR"
+      ],
+      "received_at": "2024-05-29T14:33:08.150171407Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 153,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE1MTsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:33:07.748245Z",
+            "timestamp": 620951939,
+            "rssi": -26,
+            "channel_rssi": -26,
+            "snr": 7.5,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EIPzi6gCGgwIo/ncsgYQo9nVvwMguM/6nImMAg==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:33:07.738600234Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 620951939,
+          "time": "2024-05-29T14:33:07.748245Z"
+        },
+        "received_at": "2024-05-29T14:33:07.941587446Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2C9R34E6DZTZ0JNEAYR5BR"
+    ],
+    "origin": "ip-10-102-4-58.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2C9R9TABTNJV0E59GMAP7S"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:31:46.871785389Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2C78Q5C9C046YFBBMH12MH"
+      ],
+      "received_at": "2024-05-29T14:31:46.868514297Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 152,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE1MDsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:31:46.468287Z",
+            "timestamp": 539677467,
+            "rssi": -30,
+            "channel_rssi": -30,
+            "snr": 7.8,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EJumq4ECGgwI0vjcsgYQnNWtugIg+MKiutqJAg==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:31:46.459023139Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 539677467,
+          "time": "2024-05-29T14:31:46.468287Z"
+        },
+        "received_at": "2024-05-29T14:31:46.662247624Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2C78Q5C9C046YFBBMH12MH"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2C78XQAZBRMMBN99KNP5Q0"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:30:25.602675425Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2C4SBEE6J8T515TGKN851W"
+      ],
+      "received_at": "2024-05-29T14:30:25.599810933Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 151,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE0OTsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:30:25.196395Z",
+            "timestamp": 458402851,
+            "rssi": -23,
+            "channel_rssi": -23,
+            "snr": 6.8,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EKPYytoBGgwIgfjcsgYQ4ZeUuQEguNHB16uHAg==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:30:25.188073064Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 458402851,
+          "time": "2024-05-29T14:30:25.196395Z"
+        },
+        "received_at": "2024-05-29T14:30:25.391136054Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2C4SBEE6J8T515TGKN851W"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2C4SJ2EE5MCCBF27XFC28A"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:29:04.326531530Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2C29ZH39DQJX73QZPEPVZ0"
+      ],
+      "received_at": "2024-05-29T14:29:04.322303764Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 150,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE0ODsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:29:03.920192Z",
+            "timestamp": 377127155,
+            "rssi": -23,
+            "channel_rssi": -23,
+            "snr": 6.8,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EPOB6rMBGgsIsPfcsgYQovCnNSC46p70/IQC",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:29:03.911444625Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 377127155,
+          "time": "2024-05-29T14:29:03.920192Z"
+        },
+        "received_at": "2024-05-29T14:29:04.114156137Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2C29ZH39DQJX73QZPEPVZ0"
+    ],
+    "origin": "ip-10-102-4-58.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2C2A66AX90DCB6WSD6VZYZ"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:27:43.045821082Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2BZTKM8GYFAZV2JH0R4AJE"
+      ],
+      "received_at": "2024-05-29T14:27:43.043592513Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 149,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE0NzsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:27:42.643484Z",
+            "timestamp": 295851635,
+            "rssi": -24,
+            "channel_rssi": -24,
+            "snr": 6.2,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EPOsiY0BGgwI3vbcsgYQr+LajQMguOKGkc6CAg==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:27:42.633698718Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 295851635,
+          "time": "2024-05-29T14:27:42.643484Z"
+        },
+        "received_at": "2024-05-29T14:27:42.836899250Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2BZTKM8GYFAZV2JH0R4AJE"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2BZTT53KE0R7QFZPKNYZK4"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:26:21.778217375Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2BXB7XZKTD89ZBRP2NB8CW"
+      ],
+      "received_at": "2024-05-29T14:26:21.774870251Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 148,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE0NjsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:26:21.371374Z",
+            "timestamp": 214572627,
+            "rssi": -24,
+            "channel_rssi": -24,
+            "snr": 7.2,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8ENO8qGYaDAiN9tyyBhDGy96MAiC46Jmsn4AC",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:26:21.363355725Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 214572627,
+          "time": "2024-05-29T14:26:21.371374Z"
+        },
+        "received_at": "2024-05-29T14:26:21.566367408Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2BXB7XZKTD89ZBRP2NB8CW"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2BXBEJ25NVRVHBBRYB37F0"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:25:00.497790281Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2BTVVZW9SGJXMRMCYB3PNJ"
+      ],
+      "received_at": "2024-05-29T14:25:00.494899385Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 147,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE0NTsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:25:00.086832Z",
+            "timestamp": 133293907,
+            "rssi": -24,
+            "channel_rssi": -24,
+            "snr": 6.2,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8ENPOxz8aDAi89dyyBhDytZyEASC4uL7H8P0B",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:25:00.077058937Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 133293907,
+          "time": "2024-05-29T14:25:00.086832Z"
+        },
+        "received_at": "2024-05-29T14:25:00.288977508Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2BTVVZW9SGJXMRMCYB3PNJ"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2BTW2HJWZZJY611QEMB87F"
+  },
+  {
+    "time": "2024-05-29T14:24:24.982Z",
+    "name": "synthetic.status.reconnected",
+    "isError": false,
+    "isSynthetic": true,
+    "unique_id": "synthetic.1716992664982"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:23:39.215283527Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2BRCFVDRC45KCCH8XY8TC3"
+      ],
+      "received_at": "2024-05-29T14:23:39.212930715Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 146,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE0NDsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:23:38.806831Z",
+            "timestamp": 52016203,
+            "rssi": -24,
+            "channel_rssi": -24,
+            "snr": 7,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EMvo5hgaCgjr9NyyBhD0rDwg+Imh48H7AQ==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:23:38.800758011Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 52016203,
+          "time": "2024-05-29T14:23:38.806831Z"
+        },
+        "received_at": "2024-05-29T14:23:39.004640215Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2BRCFVDRC45KCCH8XY8TC3"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2BRCPFVGAXP5FJGNNE7X36"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:22:17.938801737Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2BNX42NJDT3Q35TPT9G740"
+      ],
+      "received_at": "2024-05-29T14:22:17.936202061Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 145,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE0MzsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:22:17.533983Z",
+            "timestamp": 4265707555,
+            "rssi": -29,
+            "channel_rssi": -29,
+            "snr": 7.8,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EKOQhvIPGgwImfTcsgYQlZqU2wIguJHv/5L5AQ==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:22:17.527811996Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 4265707555,
+          "time": "2024-05-29T14:22:17.533983Z"
+        },
+        "received_at": "2024-05-29T14:22:17.731001865Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2BNX42NJDT3Q35TPT9G740"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2BNXAJF2JYAPPXSD9S6DXB"
+  },
+  {
+    "time": "2024-05-29T14:21:40.574Z",
+    "name": "synthetic.status.closed",
+    "isError": false,
+    "isSynthetic": true,
+    "unique_id": "synthetic.1716992500574"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:20:56.659455710Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2BKDQZD7EX3PG21CT905K1"
+      ],
+      "received_at": "2024-05-29T14:20:56.656980599Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 144,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE0MjsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:20:56.249938Z",
+            "timestamp": 4184429339,
+            "rssi": -27,
+            "channel_rssi": -27,
+            "snr": 7.5,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EJumpcsPGgwIyPPcsgYQ5oDI1AEg+MKym+T2AQ==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:20:56.245718628Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 4184429339,
+          "time": "2024-05-29T14:20:56.249938Z"
+        },
+        "received_at": "2024-05-29T14:20:56.448478710Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2BKDQZD7EX3PG21CT905K1"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2BKDYKABTJ3YY9J8XFEZDQ"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:19:35.376238215Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2BGYBY55MM6RAF3WAAS9DK"
+      ],
+      "received_at": "2024-05-29T14:19:35.372943170Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 143,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE0MTsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:19:34.973010Z",
+            "timestamp": 4103150731,
+            "rssi": -25,
+            "channel_rssi": -25,
+            "snr": 7.2,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EIu5xKQPGgsI9/LcsgYQqoO7TiD4/d22tfQB",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:19:34.964487592Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 4103150731,
+          "time": "2024-05-29T14:19:34.973010Z"
+        },
+        "received_at": "2024-05-29T14:19:35.167792911Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2BGYBY55MM6RAF3WAAS9DK"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2BGYJG0T3EPSNWBMGSEBP9"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:18:14.102857510Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2BEF00FB226DQQ11VA840Y"
+      ],
+      "received_at": "2024-05-29T14:18:14.097876486Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 142,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzE0MDsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:18:13.695427Z",
+            "timestamp": 4021873099,
+            "rssi": -25,
+            "channel_rssi": -25,
+            "snr": 7.8,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EMvT4/0OGgwIpfLcsgYQop/CpgMg+IHF0obyAQ==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:18:13.685725713Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 4021873099,
+          "time": "2024-05-29T14:18:13.695427Z"
+        },
+        "received_at": "2024-05-29T14:18:13.888792296Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2BEF00FB226DQQ11VA840Y"
+    ],
+    "origin": "ip-10-102-4-58.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2BEF6PDTDZ8MRNSHTWC805"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:16:52.826866037Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2BBZMARTMKRVDSN3PDAR5T"
+      ],
+      "received_at": "2024-05-29T14:16:52.824278792Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 141,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzEzOTsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:16:52.424490Z",
+            "timestamp": 3940598283,
+            "rssi": -28,
+            "channel_rssi": -28,
+            "snr": 7.2,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EIuEg9cOGgwI1PHcsgYQqo2RpgIg+PXX79fvAQ==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:16:52.416741755Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 3940598283,
+          "time": "2024-05-29T14:16:52.424490Z"
+        },
+        "received_at": "2024-05-29T14:16:52.619673300Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2BBZMARTMKRVDSN3PDAR5T"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2BBZTTB5AEDZBKPZN2NAVC"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:15:31.549470614Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2B9G8AEBGWTXQ39T72C5VY"
+      ],
+      "received_at": "2024-05-29T14:15:31.544787777Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 140,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzEzODsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:15:31.146164Z",
+            "timestamp": 3859323603,
+            "rssi": -30,
+            "channel_rssi": -30,
+            "snr": 6.8,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8ENO1orAOGgwIg/HcsgYQg5a3oAEguJDzjKntAQ==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:15:31.136783645Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 3859323603,
+          "time": "2024-05-29T14:15:31.146164Z"
+        },
+        "received_at": "2024-05-29T14:15:31.339350488Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2B9G8AEBGWTXQ39T72C5VY"
+    ],
+    "origin": "ip-10-102-4-58.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2B9GEXV6MB9ZEABAXSZ3XA"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:14:10.277074361Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2B70WEPGBCC0AC6XNK1024"
+      ],
+      "received_at": "2024-05-29T14:14:10.272624742Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 139,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzEzNzsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:14:09.869217Z",
+            "timestamp": 3778051683,
+            "rssi": -30,
+            "channel_rssi": -30,
+            "snr": 6.5,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EOP8wYkOGgsIsvDcsgYQzuXoHCC45bar+uoB",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:14:09.860772584Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 3778051683,
+          "time": "2024-05-29T14:14:09.869217Z"
+        },
+        "received_at": "2024-05-29T14:14:10.063360869Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2B70WEPGBCC0AC6XNK1024"
+    ],
+    "origin": "ip-10-102-4-58.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2B71359XRNK8HH7Y61KQCK"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:12:49.007512125Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2B4HGVC0X0QPMT03S5RFEH"
+      ],
+      "received_at": "2024-05-29T14:12:49.005147407Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 138,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzEzNjsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:12:48.602823Z",
+            "timestamp": 3696779659,
+            "rssi": -29,
+            "channel_rssi": -29,
+            "snr": 8,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EIvD4eINGgwI4O/csgYQteSz+gIg+I30ycvoAQ==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:12:48.594073150Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 3696779659,
+          "time": "2024-05-29T14:12:48.602823Z"
+        },
+        "received_at": "2024-05-29T14:12:48.796269708Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2B4HGVC0X0QPMT03S5RFEH"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2B4HQFYJ4H7SHDV6PD4K18"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:11:27.729652438Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2B22518FP49HG2DV03X5C1"
+      ],
+      "received_at": "2024-05-29T14:11:27.727208441Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 137,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzEzNTsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:11:27.324892Z",
+            "timestamp": 3615505915,
+            "rssi": -30,
+            "channel_rssi": -30,
+            "snr": 7,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EPv7gLwNGgwIj+/csgYQgarR9wEg+LjI55zmAQ==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:11:27.319945650Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 3615505915,
+          "time": "2024-05-29T14:11:27.324892Z"
+        },
+        "received_at": "2024-05-29T14:11:27.522551752Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2B22518FP49HG2DV03X5C1"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2B22BHKX3CPJ1099YSTYN5"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:10:06.456982443Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2AZJS83BCK04H4XYS9446V"
+      ],
+      "received_at": "2024-05-29T14:10:06.454616937Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 136,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzEzNDsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:10:06.054585Z",
+            "timestamp": 3534230595,
+            "rssi": -26,
+            "channel_rssi": -26,
+            "snr": 7.5,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EMOooJUNGgsIvu7csgYQh83BdSC4y7yE7uMB",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:10:06.047058232Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 3534230595,
+          "time": "2024-05-29T14:10:06.054585Z"
+        },
+        "received_at": "2024-05-29T14:10:06.249495136Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2AZJS83BCK04H4XYS9446V"
+    ],
+    "origin": "ip-10-102-13-55.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2AZJZR9FBVSXJT8ABTXHWG"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:08:45.187634443Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2AX3DDVFT2RMZR6EZGTMMZ"
+      ],
+      "received_at": "2024-05-29T14:08:45.182191887Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 135,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzEzMzsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:08:44.781283Z",
+            "timestamp": 3452957331,
+            "rssi": -30,
+            "channel_rssi": -30,
+            "snr": 7.2,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EJPlv+4MGgwI7O3csgYQo9qZzwMguJyuor/hAQ==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:08:44.772177437Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 3452957331,
+          "time": "2024-05-29T14:08:44.781283Z"
+        },
+        "received_at": "2024-05-29T14:08:44.974609290Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2AX3DDVFT2RMZR6EZGTMMZ"
+    ],
+    "origin": "ip-10-102-4-58.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2AX3M331GTRPVZSVTKP1HG"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:07:23.916538244Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2ATM1PPADQ2DYD56M35X4H"
+      ],
+      "received_at": "2024-05-29T14:07:23.912068140Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 134,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzEzMjsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:07:23.509497Z",
+            "timestamp": 3371682923,
+            "rssi": -24,
+            "channel_rssi": -24,
+            "snr": 7.2,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EOuY38cMGgwIm+3csgYQ6fOhzgIg+IPav5DfAQ==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:07:23.501779171Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 3371682923,
+          "time": "2024-05-29T14:07:23.509497Z"
+        },
+        "received_at": "2024-05-29T14:07:23.703555872Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2ATM1PPADQ2DYD56M35X4H"
+    ],
+    "origin": "ip-10-102-4-58.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2ATM8CH6V8GK6Z7VPYMDA7"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:06:02.633558639Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2AR4NPX1ARPM4P9CZ2JGR7"
+      ],
+      "received_at": "2024-05-29T14:06:02.629317121Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 133,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzEzMTsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:06:02.230643Z",
+            "timestamp": 3290411355,
+            "rssi": -29,
+            "channel_rssi": -29,
+            "snr": 6.8,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8ENvi/qAMGgwIyuzcsgYQguvTyAEg+Jaz3uHcAQ==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:06:02.221420595Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 3290411355,
+          "time": "2024-05-29T14:06:02.230643Z"
+        },
+        "received_at": "2024-05-29T14:06:02.423254753Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2AR4NPX1ARPM4P9CZ2JGR7"
+    ],
+    "origin": "ip-10-102-4-58.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2AR4W9HAVZ8THEV5GGM55X"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:04:41.366511153Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2ANNA4JZBXXNPYQNJXR81X"
+      ],
+      "received_at": "2024-05-29T14:04:41.362442642Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 132,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzEzMDsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:04:40.962726Z",
+            "timestamp": 3209138819,
+            "rssi": -29,
+            "channel_rssi": -29,
+            "snr": 7,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EIOlnvoLGgsI+evcsgYQ4u7JSSC4n9H8stoB",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:04:40.954991594Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 3209138819,
+          "time": "2024-05-29T14:04:40.962726Z"
+        },
+        "received_at": "2024-05-29T14:04:41.157141335Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2ANNA4JZBXXNPYQNJXR81X"
+    ],
+    "origin": "ip-10-102-4-101.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2ANNGPJ0ZSA5DC2SZ0E2Z6"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:03:20.097853898Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2AK5YEZDHZ014TQQ76HPXR"
+      ],
+      "received_at": "2024-05-29T14:03:20.093523287Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 131,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzEyOTsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:03:19.686163Z",
+            "timestamp": 3127866339,
+            "rssi": -29,
+            "channel_rssi": -29,
+            "snr": 7.8,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EOPnvdMLGgwIp+vcsgYQ25f9pQMguN3ymoTYAQ==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:03:19.685641315Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 3127866339,
+          "time": "2024-05-29T14:03:19.686163Z"
+        },
+        "received_at": "2024-05-29T14:03:19.888013692Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2AK5YEZDHZ014TQQ76HPXR"
+    ],
+    "origin": "ip-10-102-4-101.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2AK651Y3KBGRK4Z80BG27F"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:01:58.825745225Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2AGPJND7NA8DBWWXQ941NW"
+      ],
+      "received_at": "2024-05-29T14:01:58.821002774Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 130,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzEyODsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:01:58.419330Z",
+            "timestamp": 3046593499,
+            "rssi": -28,
+            "channel_rssi": -28,
+            "snr": 8,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8ENun3awLGgwI1urcsgYQ+7bOowIg+J7+uNXVAQ==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:01:58.412523261Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 3046593499,
+          "time": "2024-05-29T14:01:58.419330Z"
+        },
+        "received_at": "2024-05-29T14:01:58.614978500Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2AGPJND7NA8DBWWXQ941NW"
+    ],
+    "origin": "ip-10-102-4-101.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2AGPS9BVF548Y4C9KN3HBQ"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T14:00:37.561880012Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2AE774FNTJB998P25V4W0N"
+      ],
+      "received_at": "2024-05-29T14:00:37.557637999Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 129,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzEyNzsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T14:00:37.156062Z",
+            "timestamp": 2965320411,
+            "rssi": -25,
+            "channel_rssi": -25,
+            "snr": 7.2,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8ENvl/IULGgwIhercsgYQptSupQEg+M761qbTAQ==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T14:00:37.147483822Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 2965320411,
+          "time": "2024-05-29T14:00:37.156062Z"
+        },
+        "received_at": "2024-05-29T14:00:37.349611378Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2AE774FNTJB998P25V4W0N"
+    ],
+    "origin": "ip-10-102-4-101.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2AE7DS592RX1SNYRC7KNWY"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T13:59:16.274966505Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2ABQTZ1W83ZDNYPN7YDE89"
+      ],
+      "received_at": "2024-05-29T13:59:16.270529213Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 128,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzEyNjsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T13:59:15.870311Z",
+            "timestamp": 2884049515,
+            "rssi": -29,
+            "channel_rssi": -29,
+            "snr": 7.5,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EOu0nN8KGgsItOncsgYQ66ycHSD44/z199AB",
+            "channel_index": 2,
+            "received_at": "2024-05-29T13:59:15.861805729Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 2884049515,
+          "time": "2024-05-29T13:59:15.870311Z"
+        },
+        "received_at": "2024-05-29T13:59:16.064246036Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2ABQTZ1W83ZDNYPN7YDE89"
+    ],
+    "origin": "ip-10-102-4-101.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2ABR1JJ5XKEMDF4QJJBK5E"
+  },
+  {
+    "name": "as.mqtt.connect.fail",
+    "time": "2024-05-29T13:58:30.336992205Z",
+    "identifiers": [
+      {
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ErrorDetails",
+      "namespace": "pkg/identityserver",
+      "name": "api_key_not_found",
+      "message_format": "API key not found",
+      "correlation_id": "1b1c8aca8bcc4be7bc92b50ddde5f493",
+      "cause": {
+        "namespace": "pkg/identityserver/store",
+        "name": "api_key_not_found",
+        "message_format": "api key with id `{api_key_id}` not found",
+        "attributes": {
+          "api_key_id": "NFUXVMG7AH7SBMCA433GVO23UGSPMJ6Q6WD3VYY"
+        },
+        "correlation_id": "243b53c69faf4ccd841c8686810b9b82",
+        "code": 5
+      },
+      "code": 16
+    },
+    "origin": "ip-10-102-4-101.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2AAB60A28NT60N943AY57K"
+  },
+  {
+    "name": "as.mqtt.connect.fail",
+    "time": "2024-05-29T13:58:14.343335613Z",
+    "identifiers": [
+      {
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ErrorDetails",
+      "namespace": "pkg/identityserver",
+      "name": "api_key_not_found",
+      "message_format": "API key not found",
+      "correlation_id": "1b1c8aca8bcc4be7bc92b50ddde5f493",
+      "cause": {
+        "namespace": "pkg/identityserver/store",
+        "name": "api_key_not_found",
+        "message_format": "api key with id `{api_key_id}` not found",
+        "attributes": {
+          "api_key_id": "NFUXVMG7AH7SBMCA433GVO23UGSPMJ6Q6WD3VYY"
+        },
+        "correlation_id": "243b53c69faf4ccd841c8686810b9b82",
+        "code": 5
+      },
+      "code": 16
+    },
+    "origin": "ip-10-102-4-101.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2A9VJ7H8X181A6XPRQ8ZD4"
+  },
+  {
+    "name": "as.mqtt.connect.fail",
+    "time": "2024-05-29T13:57:58.346073500Z",
+    "identifiers": [
+      {
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ErrorDetails",
+      "namespace": "pkg/identityserver",
+      "name": "api_key_not_found",
+      "message_format": "API key not found",
+      "correlation_id": "1b1c8aca8bcc4be7bc92b50ddde5f493",
+      "cause": {
+        "namespace": "pkg/identityserver/store",
+        "name": "api_key_not_found",
+        "message_format": "api key with id `{api_key_id}` not found",
+        "attributes": {
+          "api_key_id": "NFUXVMG7AH7SBMCA433GVO23UGSPMJ6Q6WD3VYY"
+        },
+        "correlation_id": "243b53c69faf4ccd841c8686810b9b82",
+        "code": 5
+      },
+      "code": 16
+    },
+    "origin": "ip-10-102-4-101.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2A9BYAK83JKMCQFWW554J5"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T13:57:55.001181661Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2A98F7QAFNJQAPKP5PGPCZ"
+      ],
+      "received_at": "2024-05-29T13:57:54.998318251Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 127,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzEyNTsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T13:57:54.599342Z",
+            "timestamp": 2802778459,
+            "rssi": -29,
+            "channel_rssi": -29,
+            "snr": 7.5,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8ENuCvLgKGgwI4ujcsgYQwt/N+AIg+Jb1lMnOAQ==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T13:57:54.590326776Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 2802778459,
+          "time": "2024-05-29T13:57:54.599342Z"
+        },
+        "received_at": "2024-05-29T13:57:54.792932972Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2A98F7QAFNJQAPKP5PGPCZ"
+    ],
+    "origin": "ip-10-102-15-130.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2A98NS8WG7MKRFV4MFPGZN"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T13:56:33.735500623Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          },
+          "dev_eui": "70B3D57ED0066872",
+          "dev_addr": "260D0A4C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "eui-70b3d57ed0066872",
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        },
+        "dev_eui": "70B3D57ED0066872",
+        "dev_addr": "260D0A4C"
+      },
+      "correlation_ids": [
+        "gs:uplink:01HZ2A6S3KDYWB9VGP7MF2EN9J"
+      ],
+      "received_at": "2024-05-29T13:56:33.732299746Z",
+      "uplink_message": {
+        "f_port": 1,
+        "f_cnt": 126,
+        "frm_payload": "MjYwRDBBNEM7MjkvNS8yMDI0OzEzOjU6NDQ7MjgyOC4wNjYyUzs2NTQ2LjAxNDJXOzEyNDsA",
+        "rx_metadata": [
+          {
+            "gateway_ids": {
+              "gateway_id": "eui-a84041ffff1f4cbc",
+              "eui": "A84041FFFF1F4CBC"
+            },
+            "time": "2024-05-29T13:56:33.330892Z",
+            "timestamp": 2721510443,
+            "rssi": -25,
+            "channel_rssi": -25,
+            "snr": 7.2,
+            "uplink_token": "CiIKIAoUZXVpLWE4NDA0MWZmZmYxZjRjYmMSCKhAQf//H0y8EKvo25EKGgwIkejcsgYQtp+x+AEg+I+ntZrMAQ==",
+            "channel_index": 2,
+            "received_at": "2024-05-29T13:56:33.321182472Z"
+          }
+        ],
+        "settings": {
+          "data_rate": {
+            "lora": {
+              "bandwidth": 125000,
+              "spreading_factor": 7,
+              "coding_rate": "4/5"
+            }
+          },
+          "frequency": "917200000",
+          "timestamp": 2721510443,
+          "time": "2024-05-29T13:56:33.330892Z"
+        },
+        "received_at": "2024-05-29T13:56:33.523777274Z",
+        "consumed_airtime": "0.123136s",
+        "network_ids": {
+          "net_id": "000013",
+          "ns_id": "EC656E0000000183",
+          "tenant_id": "ttn",
+          "cluster_id": "au1",
+          "cluster_address": "au1.cloud.thethings.network"
+        }
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01HZ2A6S3KDYWB9VGP7MF2EN9J"
+    ],
+    "origin": "ip-10-102-15-130.ap-southeast-2.compute.internal",
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2A6SA72HAY0MVR5QHD2CKN"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T13:55:12.471758768Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          }
+        }
+      }
+    ],
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2A49YQK3S1Q0XGR376N60M"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T13:53:51.219240411Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          }
+        }
+      }
+    ],
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ2A1TKKMW8R61DA3D595ERT"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T13:52:29.934236662Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          }
+        }
+      }
+    ],
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ29ZB7EX6FYRQBEF6T3YYPN"
+  },
+  {
+    "name": "as.up.data.forward",
+    "time": "2024-05-29T13:51:08.663481223Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "eui-70b3d57ed0066872",
+          "application_ids": {
+            "application_id": "nodogiiot-1"
+          }
+        }
+      }
+    ],
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ29WVVQF4JVVZK16W2VKBEW"
+  },
+  {
+    "name": "as.mqtt.connect.fail",
+    "time": "2024-05-29T13:51:04.479445534Z",
+    "identifiers": [
+      {
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        }
+      }
+    ],
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ29WQRZAH4SQGG205M7AX4D"
+  },
+  {
+    "name": "as.mqtt.connect.fail",
+    "time": "2024-05-29T13:50:48.268150019Z",
+    "identifiers": [
+      {
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        }
+      }
+    ],
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ29W7YCVN2965DPZG3E0N3V"
+  },
+  {
+    "name": "as.mqtt.connect.fail",
+    "time": "2024-05-29T13:50:29.043231477Z",
+    "identifiers": [
+      {
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        }
+      }
+    ],
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01HZ29VN5KV0C9B1T9V6CRF4GG"
+  },
+  {
+    "name": "application.api-key.create",
+    "time": "2024-05-29T13:02:16.640892079Z",
+    "identifiers": [
+      {
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        }
+      }
+    ],
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_SETTINGS_API_KEYS"
+      ]
+    },
+    "unique_id": "01HZ273CJ0W1T98SP92V5XF9R2"
+  },
+  {
+    "name": "application.api-key.delete",
+    "time": "2024-05-29T13:01:44.178704765Z",
+    "identifiers": [
+      {
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        }
+      }
+    ],
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_SETTINGS_API_KEYS"
+      ]
+    },
+    "unique_id": "01HZ272CVJ3QZDK9WKC7MDKNJT"
+  },
+  {
+    "name": "application.api-key.delete",
+    "time": "2024-05-29T13:01:35.995210384Z",
+    "identifiers": [
+      {
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        }
+      }
+    ],
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_SETTINGS_API_KEYS"
+      ]
+    },
+    "unique_id": "01HZ2724VVHSZJM2YTCGVCNG55"
+  },
+  {
+    "name": "application.api-key.delete",
+    "time": "2024-05-29T13:01:26.461872965Z",
+    "identifiers": [
+      {
+        "application_ids": {
+          "application_id": "nodogiiot-1"
+        }
+      }
+    ],
+    "context": {
+      "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_SETTINGS_API_KEYS"
+      ]
+    },
+    "unique_id": "01HZ271VHX68ERE3C9J74BNYH5"
+  }
+]

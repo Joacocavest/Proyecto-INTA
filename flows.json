@@ -1,0 +1,123 @@
+[
+    {
+        "id": "7df5b99dd2957bac",
+        "type": "mqtt in",
+        "z": "92261476b9288297",
+        "name": "MensajeS de TTS",
+        "topic": "#",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "b7bc4ec36d3ac33f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 240,
+        "wires": [
+            [
+                "f5574e5163ef5337",
+                "b4cf4317de3bd631"
+            ]
+        ]
+    },
+    {
+        "id": "b0fddd78be9368f4",
+        "type": "debug",
+        "z": "92261476b9288297",
+        "name": "PAQUETE 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "f5574e5163ef5337",
+        "type": "function",
+        "z": "92261476b9288297",
+        "name": "",
+        "func": "//Este codigo es para separar la payload,decodificar. VERSION 1\n\n/*data=msg.payload;\nbusqueda=data.indexOf(\"frm_payload\")+14;\nbusquedaFin=data.indexOf(\"=\",busqueda);\ndatoBase64=data.slice(busqueda,busquedaFin);\nvar buffer = Buffer.from(datoBase64, 'base64');\nmsg.payload = buffer.toString('utf-8');\n\nreturn msg;\n\n*/\n\n//Este codigo es para separar la payload,decodificar. VERSION 2\n\n/*data=msg.payload;\nbusqueda=data.indexOf(\"frm_payload\")+14;\nbusquedaFin=data.indexOf('\"',busqueda);\ndatoBase64=data.slice(busqueda,busquedaFin);\nvar buffer = Buffer.from(datoBase64, 'base64');\nmsg.payload = buffer.toString('utf-8');\n\nreturn msg;\n\n*/\n //Este codigo es para separar la payload,decodificar,y diferenciar los paquetes\n \nvar datoCrudo;\ndata=msg.payload;\nbusqueda=data.indexOf(\"frm_payload\")+14;\nbusquedaFin=data.indexOf('\"',busqueda);\ndatoBase64=data.slice(busqueda,busquedaFin);\nvar buffer = Buffer.from(datoBase64, 'base64');\ndatoCrudo = buffer.toString('utf-8');\n\nif(datoCrudo.includes(\"P1\"))\n{\n    msg.payload=datoCrudo;\n    \n    return[msg, null];\n}\n\nif(datoCrudo.includes(\"P2\"))\n{\n    msg.payload=datoCrudo;\n    \n    return[null, msg];\n}\n\n\n\n\n\n\n//ESTE CODIGO ES PARA SEPARAR LA CARLA UTIL\n\n/*data=msg.payload; //guardamos toda la cadena en una variable\nbusqueda=data.indexOf(\"frm_payload\")+14; //Buscamos la palabra que cohincide con lo que posteriormente sera la \n                                         //la carga util\nbusquedaFin=data.indexOf(\"=\",busqueda);   //al final de la payload, hay un \"=\" que nos servira de referencia\nmsg.payload=data.slice(busqueda,busquedaFin);//extraemos solo la parte que nos interesa, osea el dato\n\nreturn msg; //retornamos el dato*/\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 240,
+        "wires": [
+            [
+                "b0fddd78be9368f4"
+            ],
+            [
+                "f34fa540164fe11a"
+            ]
+        ]
+    },
+    {
+        "id": "b4cf4317de3bd631",
+        "type": "debug",
+        "z": "92261476b9288297",
+        "name": "Texto puro",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "f34fa540164fe11a",
+        "type": "debug",
+        "z": "92261476b9288297",
+        "name": "PAQUETE 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "b7bc4ec36d3ac33f",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "au1.cloud.thethings.network:1883",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    }
+]
