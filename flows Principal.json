@@ -1,0 +1,170 @@
+[
+    {
+        "id": "ee6b7d11983eb571",
+        "type": "tab",
+        "label": "Lector TTS",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "750fbe0e4661edb6",
+        "type": "mqtt in",
+        "z": "ee6b7d11983eb571",
+        "name": "msg",
+        "topic": "#",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "b7bc4ec36d3ac33f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 340,
+        "wires": [
+            [
+                "f6858f363db2fc9f",
+                "e78343fe3de139dc"
+            ]
+        ]
+    },
+    {
+        "id": "f6858f363db2fc9f",
+        "type": "debug",
+        "z": "ee6b7d11983eb571",
+        "name": "texto puro",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 280,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "e78343fe3de139dc",
+        "type": "function",
+        "z": "ee6b7d11983eb571",
+        "name": "convertirMsjTTSaTexto",
+        "func": "let msjTTS = msg.payload;\n//identifico a partir de que caracter empieza el dato en base64.\nlet cadenaAuxiliar = '\"frm_payload\":\"';\nlet cadenaControl = msjTTS.indexOf(cadenaAuxiliar)+15; //320. Aca empieza el msj codificado en base64\n\n//identifico la cantidad de caracteres del mensaje en base64\nlet caracterDondeEmpiezaElMsj = cadenaControl;\nlet cantidadCaracteresDelMsjBase64 = 0;\nlet caracter;\ndo{\n\tcaracter = msjTTS[cadenaControl];\n\tcadenaControl = cadenaControl+1;\n\tcantidadCaracteresDelMsjBase64 = cantidadCaracteresDelMsjBase64+1;\n}while(msjTTS[cadenaControl]!='\"');\n\n//extraemos el mensaje en base64 desde caracterDondeEmpiezaElMsj hasta cantidadCaracteresDelMsjBasse64.\nlet cadenaEnBase64 = msjTTS.slice(caracterDondeEmpiezaElMsj, caracterDondeEmpiezaElMsj+cantidadCaracteresDelMsjBase64);\n\n//Transformamos el mensaje en Base64 a texto legible.\n//let cadenaDecodificada = atob(cadenaEnBase64);\n//Transformamos el mensaje en Base64 a texto legible. Para un entorno de Node.JS\nlet cadenaBuffer = Buffer.from(cadenaEnBase64, 'base64').toString('utf-8');\nlet cadenaDecodificada = cadenaBuffer;\n\n//Colocamos en Variables los datos decodificados:\nlet id_collar;\nlet fecha;\nlet hora;\nlet latitud;\nlet longitud;\nlet nro_paquete;\n//variables para controlar lo que extraemos del mensaje decodificado.\nlet caracterLeido = 0;\nlet cantidadCaracterDecodificado = 0;\ndo{//aca obtenemos la id_collar.\n\tcadenaDecodificada[cantidadCaracterDecodificado];\n\tcantidadCaracterDecodificado = cantidadCaracterDecodificado+1;\n}while(cadenaDecodificada[cantidadCaracterDecodificado] != ';');\nmsg.id_collar = cadenaDecodificada.slice(caracterLeido, cantidadCaracterDecodificado);\ncaracterLeido = cantidadCaracterDecodificado+1;\ndo{//aca obtenemos la fecha.\n\tcadenaDecodificada[cantidadCaracterDecodificado];\n\tcantidadCaracterDecodificado = cantidadCaracterDecodificado+1;\n}while(cadenaDecodificada[cantidadCaracterDecodificado] != ';');\nmsg.fecha = cadenaDecodificada.slice(caracterLeido, cantidadCaracterDecodificado);\ncaracterLeido = cantidadCaracterDecodificado+1;\ndo{//aca obtenemos la hora.\n\tcadenaDecodificada[cantidadCaracterDecodificado];\n\tcantidadCaracterDecodificado = cantidadCaracterDecodificado+1;\n}while(cadenaDecodificada[cantidadCaracterDecodificado] != ';');\nmsg.hora = cadenaDecodificada.slice(caracterLeido, cantidadCaracterDecodificado);\ncaracterLeido = cantidadCaracterDecodificado+1;\ndo{//aca obtenemos la latitud.\n\tcadenaDecodificada[cantidadCaracterDecodificado];\n\tcantidadCaracterDecodificado = cantidadCaracterDecodificado+1;\n}while(cadenaDecodificada[cantidadCaracterDecodificado] != ';');\nmsg.latitud = cadenaDecodificada.slice(caracterLeido, cantidadCaracterDecodificado);\ncaracterLeido = cantidadCaracterDecodificado+1;\ndo{//aca obtenemos la longitud.\n\tcadenaDecodificada[cantidadCaracterDecodificado];\n\tcantidadCaracterDecodificado = cantidadCaracterDecodificado+1;\n}while(cadenaDecodificada[cantidadCaracterDecodificado] != ';');\nmsg.longitud = cadenaDecodificada.slice(caracterLeido, cantidadCaracterDecodificado);\ncaracterLeido = cantidadCaracterDecodificado+1;\ndo{//aca obtenemos la nro_paquete.\n\tcadenaDecodificada[cantidadCaracterDecodificado];\n\tcantidadCaracterDecodificado = cantidadCaracterDecodificado+1;\n}while(cadenaDecodificada[cantidadCaracterDecodificado] != ';');\nmsg.nro_paquete= cadenaDecodificada.slice(caracterLeido, cantidadCaracterDecodificado);\ncaracterLeido = cantidadCaracterDecodificado+1;\n\nlet paqueteDeDatos = {\n\t\"id_collar\" : msg.id_collar,\n\t\"fecha\" : msg.fecha,\n\t\"hora\" : msg.hora,\n\t\"latitud\" : msg.latitud,\n\t\"longitud\" : msg.longitud,\n\t\"nro_paquete\" : msg.nro_paquete\n};\nreturn paqueteDeDatos;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 260,
+        "wires": [
+            [
+                "e5a70bda47da56df",
+                "b5ad983afbbbd068"
+            ]
+        ]
+    },
+    {
+        "id": "e5a70bda47da56df",
+        "type": "function",
+        "z": "ee6b7d11983eb571",
+        "name": "Convertir Hora",
+        "func": "let fechaAux = msg.fecha;\nlet horaAux = msg.hora;\n\n// Función para convertir fecha de \"DD/MM/YYYY\" a \"YYYY-MM-DD\"\nfunction convertirFecha(fechaAux) {\n    let partesDeFecha = fechaAux.split('/');\n    let days = partesDeFecha[0].padStart(2, '0'); //padStart se utiliza para rellenar una cadena con otro carácter hasta que la cadena alcance la longitud deseada.\n    let months = partesDeFecha[1].padStart(2, '0');\n    let years = partesDeFecha[2];\n    return `${years}-${months}-${days}`;\n}\n\n// Función para convertir hora de \"HH:MM:SS\" a \"HH:MM\"\nfunction convertirHora(horaAux) {\n    let partesDeHora = horaAux.split(':');\n    let horas = partesDeHora[0].padStart(2, '0');\n    let minutos = partesDeHora[1].padStart(2,'0');\n    let segundos = partesDeHora[2].padStart(2,'0');\n    return `${horas}:${minutos}:${segundos}`;\n}\n\n// Llamamos a las funciones de convertir fecha y hora\nlet fechaCorrecta = convertirFecha(fechaAux);\nlet horaCorrecta = convertirHora(horaAux);\n\n// Concatenamos la fecha y la hora en formato ISO 8601\nlet fechaYHora = `${fechaCorrecta}T${horaCorrecta}Z`;\nmsg.fechaYHora = fechaYHora;\n\n// Utilizamos un constructor del tipo de objeto \"Date\" para poder utilizarlo con sus funciones\nlet gmtDate = new Date(fechaYHora);\n\n// Verificar si la fecha es válida\nif (isNaN(gmtDate)) {\n    node.error(\"Invalid Date: \" + fechaYHora, msg);\n    return;\n}\n\n// Función para convertir GMT a hora Argentina (GMT-3)\nfunction convertirGMTaArgentina(gmtDate) {\n    let horaArgentina = -3; // Hora Argentina está a GMT-3\n    let fechaArgentina = new Date(gmtDate.getTime() + horaArgentina * 60 * 60 * 1000);\n    return fechaArgentina;\n}\n\n// Llamamos a la función Convertir a hora Argentina\nlet fechaYHoraArgentina = convertirGMTaArgentina(gmtDate);\n// Verificación y conversión a cadena legible\nmsg.fechaYHoraArgentinaString = fechaYHoraArgentina.toISOString();\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 400,
+        "wires": [
+            [
+                "f5c845cd958f5244",
+                "9403452450777f83"
+            ]
+        ]
+    },
+    {
+        "id": "f5c845cd958f5244",
+        "type": "debug",
+        "z": "ee6b7d11983eb571",
+        "name": "FechaYHoraGMT",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "fechaYHora",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "b5ad983afbbbd068",
+        "type": "debug",
+        "z": "ee6b7d11983eb571",
+        "name": "Mostrar_Datos_Extraidos",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "9403452450777f83",
+        "type": "debug",
+        "z": "ee6b7d11983eb571",
+        "name": "FechaYHoraArgentina",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "fechaYHoraArgentinaString",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "b7bc4ec36d3ac33f",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "au1.cloud.thethings.network:1883",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
