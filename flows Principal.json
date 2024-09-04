@@ -63,7 +63,8 @@
         "wires": [
             [
                 "e5a70bda47da56df",
-                "b5ad983afbbbd068"
+                "b5ad983afbbbd068",
+                "0593494eb5f284a6"
             ]
         ]
     },
@@ -137,6 +138,43 @@
         "statusType": "auto",
         "x": 840,
         "y": 360,
+        "wires": []
+    },
+    {
+        "id": "0593494eb5f284a6",
+        "type": "function",
+        "z": "ee6b7d11983eb571",
+        "name": "convertirCordenadas",
+        "func": "let latitud_aux = msg.latitud;\nlet longitud_aux = msg.longitud;\n\nlet grados_latitud = latitud_aux.substring(0,2);\nlet grados_longitud = longitud_aux.substring(0,2);\n\n/*function controlCordenada(cordenada_Aux){\n    let caracter;\n    let cantidadCaracteres = 0;\n    let i=0;\n\n    return cantidadCaracteres;\n}*/\n\nlet minutos_latitud = latitud_aux.substring(2,latitud_aux.length);\n//controlCordenada(minutos_latitud);\n\nmsg.minutos = minutos_latitud;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 480,
+        "wires": [
+            [
+                "2e223a21fe9562d1"
+            ]
+        ]
+    },
+    {
+        "id": "2e223a21fe9562d1",
+        "type": "debug",
+        "z": "ee6b7d11983eb571",
+        "name": "mostrarCordenadasConvertidas",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "minutos",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 480,
         "wires": []
     },
     {
