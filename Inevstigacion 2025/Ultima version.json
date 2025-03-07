@@ -1,0 +1,331 @@
+[
+    {
+        "id": "dcfd6e76572f4675",
+        "type": "tab",
+        "label": "flujo para probar bd",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7f991a2ddc8b6318",
+        "type": "udp in",
+        "z": "dcfd6e76572f4675",
+        "d": true,
+        "name": "",
+        "iface": "",
+        "port": "1880",
+        "ipv": "udp4",
+        "multicast": "false",
+        "group": "",
+        "datatype": "utf8",
+        "x": 160,
+        "y": 220,
+        "wires": [
+            [
+                "64ebd1b6026c3030"
+            ]
+        ]
+    },
+    {
+        "id": "64ebd1b6026c3030",
+        "type": "function",
+        "z": "dcfd6e76572f4675",
+        "name": "funcionDato",
+        "func": "let cadenaCompleta = msg.payload;\nfunction removeSpaces(hex) {\n    return hex.replace(/\\s+/g, '');\n}\n    for(let i=0; i<cadenaCompleta.length; i++){\n        if(cadenaCompleta[i] == ':'){\n            var posicionDondeEmpiezaElDato = cadenaCompleta.indexOf(cadenaCompleta[i])+15;\n            break;\n        }\n    }\n    var cadenaQueContieneElDato = cadenaCompleta.slice(posicionDondeEmpiezaElDato, (cadenaCompleta.length)-1);\n    cadenaQueContieneElDato = removeSpaces(cadenaQueContieneElDato);\n    var mensajeTraducido='';\n    //Dividimos la cadena hexadecimal en pares de caracteres\n    for(let i=0; i<cadenaQueContieneElDato.length; i+=2){\n        mensajeTraducido += String.fromCharCode(parseInt(cadenaQueContieneElDato.substr(i, 2), 16));\n    }\n\nmsg.msgTraducido = mensajeTraducido;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 220,
+        "wires": [
+            [
+                "ed28ea3531f57889",
+                "1303772f64037b88"
+            ]
+        ]
+    },
+    {
+        "id": "1303772f64037b88",
+        "type": "debug",
+        "z": "dcfd6e76572f4675",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "msgTraducido",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "ed28ea3531f57889",
+        "type": "function",
+        "z": "dcfd6e76572f4675",
+        "name": "extraerDatosTraducidos",
+        "func": "let msgTraducido = msg.msgTraducido;\n//Extraemos los datos del msgTraducido.\nlet varAux=\"\";\n//Array que contiene las variables extraidas.\nlet contenedorDatos = [];\nlet primerIndice = 0;\nfor(let i = 0; i<msgTraducido.length; i++){\n    if(msgTraducido[i] == ';'){\n        varAux = msgTraducido.slice(primerIndice,i);\n        contenedorDatos.push(varAux);\n        primerIndice = i+1;\n    }\n}\n\nmsg.id_collar = contenedorDatos[0];\nmsg.fecha = contenedorDatos[1];\nmsg.hora = contenedorDatos[2];\nmsg.latitud = contenedorDatos[3];\nmsg.longitud = contenedorDatos[4];\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 220,
+        "wires": [
+            [
+                "58fadd4c63079d04"
+            ]
+        ]
+    },
+    {
+        "id": "aa05763ccd3daba8",
+        "type": "debug",
+        "z": "dcfd6e76572f4675",
+        "d": true,
+        "name": "ID_collar",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "id_collar",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1860,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "1564d714df520969",
+        "type": "debug",
+        "z": "dcfd6e76572f4675",
+        "d": true,
+        "name": "latiutud",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "latitud",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1860,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "9d13868c3bc07cdb",
+        "type": "debug",
+        "z": "dcfd6e76572f4675",
+        "d": true,
+        "name": "longitud",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "longitud",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1860,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "58fadd4c63079d04",
+        "type": "function",
+        "z": "dcfd6e76572f4675",
+        "name": "convertirCoordenas",
+        "func": "msg.latitud = convertirCoordenadas(msg.latitud);\n\nmsg.longitud = convertirCoordenadas(msg.longitud);\n\n// let datoFinalParaCargar = {\n//     \"id_collar\": msg.id_collar,\n//     \"fecha\": msg.fechaArgentina,\n//     \"hora\": msg.horaArgentina,\n//     \"latitud\": msg.latitudConvertida,\n//     \"longitud\": msg.longitudConvertida,\n//     \"nro_paquete\": msg.nro_paquete,\n// };\n\n\n\n// msg.datoCargable = datoFinalParaCargar;\nreturn msg;\n\nfunction convertirCoordenadas(numeroConLetra) {\n    // Toma la última letra (N, S, E, O) y convierte el resto a número\n    let letra = numeroConLetra.slice(-1);\n    let numero = parseFloat(numeroConLetra.slice(0, -1));\n\n    // Obtén los grados y minutos decimales\n    let grados = Math.floor(numero / 100); // Parte entera de los grados\n    let minutosDecimales = numero % 100;  // Minutos decimales restantes\n\n    // Separa los minutos y segundos\n    let minutos = Math.floor(minutosDecimales); // Minutos enteros\n    let segundos = (minutosDecimales - minutos) * 60; // Convierte la parte decimal a segundos\n\n    // Formatea el resultado\n    let convertida = `${grados}°${minutos}'${segundos.toFixed(1)}\" ${letra}`;\n    return convertida;\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*\nmsg.latitud = convertirCoordenadas (msg.latitud);\n\nmsg.longitud = convertirCoordenadas(msg.longitud);\n\nlet datoFinalParaCargar = {\n    \"id_collar\": msg.id_collar,\n    \"fecha\": msg.fechaArgentina,\n    \"hora\":msg.horaArgentina ,\n    \"latitud\": msg.latitudConvertida,\n    \"longitud\": msg.longitudConvertida,\n    \"nro_paquete\": msg.nro_paquete,\n};\n \n \n\nmsg.datoCargable = datoFinalParaCargar;\nreturn msg;\n\nfunction convertirCoordenadas(numeroConLetra) {\n\n    let letra = numeroConLetra.slice(-1);  // Toma la última letra (N, S, E, O, etc.)\n    let numero = parseFloat(numeroConLetra.slice(0, -1));\n\n    let grados = Math.floor(parseFloat(numero) / 100);\n\n    let minutosDecimales = (parseFloat(numero) % 100)*100;\n\n\n    let minutos = Math.floor(minutosDecimales * 60);\n\n    let segundosDecimales = (minutosDecimales * 60)-minutos;\n\n    let segundos = segundosDecimales * 60;\n    let convertida = `${grados}°${minutos}'${segundos.toFixed(4)}\"${letra}`;\n    return convertida;\n}\n*/",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 220,
+        "wires": [
+            [
+                "5ff164298c59fc7d"
+            ]
+        ]
+    },
+    {
+        "id": "5ff164298c59fc7d",
+        "type": "function",
+        "z": "dcfd6e76572f4675",
+        "name": "convertirFechaYHora",
+        "func": "let fechaAux = msg.fecha;\nlet horaAux = msg.hora;\n\n// Función para convertir fecha de \"DD/MM/YYYY\" a \"YYYY-MM-DD\"\nfunction convertirFecha(fechaAux) {\n    let partesDeFecha = fechaAux.split('/');\n    let days = partesDeFecha[0].padStart(2, '0'); //padStart se utiliza para rellenar una cadena con otro carácter hasta que la cadena alcance la longitud deseada.\n    let months = partesDeFecha[1].padStart(2, '0');\n    let years = partesDeFecha[2];\n    return `${years}-${months}-${days}`;\n}\n\n// Función para convertir hora de \"HH:MM:SS\" a \"HH:MM\"\nfunction convertirHora(horaAux) {\n    let partesDeHora = horaAux.split(':');\n    let horas = partesDeHora[0].padStart(2, '0');\n    let minutos = partesDeHora[1].padStart(2,'0');\n    let segundos = partesDeHora[2].padStart(2,'0');\n    return `${horas}:${minutos}:${segundos}`;\n}\n\n// Llamamos a las funciones de convertir fecha y hora\nlet fechaCorrecta = convertirFecha(fechaAux);\nlet horaCorrecta = convertirHora(horaAux);\n\n// Concatenamos la fecha y la hora en formato ISO 8601\nlet fechaYHora = `${fechaCorrecta} ${horaCorrecta}`;\n// Utilizamos un constructor del tipo de objeto \"Date\" para poder utilizarlo con sus funciones\nlet gmtDate = new Date(fechaYHora);\n// Verificar si la fecha es válida\nif (isNaN(gmtDate)) {\n    node.error(\"Invalid Date: \" + fechaYHora, msg);\n    return;\n}\n// Función para convertir GMT a hora Argentina (GMT-3)\nfunction convertirGMTaArgentina(gmtDate) {\n    let horaArgentina = -3; // Hora Argentina está a GMT-3\n    let fechaArgentina = new Date(gmtDate.getTime() + horaArgentina * 60 * 60 * 1000);\n\n    // Formatear la fecha en el formato SQL 'YYYY-MM-DD HH:MM:SS'\n    let anio = fechaArgentina.getFullYear();\n    let mes = String(fechaArgentina.getMonth() + 1).padStart(2, '0'); // Meses van de 0-11\n    let dia = String(fechaArgentina.getDate()).padStart(2, '0');\n    let horas = String(fechaArgentina.getHours()).padStart(2, '0');\n    let minutos = String(fechaArgentina.getMinutes()).padStart(2, '0');\n    let segundos = String(fechaArgentina.getSeconds()).padStart(2, '0');\n\n    return `${anio}-${mes}-${dia} ${horas}:${minutos}:${segundos}`;\n}\n\n\n// Llamamos a la función Convertir a hora Argentina\nlet fechaYHoraArgentina = convertirGMTaArgentina(gmtDate);\nmsg.fechaYHora = fechaYHoraArgentina;\n\n\n\n//msg.fechaYHoraArgentina = fechaYHoraArgentina;\n//Verificación y conversión a cadena legible\n// msg.fechaYHoraArgentinaString = fechaYHoraArgentina.toISOString();\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1120,
+        "y": 220,
+        "wires": [
+            [
+                "4befebf6cfdb5fc7"
+            ]
+        ]
+    },
+    {
+        "id": "924c76961d36d597",
+        "type": "debug",
+        "z": "dcfd6e76572f4675",
+        "d": true,
+        "name": "Fecha y hora arg",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "fechaYHora",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1890,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "ead04278e1015431",
+        "type": "postgresql",
+        "z": "dcfd6e76572f4675",
+        "name": "Envio datos a la BD",
+        "query": "",
+        "postgreSQLConfig": "9866eb8e09be07c2",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 1530,
+        "y": 260,
+        "wires": [
+            [
+                "aa05763ccd3daba8",
+                "924c76961d36d597",
+                "1564d714df520969",
+                "9d13868c3bc07cdb",
+                "c7bacdf3e3dace7d"
+            ]
+        ]
+    },
+    {
+        "id": "c41b44f4b9a49fe5",
+        "type": "inject",
+        "z": "dcfd6e76572f4675",
+        "name": "dato original",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "4d30303030303030313b362f31322f 323032343b31353a31333a33313b323832372e37313830533b363534352e 38353330573b31393b0000;",
+        "payloadType": "str",
+        "x": 150,
+        "y": 320,
+        "wires": [
+            [
+                "64ebd1b6026c3030"
+            ]
+        ]
+    },
+    {
+        "id": "c7bacdf3e3dace7d",
+        "type": "debug",
+        "z": "dcfd6e76572f4675",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1860,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "4befebf6cfdb5fc7",
+        "type": "function",
+        "z": "dcfd6e76572f4675",
+        "name": "function 4",
+        "func": "msg.payload = `\n    INSERT INTO informacion_nodos (id_nodo, fecha_hora_lectura, latitud, longitud)\n    VALUES (\n        '${msg.id_collar}', \n        '${msg.fechaYHora}', \n        '${msg.latitud}', \n        '${msg.longitud}'\n    );\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 220,
+        "wires": [
+            [
+                "ead04278e1015431",
+                "f4c038901446c2a1"
+            ]
+        ]
+    },
+    {
+        "id": "f4c038901446c2a1",
+        "type": "debug",
+        "z": "dcfd6e76572f4675",
+        "name": "query",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1530,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "9866eb8e09be07c2",
+        "type": "postgreSQLConfig",
+        "name": "Local",
+        "host": "localhost",
+        "hostFieldType": "str",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "Nodos_Sensores",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": "10",
+        "maxFieldType": "num",
+        "idle": "1000",
+        "idleFieldType": "num",
+        "connectionTimeout": "10000",
+        "connectionTimeoutFieldType": "num",
+        "user": "postgres",
+        "userFieldType": "str",
+        "password": "msi2023",
+        "passwordFieldType": "str"
+    }
+]
