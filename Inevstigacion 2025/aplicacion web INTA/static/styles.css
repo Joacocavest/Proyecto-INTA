@@ -117,7 +117,7 @@ body {
 
 .main-content {
   flex: 1;
-  padding: 1.5rem;
+  /*padding: 1.5rem;*/
   overflow: auto;
 }
 
@@ -544,13 +544,15 @@ input:checked + .slider:before {
 
 /*Valores agregados en la interfaz de la aplicacion web*/
 .inicio-sesion-container{
+  background: linear-gradient(to right, var(--secondary), var(--primary));
   display: flex;
   flex-direction: column;
   width: 400px;
   height: 300px;
   background-color: var(--primary);
-  margin: 60px auto;
+  margin: 60px 20px;
   border-radius: 10px;
+  align-self: center;
 }
 .form-inicio-sesion{
   display: flex;
@@ -599,11 +601,12 @@ input:checked + .slider:before {
   margin-bottom: 20px;
   border-radius: 4px;
   font-size: large;
-  padding: 2px;
+  padding: 5px;
   transition: background 0.3s;
 }
 .form-inicio-sesion a{
   color: #000;
+  margin-bottom: 3px;
 }
 
 .btn-inicio-sesion:hover{
@@ -620,24 +623,72 @@ input:checked + .slider:before {
 }
 .img-inicio-sesion-container {
   width: 50%;
+  height: 100%;
+  background-color: #ddd; /* Color de fondo para ver el efecto */
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  border-radius: 0 50% 50% 0; /* Crea un semicirculo en la izquierda */
+  position: relative;
+  right: 55px;
 }
 .img-inicio-sesion-container img {
-  width: 80%; /* Ajusta el tamaño de la imagen */
-  max-width: 300px; /* Para evitar que sea demasiado grande */
-  height: auto;
-  border-radius: 50%; /* Hace la imagen circular */
+  width: 1500px; /* Ajusta el tamaño de la imagen */
+  height: 100%;
   object-fit: cover; /* Asegura que se mantenga bien recortada */
+  position: relative;
+  left: 72px;
 }
 
 .principal-container{
+  height: 100vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
+  justify-content: space-around;
 }
 
 
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
+.img-inicio-sesion-container {
+  animation: slideInLeft 3s ease-out forwards;
+}
+
+.contenedor-principal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.menu-cubo {
+  display: grid;
+  grid-template-columns: 200px 200px;
+  grid-template-rows: 200px 200px;
+  gap: 10px;
+}
+
+.boton {
+  background-color: var(--primary-hover);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.boton:hover {
+  transform: scale(1.1);
+}
