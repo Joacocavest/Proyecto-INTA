@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNCaLens</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    
+    
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo-container">
+                <img src="./images/logo5.svg" alt="Vision AI Logo" class="logo">
+                <h1 class="app-title">Vision AI</h1>
+            </div>
+            
+            <div class="header-controls">
+                
+                <div class="theme-toggle">
+                    <span class="theme-label">Modo Oscuro</span>
+                    <label class="switch">
+                        <input type="checkbox" id="dark-mode-toggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <div class="principal-container">
+                <div class="img-inicio-sesion-container">
+                    <img src="./imagenes_vacas/Manejo-1-Abre-Fotos-Divulgacao.webp" alt="imagen descriptiva de la app" class="img_vaca">
+                </div>
+                <div class="inicio-sesion-container">
+                    <form action="#" method="post" class="form-inicio-sesion">
+                        <div class="input-name">
+                            <label for="name">Usuario</label>
+                            <input type="text" placeholder="Ingrese nombre o email" required>
+                        </div>
+                        <div class="input-password">
+                            <label for="password">Contraseña</label>
+                            <input type="password" required>
+                        </div>
+                        <button type="submit" class="btn-inicio-sesion">Iniciar sesión</button>
+                        <a href="#"><small>¿No tienes cuenta? Crea una aquí</small></a>
+                        <a href="#"><small>¿Has olvidado tu contraseña?</small></a>
+                    </form>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+    <script type="module" src="../src/render/scripts.js"></script>
+</body>
+</html>
