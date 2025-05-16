@@ -1,0 +1,36 @@
+/* Fondo dividido en dos imágenes en la página principal */
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-sans);
+    background-color: var(--background);
+    
+    /* Acá hacemos dos imágenes como fondo */
+    background: 
+    url('./pagina-principal/mapadecalor-paginaprincial.jpg') left center / 50% 100% no-repeat,
+    url('./pagina-principal/basededatos-paginaprincipal.jpg') right center / 50% 100% no-repeat;
+
+    
+    color: var(--foreground);
+    background-size: 50% 100%, 50% 100%;
+    background-position: left center, right center;
+    background-repeat: no-repeat, no-repeat;
+    
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Suavizar la línea de división (opcional) */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
