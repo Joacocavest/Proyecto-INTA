@@ -1,0 +1,273 @@
+[
+    {
+        "id": "daa97d58de0a4b5f",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b4ba8b7f53c1041e",
+        "type": "inject",
+        "z": "daa97d58de0a4b5f",
+        "name": "Dato completo",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "260D0A4C:ffffffe20000004832363044304134433b32302f392f 323032343b31333a31313a32383b323832372e37323035533b363534352e 38333938573b3",
+        "payloadType": "str",
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "cde64ab863a96743"
+            ]
+        ]
+    },
+    {
+        "id": "cde64ab863a96743",
+        "type": "function",
+        "z": "daa97d58de0a4b5f",
+        "name": "funcionDato",
+        "func": "let cadenaCompleta = msg.payload;\nfunction removeSpaces(hex) {\n    return hex.replace(/\\s+/g, '');\n}\nif(cadenaCompleta.length > 10){\n    for(let i=0; i<cadenaCompleta.length; i++){\n        if(cadenaCompleta[i] == ':'){\n            var posicionDondeEmpiezaElDato = cadenaCompleta.indexOf(cadenaCompleta[i])+15;\n            break;\n        }\n    }\n    var cadenaQueContieneElDato = cadenaCompleta.slice(posicionDondeEmpiezaElDato, (cadenaCompleta.length)-1);\n    cadenaQueContieneElDato = removeSpaces(cadenaQueContieneElDato);\n    var mensajeTraducido='';\n    //Dividimos la cadena hexadecimal en pares de caracteres\n    for(let i=0; i<cadenaQueContieneElDato.length; i+=2){\n        mensajeTraducido += String.fromCharCode(parseInt(cadenaQueContieneElDato.substr(i, 2), 16));\n    }\n}else{\n    msg.paquete = cadenaCompleta;\n}\n\nmsg.msgTraducido = mensajeTraducido;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 200,
+        "wires": [
+            [
+                "f4830d32ed0de182",
+                "d33f544162c31584",
+                "7aa7cc294dfe4dc5"
+            ]
+        ]
+    },
+    {
+        "id": "d33f544162c31584",
+        "type": "debug",
+        "z": "daa97d58de0a4b5f",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "msgTraducido",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "f4830d32ed0de182",
+        "type": "function",
+        "z": "daa97d58de0a4b5f",
+        "name": "function 2",
+        "func": "let msgTraducido = msg.msgTraducido;\n//Extraemos los datos del msgTraducido.\nlet varAux=\"\";\n//Array que contiene las variables extraidas.\nlet contenedorDatos = [];\nlet primerIndice = 0;\nfor(let i = 0; i<msgTraducido.length; i++){\n    if(msgTraducido[i] == ';'){\n        varAux = msgTraducido.slice(primerIndice,i);\n        contenedorDatos.push(varAux);\n        primerIndice = i+1;\n    }\n}\n\nmsg.id_collar = contenedorDatos[0];\nmsg.fecha = contenedorDatos[1];\nmsg.hora = contenedorDatos[2];\nmsg.latitud = contenedorDatos[3];\nmsg.longitud = contenedorDatos[4];\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 200,
+        "wires": [
+            [
+                "408b06529ce04d3f",
+                "5572a3f43a04bb9c",
+                "f66de0a9bb7f9a0c",
+                "7d923ba95db83bf4",
+                "84f48e3296202962"
+            ]
+        ]
+    },
+    {
+        "id": "408b06529ce04d3f",
+        "type": "debug",
+        "z": "daa97d58de0a4b5f",
+        "name": "hora",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "hora",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "5572a3f43a04bb9c",
+        "type": "debug",
+        "z": "daa97d58de0a4b5f",
+        "name": "ID_collar",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "id_collar",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "f66de0a9bb7f9a0c",
+        "type": "debug",
+        "z": "daa97d58de0a4b5f",
+        "name": "fecha",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "fecha",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "7d923ba95db83bf4",
+        "type": "debug",
+        "z": "daa97d58de0a4b5f",
+        "name": "latiutud",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "latitud",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "84f48e3296202962",
+        "type": "debug",
+        "z": "daa97d58de0a4b5f",
+        "name": "longitud",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "longitud",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "b1b07c13acbe82af",
+        "type": "debug",
+        "z": "daa97d58de0a4b5f",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "paquete",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "88b4785af87e60e8",
+        "type": "inject",
+        "z": "daa97d58de0a4b5f",
+        "name": "paquete",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "9383b0000",
+        "payloadType": "str",
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "faa9f2c004d791b8"
+            ]
+        ]
+    },
+    {
+        "id": "faa9f2c004d791b8",
+        "type": "function",
+        "z": "daa97d58de0a4b5f",
+        "d": true,
+        "name": "FuncionPaquete",
+        "func": "let cadenaCompleta = msg.payload;\nif(cadenaCompleta.length < 15){\n    var nuevaCadena = cadenaCompleta.slice(0, cadenaCompleta.length-4);\n    var mensajeTraducido = '';\n    //Dividimos la cadena hexadecimal en pares de caracteres\n    for (let i = 0; i < nuevaCadena.length; i += 2) {\n        mensajeTraducido += String.fromCharCode(parseInt(nuevaCadena.substr(i, 2), 16));\n    }\n}\nmsg.paquete = nuevaCadena;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 140,
+        "wires": [
+            [
+                "b1b07c13acbe82af"
+            ]
+        ]
+    },
+    {
+        "id": "7aa7cc294dfe4dc5",
+        "type": "function",
+        "z": "daa97d58de0a4b5f",
+        "d": true,
+        "name": "function 3",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    }
+]
