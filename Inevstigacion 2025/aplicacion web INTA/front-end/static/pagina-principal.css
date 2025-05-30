@@ -7,9 +7,9 @@ body {
     background-color: var(--background);
     
     /* Acá hacemos dos imágenes como fondo */
-    background: 
-    url('./pagina-principal/mapadecalor-paginaprincial.jpg') left center / 50% 100% no-repeat,
-    url('./pagina-principal/basededatos-paginaprincipal.jpg') right center / 50% 100% no-repeat;
+    background:
+    url('menu-principal/imagenes-menu-principal/mapadecalor-paginaprincial.jpg') left center / 50% 100% no-repeat,    
+    url('menu-principal/imagenes-menu-principal/basededatos-paginaprincipal.jpg')right center / 50% 100% no-repeat;
 
     
     color: var(--foreground);

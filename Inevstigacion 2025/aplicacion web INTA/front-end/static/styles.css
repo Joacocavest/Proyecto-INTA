@@ -641,7 +641,9 @@ input:checked + .slider:before {
   position: relative;
   right: 55px;
 }
-.img-inicio-sesion-container img {
+
+/*--------------------------- hasta aca llegue ----------------------------------*/
+.img-inicio-sesion-container img { /*rescalo la imagen del home principal*/
   width: 1500px; /* Ajusta el tamaño de la imagen */
   height: 100%;
   object-fit: cover; /* Asegura que se mantenga bien recortada */
@@ -649,7 +651,7 @@ input:checked + .slider:before {
   left: 72px;
 }
 
-.principal-container{
+.principal-container{ /*distribucion del home*/
   height: 100vh;
   display: flex;
   flex-direction: row;
@@ -658,7 +660,7 @@ input:checked + .slider:before {
 }
 
 
-@keyframes slideInLeft {
+@keyframes slideInLeft { /* movimiento semi-scrip*/
   from {
     opacity: 0;
     transform: translateX(-100px);
@@ -669,18 +671,12 @@ input:checked + .slider:before {
   }
 }
 
-.img-inicio-sesion-container {
+.img-inicio-sesion-container { /*movimiento de la imagen de la vaca del home*/
   animation: slideInLeft 3s ease-out forwards;
 }
 
-/*.contenedor-principal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}*/
 
-.contenedor-principal {
+.contenedor-principal { /*distribucion del menu principal*/
   display: flex;
   flex-direction: column; /* Organiza los elementos de arriba hacia abajo */
   align-items: center;    /* Centra los elementos horizontalmente */
@@ -689,14 +685,14 @@ input:checked + .slider:before {
   gap: 30px;              /* Espacio entre los botones */
 }
 
-.menu-cubo {
+.menu-cubo {/*tamaño de los botones de menu principal*/
   display: grid;
   grid-template-columns: 200px 200px;
   grid-template-rows: 200px 200px;
   gap: 10px;
 }
 
-.boton {
+.boton {/*fondo de los botontes de menu principal*/
   background-color: var(--primary-hover);
   color: white;
   border: none;
@@ -706,11 +702,8 @@ input:checked + .slider:before {
   transition: transform 0.3s ease;
 }
 
-.boton:hover {
-  transform: scale(1.1);
-}
 
-
+/*revisar al final*/
 /*Cosas agregadas por lala*/
 
 .btn-inicio-sesion {
