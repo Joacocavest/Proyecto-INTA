@@ -510,7 +510,7 @@ input:checked + .slider:before {
   gap: 0.75rem;
 }
 
-/*--------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------------*/
 
 /*Valores agregados en la interfaz de la aplicacion web*/
 .inicio-sesion-container{/*back del div del formulario*/
@@ -671,3 +671,6 @@ input:checked + .slider:before {
   margin-top: 10px; /* Espacio arriba para separarlo de los botones anteriores */
   transition: background-color 0.3s ease;
 }
+
+
+/*------------------------------------------------------------------------------------------------------------------ */
