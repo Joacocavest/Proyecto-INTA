@@ -1,6 +1,6 @@
 import socket
 
-def start_server(host='10.130.1.205', port=65432, node_red_host='127.0.1.1', node_red_port=1880):
+def start_server(host='10.130.1.205', port=65432, node_red_host='10.130.1.211', node_red_port=1880):
     # Crear socket UDP para enviar datos a Node-RED
     node_red_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
