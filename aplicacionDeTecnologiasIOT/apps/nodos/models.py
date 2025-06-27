@@ -5,6 +5,7 @@ class Nodo(models.Model):
     fecha_hora = models.DateTimeField()
     lat = models.CharField()
     lon = models.CharField()
-
+    activo = models.BooleanField(default=True)
+    
     def __str__(self):
         return f'{self.id_nodo} - {self.fecha_hora}'
