@@ -7,7 +7,9 @@ function validarInicioSesion() {
     } else {
         // alert('Campos llenos, redirigiendo...');
         // Redirigir a la página principal
-        window.location.href = '../menu-principal/pagina_principal.html';  // Aquí colocas la ruta correcta a tu página principal
+        window.location.href = './pagina_principal.html';
+
+  // Aquí colocas la ruta correcta a tu página principal
     }
 }
 
