@@ -5,7 +5,7 @@ document.getElementById("formulario-2").addEventListener("submit", function(even
     var password = document.getElementById('password').value.trim();
 
     if (cuig === '' || usuario === '' || password === '' ) {
-        event.preventDefault(); // ⛔ Detiene el envío del formulario
+        event.preventDefault(); 
         alert("Por favor, complete todos los campos.");
     }
 });
