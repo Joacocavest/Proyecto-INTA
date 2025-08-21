@@ -20,9 +20,9 @@
 #mensaje-credencial{
     text-align: center;
     font-weight:bold;
-    font-size: 70%;
+    font-size: 80%;
     padding: 0px;
-    margin-top: 30px;
+    margin-top: 10px;
     line-height: 1.2; /* achica la altura del renglón */
 
 }
@@ -35,7 +35,7 @@
     padding: 8px;
     color: #FFF;
     box-shadow: 0px 5px 50px rgba(0,0,0,0.1);
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 
 } 
 
