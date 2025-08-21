@@ -1,0 +1,40 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Inicio - GreenWeb Catamarca{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<article>
+    <h2>Bienvenido a GreenWeb Catamarca</h2>
+    <p>
+        La integración de <strong>IoT</strong> y <strong>Ciencia de Datos</strong> 
+        en la agricultura y ganadería de Catamarca permite mejorar la 
+        sostenibilidad, aumentar la productividad y optimizar recursos.
+    </p>
+</article>
+
+<section class="seccion-destacada">
+    <h3>¿Qué hacemos?</h3>
+    <div class="cards">
+        <div class="card">
+            <img src="{% static 'img/sensores.jpg' %}" alt="Sensores IoT">
+            <h4>Nodos Sensores</h4>
+            <p>Capturan datos precisos del suelo, clima y ganado.</p>
+        </div>
+        <div class="card">
+            <img src="{% static 'img/datos.jpg' %}" alt="Ciencia de datos">
+            <h4>Ciencia de Datos</h4>
+            <p>Procesamos información para tomar decisiones inteligentes.</p>
+        </div>
+        <div class="card">
+            <img src="{% static 'img/productividad.jpg' %}" alt="Producción agrícola">
+            <h4>Productividad</h4>
+            <p>Optimización de procesos para aumentar la calidad y producción.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

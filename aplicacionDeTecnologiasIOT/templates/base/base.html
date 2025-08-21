@@ -1,0 +1,62 @@
+{% load static %} <!-- Necesario para usar CSS, JS e imágenes -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}"> <!-- css del base no tocar-->
+    <link rel="icon" href="{% static 'img/Imagen de WhatsApp 2025-08-19 a las 13.09.27_05fc247d.ico' %}"> <!-- Enlace a Img del icon -->
+    
+    <title>{% block title %}  {% endblock title %}</title> <!-- Bloque editable para agregar el titulo de la pagina-->
+
+    {% block extra_head %}  {% endblock %}
+    
+</head>
+
+
+<body>
+    <!-- Encabezado de la página -->
+
+    <header>
+        <h1>GreenWeb Catamarca</h1>
+        <p> </p>
+        <img src="{% static 'img/GreenWebSinFondo.png' %}" alt="Logo GreenWeb Catamarca">
+
+        
+    </header>
+
+    <nav>
+        <!-- Por ejemplo-->
+        {% comment %} <ul>
+        <li><a href="{% url 'home' %}">Inicio</a></li>
+        <li><a href="{% url 'sensores:lista_sensores' %}">Sensores</a></li>
+        <li><a href="#">Contacto</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'usuario:logout' %}">Salir ({{ user.username }})</a></li>
+        {% else %}
+            <li><a href="{% url 'usuario:login' %}">Login</a></li>
+        {% endif %}
+        </ul> {% endcomment %}
+
+    </nav>
+
+    <main>
+
+        {%block content%}
+        <!-- Aquí las páginas hijas colocan su contenido -->
+        {%endblock%}
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - GreenWeb Catamarca</p>
+        <p>Proyecto de IoT y Ciencia de Datos para agricultura y ganadería</p>
+    </footer>
+
+    <!-- Enlace a JavaScript -->
+    <script src="{% static 'js/validaciones.js' %}"></script>
+
+</body>
+</html>
