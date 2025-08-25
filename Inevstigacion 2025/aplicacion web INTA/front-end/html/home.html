@@ -18,28 +18,42 @@
         </p>
         
         <nav>
-            <!-- <ul>
-                {% comment %} <li><a href="{% url 'home' %}">Inicio</a></li>
-                <li><a href="{% url 'sensores:lista_sensores' %}">Sensores</a></li>
-                {% if user.is_authenticated %}
-                    <li><a href="{% url 'usuario:logout' %}">Salir ({{ user.username }})</a></li>
-                {% else %}
-                    <li><a href="{% url 'usuario:login' %}">Login</a></li>
-                {% endif %} {% endcomment %}
-            </ul> -->
+            
             <a href="iniciar session.html">Inicio de Seciòn</a><br><br>
         </nav>
     </header>
 
     <!-- Contenido dinámico -->
     <main>
+        <a href="#"><button>Registrarse</button></a>
+        <a href="#"><button>Iniciar Sesión</button></a>
+
+
+        <h2>Bienvenidos a GreenWeb</h2>
         <figure>
-            <img src="../static/imagenes/imagenes_vacas/R (1).jpeg" width="100%">
+            <img src="/aplicacionDeTecnologiasIOT/static/img/GReenWebSinFondo.png" alt="">
         </figure>
+
+        <article>
+            <p>
+                “Del campo al dato con un solo código, utilizando trazabilidad inteligente para una gestión eficiente”
+            </p>
+            <br>
+            <p>
+                GreenWeb es una aplicación web diseñada para establecimientos agropecuarios que buscan optimizar 
+                la gestión y el rendimiento de su ganado mediante el uso de tecnologías IoT y ciencia de datos.
+                
+                La plataforma permite registrar usuarios pertenecientes a cada establecimiento, quienes podrán 
+                cargar, editar y administrar los collares con nodos sensores instalados en el ganado. Estos 
+                dispositivos recopilan información clave sobre la ubicación y el comportamiento de los animales.
+
+                Gracias a esta información, GreenWeb brinda a los expertos herramientas valiosas para analizar 
+                los datos y tomar decisiones estratégicas que mejoren la productividad y el manejo del rodeo.
+            </p>
+
+        </article>
         
-        <!-- {% comment %} {% block contenido %} -->
-        <!-- Aquí se inyectan las páginas hijas -->
-        <!-- {% endblock %} {% endcomment %} -->
+        
     </main>
 
     <!-- Footer -->
