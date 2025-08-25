@@ -13,6 +13,8 @@ header {
     background-size: cover;
     color: #181f0d;
     padding: 15px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+
 }
 
 #arribaheader{
@@ -25,6 +27,7 @@ header {
     display: flex;
     align-items: center;
     gap: 15px;
+    
 }
 
 #logo img{
@@ -53,6 +56,8 @@ h1{
     padding: 10px;
 
     cursor: pointer;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+
 }
 
 
@@ -61,6 +66,8 @@ h1{
     border: 3px solid #181f0d;
     border-radius: 15px;
     padding: 10px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+
 }
 
 nav {
@@ -80,6 +87,8 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     border:3px solid transparent;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+
 }
 
 nav a:hover{
@@ -90,6 +99,8 @@ nav a:hover{
     color: white;
     text-decoration: none;
     font-weight: bold;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+
 }
 
 /*aca termina el header*/
@@ -99,6 +110,8 @@ main {
     width: 80%;
     border-radius: 8px;
     background: #a88f6a;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+
 
 }
 
@@ -133,6 +146,8 @@ footer {
     background: #a4bc00;
     color: #181f0d;
     padding: 10px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+
 }
 
 
@@ -174,6 +189,8 @@ footer {
     border-radius: 10px;
 
     margin: 20px 40px 0px 0px;
+
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
 }
 
 #contenido p {
