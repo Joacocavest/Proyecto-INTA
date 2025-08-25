@@ -1,7 +1,7 @@
 #login{
-    width: 40%;
+    width: 90%;
     margin: 0px auto;
-    margin-left: 60%;
+    margin-left: 1%;
 
     transition: transform  0.3s ease, background 0.3s ease, color 0.3s ease;
 
@@ -109,4 +109,19 @@ button:hover {
 
 button:active {
     transform: scale(0.98);
+}
+
+main{
+    background: linear-gradient(rgba(168, 143, 106, 0.7)),url(../img/Imagen\ de\ WhatsApp\ 2025-08-25\ a\ las\ 16.06.56_569d6f89.jpg) top center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+#parrafologin p{
+    text-align: center;
+    font-size: 25px;
+    width: 40%;
+    color: #FFF;
+    padding: 20px 0px 0px 30px;
 }
