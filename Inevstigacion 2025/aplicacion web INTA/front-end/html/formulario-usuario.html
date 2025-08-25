@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario usuario</title>
+        <link rel="icon" href="/aplicacionDeTecnologiasIOT/static/img/GReenWebSinFondo.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Inevstigacion 2025/aplicacion web INTA/front-end/static/css/base.css">
+    <!--link rel="stylesheet" href="/Inevstigacion 2025/aplicacion web INTA/front-end/static/css/login.css"-->
+    <link rel="stylesheet" href="/Inevstigacion 2025/aplicacion web INTA/front-end/static/css/usuario.css">
+</head>
+<body>
+    
+    <!-- Header -->
+    <header>
+        <p>AgroTech Catamarca <img src="/aplicacionDeTecnologiasIOT/static/img/GReenWebSinFondo.png" alt="" width="10%">
+        </p>
+        
+        <nav>
+            <!-- <ul>
+                {% comment %} <li><a href="{% url 'home' %}">Inicio</a></li>
+                <li><a href="{% url 'sensores:lista_sensores' %}">Sensores</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'usuario:logout' %}">Salir ({{ user.username }})</a></li>
+                {% else %}
+                    <li><a href="{% url 'usuario:login' %}">Login</a></li>
+                {% endif %} {% endcomment %}
+            </ul> -->
+            <a href="">home</a>
+            <a href="">sensores disponibles</a><br><br>
+        </nav>
+    </header>
+
+    <!-- Contenido dinámico -->
+    <main>
+
+        <div id="login">
+            <form action="#" method="get">
+                <div>
+                    <fieldset>
+                        <label id="registrate"><Strong>Registrate</Strong></label> 
+                        <p  id="mensaje-credencial">
+                            Completa los campos de informacion  <br>
+                            para crear la cuenta
+                        </p>
+
+                        <div id="input-login">
+                            <label for="usuario"></label> 
+                                <input type="text" name="usuario" id="usuario" placeholder="👤  Usuario" required> <br>
+
+                            <label for="contra"></label>
+                                <input type="password" name="contra" id="contra" placeholder="🔒 Contraseña" required> <br>
+                        </div>
+                        
+                        <input type="checkbox" name="box-login" id="box-login">
+                        <label for="box-login">Recordarme</label>
+
+                        <a href="">Recuperar Contraseña</a> <br>
+
+
+                        <button type="submit" >Iniciar Sesion</button>
+                    </fieldset>
+                </div>
+
+
+            </form>
+        </div>
+
+        <!-- {% comment %} {% block contenido %} -->
+        <!-- Aquí se inyectan las páginas hijas -->
+        <!-- {% endblock %} {% endcomment %} -->
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 AgroTech Catamarca - Proyecto IoT y Ciencia de Datos</p>
+    </footer>
+
+    <!-- JS -->
+    <!-- <script src="{% static 'js/validaciones.js' %}"></script> -->
+</body>
+</html>
