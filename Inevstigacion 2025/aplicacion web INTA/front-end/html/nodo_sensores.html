@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nodos Sensores</title>
+        <link rel="icon" href="/aplicacionDeTecnologiasIOT/static/img/GReenWebSinFondo.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Inevstigacion 2025/aplicacion web INTA/front-end/static/css/base.css">
+</head>
+<body>
+    
+    <!-- Header -->
+    <header>
+        <p>AgroTech Catamarca <img src="/aplicacionDeTecnologiasIOT/static/img/GReenWebSinFondo.png" alt="" width="10%">
+        </p>
+        
+        <nav>
+            <!-- <ul>
+                {% comment %} <li><a href="{% url 'home' %}">Inicio</a></li>
+                <li><a href="{% url 'sensores:lista_sensores' %}">Sensores</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'usuario:logout' %}">Salir ({{ user.username }})</a></li>
+                {% else %}
+                    <li><a href="{% url 'usuario:login' %}">Login</a></li>
+                {% endif %} {% endcomment %}
+            </ul> -->
+            <a href="">home</a>
+            <a href="">sensores disponibles</a><br><br>
+        </nav>
+    </header>
+
+    <!-- Contenido dinámico -->
+    <main>
+        <h2>Nodos Sensores</h2>
+
+        <a href="">Agragar Nodo </a>|
+        <a href="">Modificar Nodo</a>
+        <br><br>
+
+        <button>Buscar Nodo</button>
+
+        <select name="sel_especie" id="sel_especie">
+                <option value="" disabled selected hidden>Seleccione la especie</option>
+                <option value="ovino">Ovino</option>
+                <option value="bovino">Bovino</option>
+        </select>
+
+        <select name="sel_raza" id="sel_raza">
+                <option value="" disabled selected hidden>Seleccione la Raza</option>
+                <option value="raza1">Raza 1</option>
+                <option value="raza2">Raza 2</option>
+        </select>
+
+        <Button>Eliminar Nodo</Button>
+
+        <br><br>
+
+        <input type="text" name="identificador_nodo" id="identificador_nodo">
+
+        <button>Seguir Nodo</button><br><br>
+
+        <table >
+            <thead>
+                <tr>
+                    <td>Id</td> 
+                    <td>Especie</td>
+                    <td>Raza</td>
+                    <td>Estado</td>
+                    <td>Defectuoso</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>AB2345555</td>
+                    <td>Bovino</td>
+                    <td>Raza 1</td>
+                    <td>Activo</td>
+                    <td>False</td>
+                </tr>
+                
+            </tbody>
+
+        </table>
+
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 AgroTech Catamarca - Proyecto IoT y Ciencia de Datos</p>
+    </footer>
+
+    <!-- JS -->
+    <!-- <script src="{% static 'js/validaciones.js' %}"></script> -->
+</body>
+</html>
