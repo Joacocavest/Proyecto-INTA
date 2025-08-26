@@ -112,7 +112,7 @@ button:active {
 }
 
 main{
-    background: linear-gradient(rgba(168, 143, 106, 0.7)),url(../img/Imagen\ de\ WhatsApp\ 2025-08-25\ a\ las\ 16.06.56_569d6f89.jpg) top center no-repeat;
+    background: linear-gradient(rgba(168, 143, 106, 0.7)),url(../img/Imagen\ de\ WhatsApp\ 2025-08-25\ a\ las\ 16.06.56_569d6f89.jpg) center no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -121,7 +121,7 @@ main{
 #parrafologin p{
     text-align: center;
     font-size: 25px;
-    width: 40%;
+    width: 50%;
     color: #FFF;
     padding: 20px 0px 0px 30px;
 }
