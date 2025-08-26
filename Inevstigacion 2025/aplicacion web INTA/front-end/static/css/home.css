@@ -10,6 +10,7 @@ main{
  }
 
  main figure {
+    margin: 0px;
     display: flex;  
     justify-content: center; /* centra horizontal */
     align-items: center;
@@ -27,9 +28,9 @@ main{
 body {
   margin: 0;
   padding: 0;
-  color: white;
+  color: rgba(255, 255, 255, 1);
 
-  background: linear-gradient(rgba(0, 128, 0, 0.5)),
+  background: linear-gradient(rgba(129, 149, 57, 0.6)),
                 url(../img/Imagen\ de\ WhatsApp\ 2025-08-25\ a\ las\ 16.06.56_569d6f89.jpg) top center no-repeat;
   background-size: cover;     
   background-position: center; 
@@ -64,3 +65,25 @@ body {
     box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
 }
 
+main article {
+    background: linear-gradient(rgba(84, 111, 1, 0.7));
+    padding: 15px;
+    margin: 0px;
+    
+}
+
+#art_corto{
+    text-align: center;
+    background: transparent;
+}
+
+#art_corto p {
+    font-size: 50px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 1);
+}
+
+#art_largo p{
+    text-align: center;
+    font-size: 35px;
+}
