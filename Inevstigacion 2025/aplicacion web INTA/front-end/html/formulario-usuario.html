@@ -3,64 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario usuario</title>
+    <title>Registrarse GreenWeb</title>
         <link rel="icon" href="/aplicacionDeTecnologiasIOT/static/img/GReenWebSinFondo.png" type="image/x-icon">
 
     <!-- CSS -->
     <link rel="stylesheet" href="/Inevstigacion 2025/aplicacion web INTA/front-end/static/css/base.css">
-    <!--link rel="stylesheet" href="/Inevstigacion 2025/aplicacion web INTA/front-end/static/css/login.css"-->
-    <link rel="stylesheet" href="/Inevstigacion 2025/aplicacion web INTA/front-end/static/css/usuario.css">
+    <link rel="stylesheet" href="../static/css/usuario.css">
 </head>
 <body>
     
     <!-- Header -->
     <header>
-        <p>AgroTech Catamarca <img src="/aplicacionDeTecnologiasIOT/static/img/GReenWebSinFondo.png" alt="" width="10%">
-        </p>
+        <div id="arribaheader">
+            <div id="logo">
+                <img src="../static/img/GReenWebSinFondo.png" alt="Logo GreenWeb">
+            </div>
+
+            <h1>GreenWeb</h1>
+
+
+            <div id="user-info">
+                <button>Perfil de usuario</button>
+                <button>Nombre de usuario</button>
+            </div>
+        </div>        
         
         <nav>
-            <!-- <ul>
-                {% comment %} <li><a href="{% url 'home' %}">Inicio</a></li>
-                <li><a href="{% url 'sensores:lista_sensores' %}">Sensores</a></li>
-                {% if user.is_authenticated %}
-                    <li><a href="{% url 'usuario:logout' %}">Salir ({{ user.username }})</a></li>
-                {% else %}
-                    <li><a href="{% url 'usuario:login' %}">Login</a></li>
-                {% endif %} {% endcomment %}
-            </ul> -->
-            <a href="">home</a>
-            <a href="">sensores disponibles</a><br><br>
+            <a href="#">Administración</a>
+            <a href="#">Home</a>
+            <a href="#">Nodos sensores</a>
         </nav>
     </header>
 
     <!-- Contenido dinámico -->
     <main>
+        <div id="registrarse">
+            <div id="parraforegistro">
+                <p>
+                    “Del campo al dato con un solo código, utilizando trazabilidad inteligente para una gestión eficiente”
+                </p>
+            </div>
 
-        <div id="login">
+            <div>
+                <h2>Registrarse</h2>
+            </div>
+
             <form action="#" method="get">
                 <div>
+                    
                     <fieldset>
-                        <label id="registrate"><Strong>Registrate</Strong></label> 
-                        <p  id="mensaje-credencial">
-                            Completa los campos de informacion  <br>
-                            para crear la cuenta
-                        </p>
+                        <label id="datosusuario"><Strong>Datos de usuario</Strong></label> 
+                        
+                        <div id="inputs-registrarse">
+                            <label for="usuario-nombre"></label> 
+                                <input type="text" name="usuario-nombre" id="usuario-nombre" placeholder="👤 Nombre" maxlength="40" required> <br>
 
-                        <div id="input-login">
+                            <label for="usuario-apellido"></label> 
+                                <input type="text" name="usuario-apellido" id="usuario-apellido" placeholder="👤 Apellido" maxlength="40" required> <br>
+
+                            <label for="usuario-cuit"></label> 
+                                <input type="text" name="usuario-cuit" id="usuario-cuit" placeholder="🪪 Cuit: 12-12345678-1" pattern="^\d{2}-\d{8}-\d{1}$" required> <br>
+
+                            <label for="usuario-telefono"></label> 
+                                <input type="tel" name="usuario-telefono" id="usuario-telefono" placeholder="📱 Telefono: +0123456789" pattern="^\+?\d{10,15}$" required> <br>
+
+                            <label for="usuario-email"></label> 
+                                <input type="email" name="usuario-email" id="usuario-email" placeholder=" 📨 Correo" maxlength="40" required> <br>
+
+                            <label for="usuario-rol"></label>
+                                <select name="usuario-rol" id="usuario-rol" required>
+                                    <option value="0" hidden>👤 Rol</option>
+                                    <option value="1">🧑‍💻 Administrador</option>
+                                    <option value="2">🧑‍💼 Empleado</option>
+                                </select> <br>
+
                             <label for="usuario"></label> 
                                 <input type="text" name="usuario" id="usuario" placeholder="👤  Usuario" required> <br>
 
                             <label for="contra"></label>
                                 <input type="password" name="contra" id="contra" placeholder="🔒 Contraseña" required> <br>
+
+                            <label for="usuario-contra"></label>
+                                <input type="password" name="contra" id="contra" placeholder="🔒 Repetir Contraseña" required> <br>
+                                
+                        </div>
+
+                        <br>
+
+                        <!-- establecimiento-->
+                        <div id="establecimiento">
+                            <label id="datosestablecimiento"><Strong>Datos de establecimiento</Strong></label> 
+
+                            <label for="establecimiento-cuig"></label> 
+                                <input type="number" name="establecimiento-cuig" id="establecimiento-cuig" placeholder="🧑‍🌾 Cuig" maxlength="40" required> <br>
+
+
+                            
+                            <label for="establecimiento-nombre"></label>
+                                <select name="establecimiento-nombre" id="establecimiento-nombre" required>
+                                    <option value="0" hidden>🐄 Nombre del establecimiento</option>
+                                    <option value="1">Opcion1</option>
+                                    <option value="2">Opcion2</option>
+                                </select> <br>
+
+                            <label for="establecimiento-provincia"></label>
+                                <select name="establecimiento-provincia" id="establecimiento-provincia" required>
+                                    <option value="0" hidden>🌎 Provincia</option>
+                                    <option value="1">Opcion1</option>
+                                    <option value="2">Opcion2</option>
+                                </select> <br>
+                            
+                            <label for="establecimiento-departamento"></label>
+                                <select name="establecimiento-departamento" id="establecimiento-departamento" required>
+                                    <option value="0" hidden>🌎 Departamento</option>
+                                    <option value="1">Opcion1</option>
+                                    <option value="2">Opcion2</option>
+                                </select> <br>
+
+                            <label for="establecimiento-provincia"></label>
+                                <select name="establecimiento-provincia" id="establecimiento-provincia" required>
+                                    <option value="0" hidden>🌎 Localidad</option>
+                                    <option value="1">Opcion1</option>
+                                    <option value="2">Opcion2</option>
+                                </select> <br>
+                            
+                            <label for="establecimiento-direccion"></label> 
+                                <input type="text" name="establecimiento-direccion" id="establecimiento-direccion" placeholder="🏡 Direccion" maxlength="40" required> <br>
+
+                            <label for="establecimiento-logo" id="label-logo">🐄 Seleccione el logo  </label> 
+                                <input type="file" name="establecimiento-logo" id="establecimiento-logo" required> 
+
+                        </div>
+                        <br>
+                        <div id="botones-formularios">
+                            <button type="submit" id="boton-aceptar">Aceptar</button>
+                            <button type="reset" id="boton-cancelar">Cancelar</button>
                         </div>
                         
-                        <input type="checkbox" name="box-login" id="box-login">
-                        <label for="box-login">Recordarme</label>
-
-                        <a href="">Recuperar Contraseña</a> <br>
-
-
-                        <button type="submit" >Iniciar Sesion</button>
                     </fieldset>
                 </div>
 
@@ -68,15 +147,27 @@
             </form>
         </div>
 
-        <!-- {% comment %} {% block contenido %} -->
-        <!-- Aquí se inyectan las páginas hijas -->
-        <!-- {% endblock %} {% endcomment %} -->
+        
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 AgroTech Catamarca - Proyecto IoT y Ciencia de Datos</p>
+        <div id="cosasdearriba">
+            <div id="logo-titulo">
+            <img id="imagenlogo" src="../static/img/GReenWebSinFondo.png" alt="Logo GreenWeb">
+            <h2>GreenWeb</h2>
+            </div>
+
+            <div id="contenido">
+            <p>Información del footer</p>
+            </div>
+        </div>
+
+        <div id="cosasdeabajo">
+                <p>Todos los derecho reservados &copy; 2025 GreenWeb - Proyecto IoT y Ciencia de Datos</p>
+        </div>
     </footer>
+
 
     <!-- JS -->
     <!-- <script src="{% static 'js/validaciones.js' %}"></script> -->
