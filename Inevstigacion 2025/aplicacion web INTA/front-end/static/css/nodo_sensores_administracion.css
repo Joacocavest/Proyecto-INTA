@@ -104,6 +104,12 @@ main section select, main section input {
     width: 180px;
 }
 
+#dni_perso {
+    width: 155px;    
+    text-align: center;
+    
+}
+
 
 
 
