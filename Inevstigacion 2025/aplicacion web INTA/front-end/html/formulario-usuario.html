@@ -38,7 +38,7 @@
     <!-- Contenido dinámico -->
     <main>
         <div id="registrarse">
-            <div>
+            <div id="parraforegistro">
                 <p>
                     “Del campo al dato con un solo código, utilizando trazabilidad inteligente para una gestión eficiente”
                 </p>
@@ -52,7 +52,7 @@
                 <div>
                     
                     <fieldset>
-                        <label id="datosUsuario"><Strong>Datos de usuario</Strong></label> 
+                        <label id="datosusuario"><Strong>Datos de usuario</Strong></label> 
                         
                         <div id="inputs-registrarse">
                             <label for="usuario-nombre"></label> 
@@ -92,12 +92,12 @@
 
                         <!-- establecimiento-->
                         <div id="establecimiento">
-                            <label id="datosEstablecimiento"><Strong>Datos de usuario</Strong></label> <br>
+                            <label id="datosestablecimiento"><Strong>Datos de establecimiento</Strong></label> 
 
                             <label for="establecimiento-cuig"></label> 
-                                <input type="number" name="establecimiento-cuig" id="establecimiento-cuig" placeholder="🧑‍🌾 Cuig" maxlength="40" required> 
+                                <input type="number" name="establecimiento-cuig" id="establecimiento-cuig" placeholder="🧑‍🌾 Cuig" maxlength="40" required> <br>
 
-                            <button type="button" id="boton-buscar">Buscar</button> <br>
+
                             
                             <label for="establecimiento-nombre"></label>
                                 <select name="establecimiento-nombre" id="establecimiento-nombre" required>
@@ -130,14 +130,16 @@
                             <label for="establecimiento-direccion"></label> 
                                 <input type="text" name="establecimiento-direccion" id="establecimiento-direccion" placeholder="🏡 Direccion" maxlength="40" required> <br>
 
-                            <label for="establecimiento-logo"> 🐄 Seleccione el logo del establecimiento </label> 
+                            <label for="establecimiento-logo" id="label-logo">🐄 Seleccione el logo  </label> 
                                 <input type="file" name="establecimiento-logo" id="establecimiento-logo" required> 
 
                         </div>
+                        <br>
+                        <div id="botones-formularios">
+                            <button type="submit" id="boton-aceptar">Aceptar</button>
+                            <button type="reset" id="boton-cancelar">Cancelar</button>
+                        </div>
                         
-                        <button type="submit" id="boton-aceptar">Aceptar</button>
-                        <button type="reset" id="boton-aceptar">Cancelar</button>
-
                     </fieldset>
                 </div>
 
