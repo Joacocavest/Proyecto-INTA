@@ -9,7 +9,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/Inevstigacion 2025/aplicacion web INTA/front-end/static/css/base.css">
-
+    <link rel="stylesheet" href="/Inevstigacion 2025/aplicacion web INTA/front-end/static/css/nodo_sensores_administracion.css">
 </head>
 <body>
     
@@ -38,45 +38,84 @@
 
     <!-- Contenido dinámico -->
     <main>
-        <h2>Administracion</h2>
+        <section>
+            <h2>Administracion</h2>
 
-        <a href="">Gestion personal</a>|
-        <a href="">Modificar Personal</a>
-        <br><br>
+            <div class="agre_modi agre_modi_admi">
+                <a href="">Gestion personal</a>
+                <a href="">Modificar Personal</a>
+            </div>
 
-        <button>Buscar Personal</button>
-        
-        <Button>Eliminar Personal</Button> 
-        <br>
+            <br><br>
+            <button class="botones_link" id="buscar_p">Buscar Personal</button>
+            
+            <Button class="botones_link" id="eliminar_p">Eliminar Personal</Button>
+            <br>
+            
+            <button class="botones_link" id="seguir_p">Seguir Personal</button>
+            
+            <input type="text" name="dni_perso" id="dni_perso">
+            <br><br>
+            
+            <div class="tabla-container">
+                <table id="tabla_sensores">
+                    <thead>
+                        <tr>
+                            <td>cabecera 1</td>
+                            <td>cabecera 2</td>
+                            <td>cabecera 3</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>valor 1</td>
+                            <td>valor 2</td>
+                            <td>valor 3</td>
+                        </tr>
 
-        
-        <button>Seguir Nodo</button>
-        
-        <input type="text" name="dni_perso" id="dni_perso">
+                        <tr>
+                            <td>valor 1</td>
+                            <td>valor 2</td>
+                            <td>valor 3</td>
+                        </tr>
 
-        <br><br>
-        
-        <table >
-            <thead>
-                <tr>
-                    <td>cabecera 1</td>
-                    <td>cabecera 2</td>
-                    <td>cabecera 3</td>
-                </tr>
-            </thead>
+                        <tr>
+                            <td>valor 1</td>
+                            <td>valor 2</td>
+                            <td>valor 3</td>
+                        </tr>
 
-            <tbody>
-                <tr>
-                    
-                    <td>valor 1</td>
-                    <td>valor 2</td>
-                    <td>valor 3</td>
-                    
-                </tr>
+
+                        <tr>
+                            <td>valor 1</td>
+                            <td>valor 2</td>
+                            <td>valor 3</td>
+                        </tr>
+
+
+                        <tr>
+                            <td>valor 1</td>
+                            <td>valor 2</td>
+                            <td>valor 3</td>
+                        </tr>
+
+
+                        <tr>
+                            <td>valor 1</td>
+                            <td>valor 2</td>
+                            <td>valor 3</td>
+                        </tr>
+
+                        <tr>
+                            <td>valor 1</td>
+                            <td>valor 2</td>
+                            <td>valor 3</td>
+                        </tr>
                 
-            </tbody>
-
-        </table>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
 
 

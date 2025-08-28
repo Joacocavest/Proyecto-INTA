@@ -1,10 +1,12 @@
+
+/*---------------------------css de la pagina de nodos_sensores---------------------------*/
+
 main section {
     background: linear-gradient(rgba(84, 111, 1, 0.7)) ,url(../img/vaca_nodo_sensores.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     padding: 20px 20px 60px 20px;
-
 
 }
 
@@ -20,7 +22,7 @@ main section h2 {
     
 }
 
-.botones_link , #agre_modi a {
+.botones_link , .agre_modi a {
     display: inline-block;        
     width: 120px;                 
     text-align: center; 
@@ -35,7 +37,7 @@ main section h2 {
     box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
 }
 
-.botones_link:hover, #agre_modi a:hover{
+.botones_link:hover, .agre_modi a:hover{
     background-color: #435801;
     box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
 }
@@ -90,6 +92,16 @@ main section select, main section input {
   color: #fff;
   z-index: 2; /* se asegura de quedar encima de las filas */
   border: 3px solid black;
+}
+
+/*---------------------------css de la pagina administracion---------------------------*/
+
+.agre_modi_admi a {
+    width: 160px;
+}
+
+#buscar_p, #eliminar_p, #seguir_p {
+    width: 180px;
 }
 
 
