@@ -27,7 +27,7 @@ urlpatterns = [
     path('usuario/', include('apps.usuario.urls', namespace='usuario')),
     
     #vistas de nodo y lectura:
-    path('nodo/', include('apps.nodos.urls', namespace='nodo')),
+    path('nodos/', include('apps.nodos.urls', namespace='nodo')),
     
     #vistas de animal, especie y raza
     path('animal/', include('apps.animal.urls', namespace='animal'))
