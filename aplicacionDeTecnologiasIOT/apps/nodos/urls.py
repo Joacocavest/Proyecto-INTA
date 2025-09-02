@@ -3,9 +3,8 @@ from apps.nodos import views
 
 app_name = 'nodos'
 urlpatterns = [
-    path('', views.lista_nodos, name='lista_nodos'),
+    path('lista_nodos/', views.lista_nodos, name='lista_nodos'),
     path('<int:pk>', views.nodo, name='nodo'),
-    path('', views.lista_lecturas, name='lista_lecturas'),
-    path('<int:pk>', views.lectura, name='lectura')
+    path('lista_lecturas/', views.lista_lecturas, name='lista_lecturas'),
+    path('lectura_nodo/<int:pk>', views.lectura, name='lectura')
 ]
- 
