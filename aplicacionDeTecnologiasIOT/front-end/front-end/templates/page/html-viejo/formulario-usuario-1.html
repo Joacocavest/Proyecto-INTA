@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario-Persona</title>
+
+    <link rel="stylesheet" href="/aplicacion web INTA/front-end/static/css/formulario-persona.css">
+</head>
+<body>
+    <div id="cont-form">
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Usuario</legend>
+
+                <label for="nombre">Ingrese su nombre: </label>
+                <input type="text" name="nombre" id="nombre" size="20" maxlength="20" 
+                        placeholder="Primer o Segundo nombre" tabindex="1"><br>
+
+                <label for="apellido">Ingrese su apellido: </label>
+                <input type="text" name="apellido" id="apellido" size="20" maxlength="20"
+                        placeholder="Apellido o Apellidos" tabindex="2"> <br>
+
+                <label for="cuit">Ingrese su cuit: </label>
+                <input type="text" name="cuit" id="cuit" size="20" maxlength="11"
+                        placeholder="Sin espacios o Guiones" tabindex="3"><br>
+
+                <label for="sexo">Ingrese su sexo: </label>
+                <input type="text" name="sexo" id="sexo" size="20" maxlength="1"
+                        placeholder="F o M" tabindex="4"> <br>
+
+                <label for="email">Ingrese su correo: </label>
+                <input type="text" name="email" id="email" maxlength="15"
+                        placeholder="Correo electronico" tabindex="5"> <br>
+                        
+                <button type="button" class="boton" tabindex="6" onclick="validarFormularioCompleto()">Siguiente</button>
+
+
+            </fieldset>
+        </form>
+    </div>
+    <script src="/aplicacion web INTA/front-end/static/js/formulario-1.js"></script>
+</body>
+</html>

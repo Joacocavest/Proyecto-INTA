@@ -1,0 +1,309 @@
+:root {
+
+--light-background: #f4f1ec; /* fondo beige claro */
+--light-card: #fffdf8;
+--light-border: #d6cfc7;
+--light-card-foreground: #1a2238;
+--light-input: #e2e8f0;
+--light-background: #f5f7fa;
+
+
+
+--dark-background: rgb(39, 30, 4); /* fondo oscuro cálido */
+--dark-card: #292010;
+--dark-border: #1e5225;
+--dark-foreground: #f8fafc;
+
+
+--primary: #6b4f28;             /* Marrón principal */
+--primary-hover: #4e3a1e;       /* Marrón más oscuro para hover */
+--primary-foreground: #f8fafc;  /* Letra clara sobre fondo marrón */
+
+--secondary: #0b4413;           /* Gris medio */
+--secondary-foreground: #ffffff;
+
+--accent: #355c2e;              /* Verde lima natural */
+--accent-hover: #519a20;
+--accent-foreground: #1a2238;   /* Texto sobre verde */
+
+  --destructive: #ef4444;
+  --destructive-foreground: #f8fafc;
+  --muted: #64748b;
+  --muted-foreground: #cbd5e1;
+
+  --radius: 0.5rem;
+  --header-height: 4rem;
+  --sidebar-width: 16rem;
+
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+
+  --background: var(--light-background);
+  --foreground: var(--light-foreground);
+  --card: var(--light-card);
+  --card-foreground: var(--light-card-foreground);
+  --border: var(--light-border);
+  --input: var(--light-input);
+}
+
+.dark {
+  --background: var(--dark-background);
+  --foreground: var(--dark-foreground);
+  --card: var(--dark-card);
+  --card-foreground: var(--dark-card-foreground);
+  --border: var(--dark-border);
+  --input: var(--dark-input);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: var(--background);
+ 
+  color: var(--foreground);
+
+  background-size: 100% 100%;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app-header { /*ordena los logos*/
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  background-color: var(--card);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.logo-container { /*relacionado con los logos*/
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo { /*relacionado con los logos*/
+  height: 2.5rem;
+  width: auto;
+}
+
+.app-title {  /*relacionado con los logos*/
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(to right, var(--accent), var(--primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 1.5rem;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider { /*grafico del boton de modo oscuro*/
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--input);
+  transition: .4s;
+  border-radius: 1rem;
+}
+
+.slider:before { /*grafico del boton de modo oscuro*/
+  position: absolute;
+  content: "";
+  height: 1.125rem;
+  width: 1.125rem;
+  left: 0.1875rem;
+  bottom: 0.1875rem;
+  background-color: var(--card);
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider { /*color de el boton modo oscuro*/
+  background-color: var(--primary);
+}
+
+input:checked + .slider:before {  /*animacion del boton de modo oscuro*/
+  transform: translateX(1.5rem);
+}
+
+
+/*Valores agregados en la interfaz de la aplicacion web*/
+.inicio-sesion-container{/*back del div del formulario*/
+  background: linear-gradient(to right, var(--secondary), var(--primary));
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 300px;
+  background-color: var(--primary);
+  margin: 60px 20px;
+  border-radius: 10px;
+  align-self: center;
+}
+
+.form-inicio-sesion{ /*distribucion de elementos adiciones en el form de inicio de sesion*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.input-name{ /*tamaño-radio del form-usuario en el home-principal*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.input-name label{ /* tamaño de la form-usuario en el home-principal*/
+  margin-right: 50px;
+  font-size: x-large;
+  text-shadow: 1px 1px #000;
+}
+
+.input-name input{ /* posicion de la form-usuario en el home-principal */
+  border-radius: 5px;
+  font-size: large;
+  transition: background 0.3s;
+}
+
+.input-password {/*tamaño-radio del form-contraseña en el home-principal*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.input-password label{ /* tamaño de la form-contraseña en el home-principal*/
+  margin-right: 4px;
+  font-size: x-large;
+  text-shadow: 1px 1px #000;
+}
+
+.input-password input{ /* posicion de la form-contraseña en el home-principal */
+  border-radius: 5px;
+  font-size: large;
+  transition: background 0.3s;
+}
+
+.btn-inicio-sesion{ /* posicion del boton de volver-inicio del menu principal*/
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  font-size: large;
+  padding: 5px;
+  transition: background 0.3s;
+}
+
+.form-inicio-sesion a{ /*color negro del texto del form del incio de sesion del home principal*/
+  color: #000;
+  margin-bottom: 3px;
+}
+
+.img-inicio-sesion-container { /*la vuelve rendonda a la imagen del home principal */
+  width: 50%;
+  height: 100%;
+  background-color: #ddd; /* Color de fondo para ver el efecto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 0 50% 50% 0; /* Crea un semicirculo en la izquierda */
+  position: relative;
+  right: 55px;
+}
+
+.img-inicio-sesion-container img { /*rescalo la imagen del home principal*/
+  width: 1500px; /* Ajusta el tamaño de la imagen */
+  height: 100%;
+  object-fit: cover; /* Asegura que se mantenga bien recortada */
+  position: relative;
+  left: 72px;
+}
+
+.principal-container{ /*distribucion del home*/
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+
+@keyframes slideInLeft { /* movimiento semi-scrip*/
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.img-inicio-sesion-container { /*movimiento de la imagen de la vaca del home*/
+  animation: slideInLeft 3s ease-out forwards;
+}
+
+
+.contenedor-principal { /*distribucion del menu principal*/
+  display: flex;
+  flex-direction: column; /* Organiza los elementos de arriba hacia abajo */
+  align-items: center;    /* Centra los elementos horizontalmente */
+  justify-content: center; /* Alinea los elementos verticalmente en el centro */
+  height: 100vh;           /* Altura del contenedor */
+  gap: 30px;              /* Espacio entre los botones */
+}
+
+.menu-cubo {/*tamaño de los botones de menu principal*/
+  display: grid;
+  grid-template-columns: 200px 200px;
+  grid-template-rows: 200px 200px;
+  gap: 10px;
+}
+
+.boton {/*fondo de los botontes de menu principal*/
+  background-color: var(--primary-hover);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/*Cosas agregadas por lala*/
+.btn-inicio-sesion { /*boton del inicio de sesion */
+  padding: 15px 30px;
+  font-size: 16px;
+  background-color: #037412;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px; /* Espacio arriba para separarlo de los botones anteriores */
+  transition: background-color 0.3s ease;
+}

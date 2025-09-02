@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nodos Sensores GreenWeb</title>
+        <link rel="icon" href="/aplicacionDeTecnologiasIOT/static/img/GReenWebSinFondo.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Inevstigacion 2025/aplicacion web INTA/front-end/static/css/base.css">
+    <link rel="stylesheet" href="/Inevstigacion 2025/aplicacion web INTA/front-end/static/css/nodo_sensores_administracion.css">
+
+
+</head>
+<body>
+    
+    <!-- Header -->
+    <header>
+        <div id="arribaheader">
+            <div id="logo">
+                <img src="../static/img/GReenWebSinFondo.png" alt="Logo GreenWeb">
+            </div>
+
+            <h1>GreenWeb</h1>
+
+
+            <div id="user-info">
+                <button>Perfil de usuario</button>
+                <button>Nombre de usuario</button>
+            </div>
+        </div>        
+        
+        <nav>
+            <a href="#">Administración</a>
+            <a href="#">Home</a>
+            <a href="#">Nodos sensores</a>
+        </nav>
+    </header>
+
+    <!-- Contenido dinámico -->
+    <main>
+        <section>
+            <h2>Nodos Sensores</h2>
+
+            <div class="agre_modi">
+                <a href="">Agregar Nodo </a>
+                <a href="">Modificar Nodo</a>
+            </div>
+            <br><br>
+            <button class="botones_link">Buscar Nodo</button>
+            <select name="sel_especie" id="sel_especie">
+                    <option value="" disabled selected hidden>Seleccione la especie</option>
+                    <option value="ovino">Ovino</option>
+                    <option value="bovino">Bovino</option>
+            </select>
+            <select name="sel_raza" id="sel_raza">
+                    <option value="" disabled selected hidden>Seleccione la Raza</option>
+                    <option value="raza1">Raza 1</option>
+                    <option value="raza2">Raza 2</option>
+            </select>
+            <Button class="botones_link" id="boton_eliminar">Eliminar Nodo</Button>
+            <br><br>
+            <input type="text" name="identificador_nodo" id="identificador_nodo">
+            <button class="botones_link">Seguir Nodo</button>
+            
+            <br><br>
+
+            <div class="tabla-container">
+                <table id="tabla_sensores">
+                    <thead>
+                        <tr>
+                            <th>Id</td>
+                            <th>Especie</td>
+                            <th>Raza</td>
+                            <th>Estado</td>
+                            <th>Defectuoso</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AB2345555</td>
+                            <td>Bovino</td>
+                            <td>Raza 1</td>
+                            <td>Activo</td>
+                            <td>False</td>
+                        </tr>
+                        <tr>
+                            <td>AB2345555</td>
+                            <td>Bovino</td>
+                            <td>Raza 1</td>
+                            <td>Activo</td>
+                            <td>False</td>
+                        </tr>
+                        <tr>
+                            <td>AB2345555</td>
+                            <td>Bovino</td>
+                            <td>Raza 1</td>
+                            <td>Activo</td>
+                            <td>False</td>
+                        </tr>
+                        <tr>
+                            <td>AB2345555</td>
+                            <td>Bovino</td>
+                            <td>Raza 1</td>
+                            <td>Activo</td>
+                            <td>False</td>
+                        </tr>
+                        <tr>
+                            <td>AB2345555</td>
+                            <td>Bovino</td>
+                            <td>Raza 1</td>
+                            <td>Activo</td>
+                            <td>False</td>
+                        </tr>
+                        <tr>
+                            <td>AB2345555</td>
+                            <td>Bovino</td>
+                            <td>Raza 1</td>
+                            <td>Activo</td>
+                            <td>False</td>
+                        </tr>
+                
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div id="cosasdearriba">
+            <div id="logo-titulo">
+            <img id="imagenlogo" src="../static/img/GReenWebSinFondo.png" alt="Logo GreenWeb">
+            <h2>GreenWeb</h2>
+            </div>
+
+            <div id="contenido">
+            <p>Información del footer</p>
+            </div>
+        </div>
+
+        <div id="cosasdeabajo">
+                <p>Todos los derecho reservados &copy; 2025 GreenWeb - Proyecto IoT y Ciencia de Datos</p>
+        </div>
+    </footer>
+
+
+    <!-- JS -->
+    <!-- <script src="{% static 'js/validaciones.js' %}"></script> -->
+</body>
+</html>
