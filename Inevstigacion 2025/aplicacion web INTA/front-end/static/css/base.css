@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css?family=Trirong');
+
+body {
+    font-family: "Trirong", serif;
+    margin: 0;
+    padding: 0;
+    background: #d8cabb;
+}
+
+/*aca comienza, si tocas espero no seas el belicho*/
+header {
+    background: linear-gradient(rgba(164, 188, 0, 0.5), rgba(164, 188, 0, 0.5)),url(../img/vacas-comiendo-hierba-exuberante-campo-verde-frente-montana-fuji-japon_335224-36.avif) center no-repeat;
+    background-size: cover;
+    color: #181f0d;
+    padding: 15px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+
+}
+
+#arribaheader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    
+}
+
+#logo img{
+    width: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background-color: rgba(168, 143, 106, 0.7);
+}
+
+h1{
+    font-size: 60px;
+    text-align: center;
+}
+
+#user-info{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#user-info button{
+    background-color: #181f0d;
+    color: white;
+    border: 3px solid #181f0d;
+    border-radius: 15px;
+    padding: 10px;
+
+    cursor: pointer;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+
+}
+
+
+#user-info button:hover {
+    background-color: #435801;
+    border: 3px solid #181f0d;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+
+}
+
+nav {
+    margin-top: 20px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+nav a {
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    background: #181f0d;
+    text-decoration: none;
+    font-weight: bold;
+    border:3px solid transparent;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+
+}
+
+nav a:hover{
+    background-color: #435801;
+    border: 3px solid #181f0d;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+
+}
+
+/*aca termina el header*/
+main {
+    padding: 50px;
+    margin: 20px auto;
+    width: 90%;
+    border-radius: 8px;
+    background: #a88f6a;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+
+
+}
+
+article{
+    padding: 1em;
+    margin: auto;
+    border-radius: 1pc;
+    color: #FFF;
+    background: #a4bc00
+}
+
+h2{
+    border-radius: 10px;
+    padding: 10px;
+    background: #546f01;
+    color: #FFF;
+}
+
+
+img{
+    border-radius: 100%;
+    border: 2px solid #181f0d;
+}
+
+p{
+    font-size: xx-large;
+}
+
+
+/*aca empieza el footer ñeri guarda que toca de pedo anda*/
+footer {
+    background: #a4bc00;
+    color: #181f0d;
+    padding: 10px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+
+}
+
+
+/* Logo redondo */
+#imagenlogo {
+    width: 120px;
+    height: 120px;
+    background-color: #a88f6a;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Contenedor logo + texto */
+#logo-titulo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* espacio entre logo y h2 */
+}
+
+#logo-titulo h2 {
+    font-size: 300%;
+    margin: 0;
+    background: none;
+}
+
+/* Distribución arriba */
+#cosasdearriba {
+    display: flex;
+    justify-content: space-between; /* logo/h2 a la izquierda, contenido a la derecha */
+    align-items: center;
+}
+
+/* Caja de contenido */
+#contenido {
+    background-color: #a88f6a;
+    width: 400px;
+    height: 150px;
+    padding: 15px;
+    border-radius: 10px;
+
+    margin: 20px 40px 0px 0px;
+
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+}
+
+#contenido p {
+    font-size: 120%;
+    margin: 0;
+}
+
+/* Abajo el copyright */
+#cosasdeabajo {
+    margin-top: 15px;
+    text-align: center;
+}
+
+#cosasdeabajo p {
+    font-size: 20px;
+    margin: 0;
+}

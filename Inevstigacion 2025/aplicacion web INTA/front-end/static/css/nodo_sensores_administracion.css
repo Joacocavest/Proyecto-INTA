@@ -1,0 +1,116 @@
+
+/*---------------------------css de la pagina de nodos_sensores---------------------------*/
+
+main section {
+    background: linear-gradient(rgba(84, 111, 1, 0.7)) ,url(../img/vaca_nodo_sensores.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px 20px 60px 20px;
+
+}
+
+main section h2 {
+    text-align: left;
+    text-decoration: underline;
+    float: center;
+    background: transparent ;
+    font-size: 80px;
+    color: black;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+.botones_link , .agre_modi a {
+    display: inline-block;        
+    width: 120px;                 
+    text-align: center; 
+    background-color: #181f0d;
+    color: white;
+    border: 3px solid #181f0d;
+    border-radius: 15px;
+    padding: 10px;
+    margin:5px 0px;
+
+    cursor: pointer;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+}
+
+.botones_link:hover, .agre_modi a:hover{
+    background-color: #435801;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+}
+
+#boton_eliminar:hover {
+    background: red;
+}
+
+
+main section select, main section input {
+    padding: 10px;
+    border-radius: 15px;
+    border: 3px solid black;
+    width: 500px;
+}
+
+
+#tabla_sensores  {
+    width: 100%;
+    border: 3px solid black;
+    padding: 0px;
+    text-align: center;
+    border-collapse: collapse;
+    
+    
+}
+
+#tabla_sensores thead tr {
+    background: #181f0d;
+    color:white;
+}
+
+#tabla_sensores tr td {
+    border: 3px solid black;
+}
+#tabla_sensores tbody tr:hover {
+    background:#384720;
+    color:white;
+}
+
+.tabla-container {
+  max-height: 160px;   /* altura máxima visible */
+  overflow-y: auto;    /* activa el scroll vertical */
+  border: 1px solid #000;
+}
+
+
+#tabla_sensores thead th {
+  position: sticky;
+  top: 0;
+  background-color:#181f0d; /* para que no se vea transparente */
+  color: #fff;
+  z-index: 2; /* se asegura de quedar encima de las filas */
+  border: 3px solid black;
+}
+
+/*---------------------------css de la pagina administracion---------------------------*/
+
+.agre_modi_admi a {
+    width: 160px;
+}
+
+#buscar_p, #eliminar_p, #seguir_p {
+    width: 180px;
+}
+
+#dni_perso {
+    width: 155px;    
+    text-align: center;
+    
+}
+
+
+
+
+
