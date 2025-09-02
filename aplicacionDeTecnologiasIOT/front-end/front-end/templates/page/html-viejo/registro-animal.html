@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro-Animal</title>
+
+    <link rel="stylesheet" href="/aplicacion web INTA/front-end/static/css/formulario-persona.css">
+</head>
+<body>
+    <div id="cont-form">
+        <form action="#" method="post" id="registro-animal">
+            <fieldset>
+                <legend>Animal</legend>
+
+               
+                <label for="cuig">Ingrese el cuig del establecimiento: </label>
+                <input type="text" name="apellido" id="cuig" maxlength="15"
+                        placeholder="Sin espacios o Guiones" tabindex="1"> <br>
+
+                <label for="carabana">Ingrese la carabana del animal: </label>
+                <input type="text" name="carabana" id="carabana" maxlength="15"
+                        placeholder="Carabana" tabindex="2"> <br>
+
+                <label for="especie">Ingrese la especie del animal: </label>
+                <input type="text" name="especie" id="especie" maxlength="15"
+                        placeholder="Especie" tabindex="3"> <br>
+
+                <label for="raza">Ingrese la raza del animal: </label>
+                <input type="text" name="raza" id="raza" maxlength="15"
+                        placeholder="Raza" tabindex="4"> <br>
+
+                <label for="cuidador">Ingrese el ID del cuidador del animal: </label>
+                <input type="text" name="cuidador" id="cuidador" maxlength="15"
+                        placeholder="Que ya este en el sistema" tabindex="5"> <br>
+                
+                <div id="botones">
+                    <input type="submit" value="Enviar" tabindex="5">
+                </div>
+                
+            </fieldset>
+        </form>
+    </div>
+
+    <script src="/aplicacion web INTA/front-end/static/js/registro-ani.js"></script>
+</body>
+</html>

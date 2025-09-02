@@ -1,0 +1,84 @@
+#contenedoradministracion{
+    background: linear-gradient(rgba(164,188,0,0.5)),url(../img/Imagen\ de\ WhatsApp\ 2025-08-25\ a\ las\ 16.06.56_64f2f93a.jpg) top center no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: 1% 0%;
+    border-radius: 1%;
+}
+
+main{
+    padding: 2%;
+    margin: 10px auto;
+}
+
+#botonesadministracion{
+    margin: 15% auto;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+
+    width: 30%;
+}
+
+/*opcion 1 me gusta*/
+button{
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(84, 111, 1,0.8);
+    border: none;
+    border-radius: 30px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 0px;
+    transition: background-color 0.3s, transform 0.2s;
+
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
+    margin: 1%;
+}
+
+/*opcion 2 como esta en el modkup*/
+ #botonadmin{
+    border-radius: 30px 30px 0px 0px;
+    border-bottom:3px solid whitesmoke ;
+ }
+
+ 
+ #botonempleado{
+    border-radius: 0px 00px 0px 0px;
+    border-bottom:3px solid whitesmoke ;
+ }
+
+ 
+ #botoncuidador{
+    border-radius: 0px 0px 30px 30px;
+ }
+
+ button{
+    margin: 0px;
+ }
+
+ 
+/*-------------------*/
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:hover{
+    background-color:rgb(164, 188, 0);
+    transform: scale(1.02);
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+}  
+
+
+h2{
+    background: none;
+    text-align: center;
+    font-size: 150%;
+    color: white;
+    background-color: rgba(84, 111, 1,0.4);
+    margin: 10%;
+}

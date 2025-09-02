@@ -16,8 +16,6 @@ def usuario(request, pk):
     return render(request, 'usuario/usuario.html', {'usuario':usuario})
 
 
-
-
 #VISTA PARA LISTAR LOS CUIDADORES#
 def lista_cuidadores(request):
     cuidadores = Cuidador.objects.all()
@@ -29,8 +27,6 @@ def cuidador(request, pk):
     return render(request, 'cuidador/cuidador.html', {'cuidador':cuidador})
 
 
-
-
 #VISTA PARA LISTAR LOS ESTABLECIMIENTOS#
 def lista_establecimientos(request):
     establecimientos = Establecimiento.objects.all()
@@ -40,7 +36,6 @@ def lista_establecimientos(request):
 def establecimiento(request, pk):
     establecimiento = get_object_or_404(Establecimiento, pk=pk)
     return render(request, 'establecimiento/establecimiento.html', {'establecimiento':establecimiento})
-
 
 
 #VISTA PARA LISTAR LOS ROLES#

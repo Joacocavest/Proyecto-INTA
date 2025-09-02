@@ -1,62 +1,82 @@
-{% load static %} <!-- Necesario para usar CSS, JS e imágenes -->
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}"> <!-- css del base no tocar-->
-    <link rel="icon" href="{% static 'img/Imagen de WhatsApp 2025-08-19 a las 13.09.27_05fc247d.ico' %}"> <!-- Enlace a Img del icon -->
     
-    <title>{% block title %}  {% endblock title %}</title> <!-- Bloque editable para agregar el titulo de la pagina-->
+    <title>{% block title %}GreenWeb{% endblock title %}</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/GreenWebSinFondo.png' %}" type="image/x-icon">
 
-    {% block extra_head %}  {% endblock %}
-    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    {% block extra_head %}{% endblock %}
 </head>
-
-
 <body>
-    <!-- Encabezado de la página -->
-
+    
+    <!-- Header -->
     <header>
-        <h1>GreenWeb Catamarca</h1>
-        <p> </p>
-        <img src="{% static 'img/GreenWebSinFondo.png' %}" alt="Logo GreenWeb Catamarca">
+        <div id="arribaheader">
+            <div id="logo">
+                <img src="{% static 'img/GreenWebSinFondo.png' %}" alt="Logo GreenWeb">
+            </div>
 
+            <h1>GreenWeb</h1>
+
+            <div id="user-info">
+                {% if user.is_authenticated %}
+                    <button>{{ user.username }}</button>
+                    <a href="{% url 'usuario:logout' %}">
+                        <button>Salir</button>
+                    </a>
+                {% else %}
+                    {% comment %} <a href="{% url 'usuario:login' %}"> {% endcomment %}
+                        <button>Login</button>
+                    </a>
+                    {% comment %} <a href="{% url 'usuario:register' %}"> {% endcomment %}
+                        <button>Registrarse</button>
+                    </a>
+                {% endif %}
+            </div>
+        </div>        
         
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="#">Administración</a>
+            <a href="{% url 'nodo:lista_nodos' %}">Nodos sensores</a>
+        </nav>
     </header>
 
-    <nav>
-        <!-- Por ejemplo-->
-        {% comment %} <ul>
-        <li><a href="{% url 'home' %}">Inicio</a></li>
-        <li><a href="{% url 'sensores:lista_sensores' %}">Sensores</a></li>
-        <li><a href="#">Contacto</a></li>
-        {% if user.is_authenticated %}
-            <li><a href="{% url 'usuario:logout' %}">Salir ({{ user.username }})</a></li>
-        {% else %}
-            <li><a href="{% url 'usuario:login' %}">Login</a></li>
-        {% endif %}
-        </ul> {% endcomment %}
-
-    </nav>
-
+    <!-- Contenido dinámico -->
     <main>
-
-        {%block content%}
-        <!-- Aquí las páginas hijas colocan su contenido -->
-        {%endblock%}
-
+        {% block content %}
+        <!-- Aquí se inyectan las páginas hijas -->
+        {% endblock %}
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 - GreenWeb Catamarca</p>
-        <p>Proyecto de IoT y Ciencia de Datos para agricultura y ganadería</p>
+        <div id="cosasdearriba">
+            <div id="logo-titulo">
+                <img id="imagenlogo" src="{% static 'img/GreenWebSinFondo.png' %}" alt="Logo GreenWeb">
+                <h2>GreenWeb</h2>
+            </div>
+
+            <div id="contenido">
+                <p>Información del footer</p>
+            </div>
+        </div>
+
+        <div id="cosasdeabajo">
+            <p>Todos los derechos reservados &copy; 2025 GreenWeb - Proyecto IoT y Ciencia de Datos</p>
+        </div>
     </footer>
 
-    <!-- Enlace a JavaScript -->
+    <!-- JS -->
     <script src="{% static 'js/validaciones.js' %}"></script>
-
 </body>
 </html>

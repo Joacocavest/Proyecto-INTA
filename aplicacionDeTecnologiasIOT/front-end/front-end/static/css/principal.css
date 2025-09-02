@@ -1,0 +1,52 @@
+/* Reset de la lista */
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+/* Estilos de los botones principales */
+.menu ul li {
+  position: relative; /* necesario para el submenu */
+}
+
+.menu a {
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  background: #1a1a1a;  /* negro */
+  color: white;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+/* Estilos del submenú */
+.menu .submenu {
+  display: none;  /* oculto por defecto */
+  position: absolute;
+  top: 100%;  /* aparece debajo */
+  left: 0;
+  background: #1a1a1a;
+  padding: 0;
+  border-radius: 12px;
+  min-width: 160px;
+  flex-direction: column;
+}
+
+/* Links dentro del submenu */
+.menu .submenu li a {
+  padding: 10px 15px;
+  border-radius: 0;
+}
+
+/* Hover: mostrar submenu */
+.menu .dropdown:hover .submenu {
+  display: block;
+}
+
+/* Efecto hover */
+.menu .submenu li a:hover {
+  background: #333;
+}

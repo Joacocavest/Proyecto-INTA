@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login GreenWeb</title>
+        <link rel="icon" href="/aplicacionDeTecnologiasIOT/static/img/GReenWebSinFondo.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Inevstigacion 2025/aplicacion web INTA/front-end/static/css/base.css">
+    <link rel="stylesheet" href="/Inevstigacion 2025/aplicacion web INTA/front-end/static/css/login.css">
+
+</head>
+<body>
+    
+    <!-- Header -->
+    <header>
+        <div id="arribaheader">
+            <div id="logo">
+                <img src="../static/img/GReenWebSinFondo.png" alt="Logo GreenWeb">
+            </div>
+
+            <h1>GreenWeb</h1>
+
+
+            <div id="user-info">
+                <button>Perfil de usuario</button>
+                <button>Nombre de usuario</button>
+            </div>
+        </div>        
+        
+        <nav>
+            <a href="#">Administración</a>
+            <a href="#">Home</a>
+            <a href="#">Nodos sensores</a>
+        </nav>
+    </header>
+
+    <!-- Contenido dinámico -->
+    <main>
+        <div id="parrafologin">
+            <p>
+                “Del campo al dato con un solo código, utilizando trazabilidad inteligente para una gestión eficiente”
+            </p>
+        </div>
+        
+        <div id="login">
+            <form action="principal.html" method="get">
+                <div>
+                    
+                    <fieldset>
+                        <label id="bienvenido"><Strong>Bienvenido de nuevo</Strong></label> 
+                        <p  id="mensaje-credencial">
+                            Ingresar sus credenciales  <br>
+                            para acceder a su cuenta
+                        </p>
+
+                        <div id="input-login">
+                            <label for="usuario"></label> 
+                                <input type="text" name="usuario" id="usuario" placeholder="👤  Usuario" required> <br>
+
+                            <label for="contra"></label>
+                                <input type="password" name="contra" id="contra" placeholder="🔒 Contraseña" required> <br>
+                        </div>
+                        
+                        <input type="checkbox" name="box-login" id="box-login">
+                        <label for="box-login">Recordarme</label>
+
+                        <a href="">Recuperar Contraseña</a> <br>
+
+
+                        <button type="submit" >Iniciar Sesion</button>
+                    </fieldset>
+                </div>
+
+
+            </form>
+        </div>
+
+        <!-- {% comment %} {% block contenido %} -->
+        <!-- Aquí se inyectan las páginas hijas -->
+        <!-- {% endblock %} {% endcomment %} -->
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div id="cosasdearriba">
+            <div id="logo-titulo">
+            <img id="imagenlogo" src="../static/img/GReenWebSinFondo.png" alt="Logo GreenWeb">
+            <h2>GreenWeb</h2>
+            </div>
+
+            <div id="contenido">
+            <p>Información del footer</p>
+            </div>
+        </div>
+
+        <div id="cosasdeabajo">
+                <p>Todos los derecho reservados &copy; 2025 GreenWeb - Proyecto IoT y Ciencia de Datos</p>
+        </div>
+    </footer>
+
+
+    <!-- JS -->
+    <!-- <script src="{% static 'js/validaciones.js' %}"></script> -->
+</body>
+</html>
