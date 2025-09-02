@@ -17,12 +17,20 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from apps.usuario import views as usuario_views 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', usuario_views.home, name='home'), 
+    path('', usuario_views.home, name='home'),
+    #vistas de usuario, cuidador, establecimiento y rol:
+    path('usuario/', include('apps.usuario.urls', namespace='usuario')),
+    
+    #vistas de nodo y lectura:
+    path('nodo/', include('apps.nodos.urls', namespace='nodo')),
+    
+    #vistas de animal, especie y raza
+    path('animal/', include('apps.animal.urls', namespace='animal'))
 ]
 
 if settings.DEBUG:  # Solo en modo desarrollo

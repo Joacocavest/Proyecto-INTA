@@ -5,7 +5,7 @@ from django.utils import timezone
 class Nodo(models.Model):
     id_nodo = models.CharField(primary_key=True, max_length=15, unique=True, null=False, blank=False)
     activo = models.BooleanField(default=True, blank=False, null=False) #cuando activo = True, significa que está activo el nodo.
-    defectuoso = models.BooleanField(default=True, blank=False, null=False) #cuando defectuoso = False, significa que esta defectuoso el nodo.
+    defectuoso = models.BooleanField(default=False, blank=False, null=False) #cuando defectuoso = True, significa que esta defectuoso el nodo.
     modelo_gps = models.CharField(max_length=100, blank=True, null=True)
     bateria = models.IntegerField(default=100, blank=False, null=False)
     codigo = models.IntegerField(blank=True, null=True)
