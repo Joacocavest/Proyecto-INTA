@@ -6,5 +6,5 @@ urlpatterns = [
     path('lista_nodos/', views.lista_nodos, name='lista_nodos'),
     path('<int:pk>', views.nodo, name='nodo'),
     path('lista_lecturas/', views.lista_lecturas, name='lista_lecturas'),
-    path('lectura/<int:pk>', views.lectura, name='lectura')
+    path('lectura_nodo/<int:pk>', views.lectura, name='lectura')
 ]
