@@ -11,7 +11,8 @@ class Nodo(models.Model):
     codigo = models.IntegerField(blank=True, null=True)
     
     def __str__(self):
-        return f'{self.id_nodo}, {self.estado}, {self.condicion}, {self.bateria}'
+        return f'{self.id_nodo}, Activo: {self.activo}, Defectuoso: {self.defectuoso}, Batería: {self.bateria}'
+
     
     
     
