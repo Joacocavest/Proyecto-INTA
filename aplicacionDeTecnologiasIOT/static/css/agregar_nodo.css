@@ -1,0 +1,157 @@
+/*--------------------------- Estilos para la sección del formulario ---------------------------*/
+
+.form-section {
+    /* Mantén la imagen de fondo y el degradado que te gustaron */
+    background: linear-gradient(rgba(84, 111, 1, 0.7)), url("../img/vaca_nodo_sensores.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.form-section h2 {
+    font-size: 3rem;
+    color: white; /* Color de texto blanco para contrastar con el degradado */
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para el texto */
+}
+
+/*--------------------------- Estilos del Formulario tipo 'Card' ---------------------------*/
+
+.nodo-form {
+    background: rgba(255, 255, 255, 0.95); /* Fondo blanco casi opaco */
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    width: 100%;
+    max-width: 550px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Espacio entre los campos */
+}
+
+/* Estilos de las etiquetas y campos de entrada */
+.nodo-form p {
+    margin: 0;
+}
+
+
+.nodo-form label {
+    font-weight: 600;
+    color: #444;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0;
+}
+
+.nodo-form input[type="text"],
+.nodo-form input[type="number"],
+.nodo-form input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.nodo-form input:focus {
+    border-color: #1a3a00;
+    box-shadow: 0 0 0 4px rgba(26, 58, 0, 0.1);
+    outline: none;
+}
+
+/* --- Estilos para los Checkboxes Modernos (Opción 3) --- */
+
+.nodo-form .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el checkbox y el texto */
+}
+
+.nodo-form input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #aaa;
+    border-radius: 50%; /* Checkbox circular, una alternativa moderna */
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.nodo-form input[type="checkbox"]:checked {
+    background-color: #1a3a00;
+    border-color: #1a3a00;
+}
+
+.nodo-form input[type="checkbox"]:checked::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nodo-form input[type="checkbox"]:focus {
+    box-shadow: 0 0 0 3px rgba(26, 58, 0, 0.3);
+    outline: none;
+}
+
+/*--------------------------- Estilos para los botones ---------------------------*/
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.btn-submit,
+.btn-cancel {
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 50%;
+    text-align: center;
+}
+
+.btn-submit {
+    background-color: #1a3a00;
+    color: white;
+}
+
+.btn-submit:hover {
+    background-color: #2b5500;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-cancel {
+    background-color: #e0e0e0;
+    color: #444;
+}
+
+.btn-cancel:hover {
+    background-color: #d0d0d0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}

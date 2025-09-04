@@ -10,4 +10,3 @@ urlpatterns = [
     path('', views.lista_razas, name='lista_razas'),
     path('<int:pk>', views.raza, name='raza'),
 ]
- 

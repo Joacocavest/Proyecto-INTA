@@ -1,4 +1,3 @@
-
 /*---------------------------css de la pagina de nodos_sensores---------------------------*/
 
 main section {
@@ -7,110 +6,109 @@ main section {
     background-repeat: no-repeat;
     background-position: center;
     padding: 20px 20px 60px 20px;
-
 }
 
 main section h2 {
     text-align: left;
     text-decoration: underline;
-    float: center;
-    background: transparent ;
-    font-size: 80px;
-    color: black;
+    font-size: 75px;
+    color: rgb(255, 255, 255);
     margin: 0px;
-    padding: 0px;
-    
+    margin-bottom: 10px;
+    padding: 10px;
 }
 
-.botones_link , .agre_modi a {
+/* ---------------- BOTONES GENERALES ---------------- */
+.botones_link, .agre_modi a, .btn-eliminar, .btn-agregar, .btn-modificar {
     display: inline-block;        
-    width: 120px;                 
-    text-align: center; 
-    background-color: #181f0d;
+    width: 130px;   /* mismo ancho */
+    height: 50px;   /* misma altura */
+    text-align: center;
+    font-size: 15px;
+    text-decoration: none;
+    line-height: 25px; /* centra texto */
+    background-color: #546f01;
     color: white;
-    border: 3px solid #181f0d;
+    border: 3px solid #414e2c;
     border-radius: 15px;
-    padding: 10px;
-    margin:5px 0px;
-
+    margin: 5px 0px;
     cursor: pointer;
-    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    vertical-align: middle;
+    font-weight: bold;
 }
 
-.botones_link:hover, .agre_modi a:hover{
-    background-color: #435801;
-    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+/* Hover base */
+.botones_link:hover, .agre_modi a:hover {
+    background-color: #678600;
+    border-color: #678600;
 }
 
-#boton_eliminar:hover {
-    background: red;
+/* ---------------- BOTONES ESPECIALES ---------------- */
+
+/* Agregar y Modificar */
+.btn-agregar, .btn-modificar {
+    background-color: #2a6f2b; /* verde elegante */
+    border-color: #2a6f2b;
+    padding-top: 12px;
+}
+.btn-agregar:hover, .btn-modificar:hover {
+    background-color: #3fa64a; /* verde más claro */
 }
 
+/* Eliminar */
+.btn-eliminar {
+    background-color: #7a1f1f;
+    border-color: #7a1f1f;
+}
+.btn-eliminar:hover {
+    background-color: red;
+    color: white;
+}
 
-main section select, main section input {
+/* ---------------- INPUTS Y SELECTS ---------------- */
+main section select, 
+main section input {
     padding: 10px;
     border-radius: 15px;
-    border: 3px solid black;
-    width: 500px;
+    border: 3px solid rgb(88, 88, 88);
+    width: 230px;
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
-
-#tabla_sensores  {
+/* ---------------- TABLA ---------------- */
+#tabla_sensores {
     width: 100%;
-    border: 3px solid black;
-    padding: 0px;
+    border: 2px solid black;
     text-align: center;
     border-collapse: collapse;
-    
-    
 }
 
 #tabla_sensores thead tr {
-    background: #181f0d;
-    color:white;
+    background: #436113;
+    border: 2px solid black;
+    color: white;
 }
 
 #tabla_sensores tr td {
-    border: 3px solid black;
+    border: 2px solid black;
+    color: white;
+    background-color: rgba(58, 58, 58, 0.7);
+    padding: 0px;
 }
+
 #tabla_sensores tbody tr:hover {
-    background:#384720;
-    color:white;
+    background: #406e2e;
+    color: white;
 }
 
+/* La tabla visible con 15 filas sin scroll */
 .tabla-container {
-  max-height: 160px;   /* altura máxima visible */
-  overflow-y: auto;    /* activa el scroll vertical */
-  border: 1px solid #000;
+    max-height: none;   /* quitamos límite de altura */
+    overflow-y: visible;
 }
 
-
-#tabla_sensores thead th {
-  position: sticky;
-  top: 0;
-  background-color:#181f0d; /* para que no se vea transparente */
-  color: #fff;
-  z-index: 2; /* se asegura de quedar encima de las filas */
-  border: 3px solid black;
+/* Si aún querés mantener altura fija para 15 filas exactas: */
+#tabla_sensores tbody tr {
+    height: 40px;  /* cada fila tendrá altura uniforme */
 }
-
-/*---------------------------css de la pagina administracion---------------------------*/
-
-.agre_modi_admi a {
-    width: 160px;
-}
-
-#buscar_p, #eliminar_p, #seguir_p {
-    width: 180px;
-}
-
-#dni_perso {
-    width: 155px;    
-    text-align: center;
-    
-}
-
-
-
-
-

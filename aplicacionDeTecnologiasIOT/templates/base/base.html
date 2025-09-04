@@ -30,7 +30,7 @@
             <div id="user-info">
                 {% if user.is_authenticated %}
                     <button>{{ user.username }}</button>
-                    <a href="{% url 'usuario:logout' %}">
+                    {% comment %} <a href="{% url 'usuario:logout' %}"> {% endcomment %}
                         <button>Salir</button>
                     </a>
                 {% else %}

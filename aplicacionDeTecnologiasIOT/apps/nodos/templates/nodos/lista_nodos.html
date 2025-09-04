@@ -4,66 +4,104 @@
 {% block title %}Nodos Sensores - GreenWeb{% endblock %}
 
 {% block extra_head %}
-    <link rel="stylesheet" href="{% static 'css/nodo_sensores_administracion.css' %}">
+<link rel="stylesheet" href="{% static 'css/nodo_sensores_administracion.css' %}">
 {% endblock %}
 
 {% block content %}
-    <section>
-        <h2>Nodos Sensores</h2>
+<section>
+    <h2>Nodos Sensores</h2>
 
-        <div class="agre_modi">
-            <a href="{% url 'nodos:crear_nodo' %}">Agregar Nodo</a>
-            <a href="#">Modificar Nodo</a>
-        </div>
+    <!-- Botón para agregar un nodo nuevo -->
+    <div class="agre_modi">
+        <a href="{% url 'nodos:crear_nodo' %}" class="botones_link btn-agregar">Agregar Nodo</a>
+    </div>
 
-        <br><br>
-        <button class="botones_link">Buscar Nodo</button>
-        
-        <select name="sel_especie" id="sel_especie">
-            <option value="" disabled selected hidden>Seleccione la especie</option>
-            <option value="ovino">Ovino</option>
-            <option value="bovino">Bovino</option>
-        </select>
 
-        <select name="sel_raza" id="sel_raza">
-            <option value="" disabled selected hidden>Seleccione la raza</option>
-            <option value="raza1">Raza 1</option>
-            <option value="raza2">Raza 2</option>
-        </select>
+    <!-- Formulario de búsqueda -->
+    <form method="get" action="{% url 'nodos:lista_nodos' %}">
+    <button type="submit" class="botones_link">Buscar</button>
 
-        <button class="botones_link" id="boton_eliminar">Eliminar Nodo</button>
-        <br><br>
+    <!-- Buscar por ID -->
+    <input type="text" name="q" placeholder="Buscar por ID" value="{{ request.GET.q }}">
 
-        <input type="text" name="identificador_nodo" id="identificador_nodo" placeholder="ID del nodo">
-        <button class="botones_link">Seguir Nodo</button>
-        
-        <br><br>
+    
+    <!-- Filtro por raza -->
+    <select name="raza">
+        <option value="">Seleccione la Raza del Ganado</option>
+        {% for raza in razas %}
+        <option value="{{ raza.nombre_raza }}" 
+        {% if request.GET.raza == raza.nombre_raza %}selected{% endif %}>
+        {{ raza.nombre_raza }}
+        </option>
+        {% endfor %}
+    </select>
 
-        <div class="tabla-container">
-            <table id="tabla_sensores">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Especie</th>
-                        <th>Raza</th>
-                        <th>Estado</th>
-                        <th>Defectuoso</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for nodo in nodos %}
-                    <tr>
-                        <td>{{ nodo.id_nodo }}</td>
-                        <td>{{ nodo.id_especie }}</td> <td>{{ nodo.id_raza }}</td> <td>{{ nodo.activo|yesno:"Activo,Inactivo" }}</td>
-                        <td>{{ nodo.defectuoso|yesno:"Sí,No" }}</td>
-                    </tr>
+    <!-- Filtro por especie -->
+    <select name="especie">
+        <option value="">Seleccione Tipo de Ganado</option>
+        {% for especie in especies %}
+            <option value="{{ especie.nombre_especie }}" 
+                {% if request.GET.especie == especie.nombre_especie %}selected{% endif %}>
+                {{ especie.nombre_especie }}
+            </option>
+        {% endfor %}
+    </select>
+</form>
+
+
+    <!-- Botón seguir nodo -->
+    <button class="botones_link">Seguir Nodo</button>
+    <input type="text" name="identificador_nodo" id="identificador_nodo" placeholder="ID del nodo">
+
+    <br><br>
+
+    <!-- Tabla de nodos -->
+    <div class="tabla-container">
+        <table id="tabla_sensores">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Especie</th>
+                    <th>Raza</th>
+                    <th>Modelo GPS</th>
+                    <th>Batería</th>
+                    <th>Código</th>
+                    <th>Activo</th>
+                    <th>Defectuoso</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for nodo in nodos %}
+                    {% with animal=nodo.animal_nodo.first %}
+                            <tr>
+                                <td>{{ nodo.id_nodo }}</td>
+                                <td>{{ animal.id_especie.nombre_especie }}</td>
+                                <td>{{ animal.id_raza.nombre_raza }}</td>
+                                <td>{{ nodo.modelo_gps }}</td>
+                                <td>{{ nodo.bateria }}</td>
+                                <td>{{ nodo.codigo }}</td>
+                                <td>{{ nodo.activo|yesno:"Sí,No" }}</td>
+                                <td>{{ nodo.defectuoso|yesno:"Sí,No" }}</td>
+                                <td>
+                                    <!-- Modificar -->
+                                    <a href="{% url 'nodos:modificar_nodo' nodo.id_nodo %}" class="botones_link btn-modificar">Modificar</a>
+
+                                    <!-- Eliminar -->
+                                    <form action="{% url 'nodos:eliminar_nodo' nodo.id_nodo %}" method="post" style="display:inline;">
+                                        {% csrf_token %}
+                                        <button type="submit" class="botones_link btn-eliminar">Eliminar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endwith %}
                     {% empty %}
-                    <tr>
-                        <td colspan="5">No hay nodos registrados.</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </section>
+                            <tr>
+                                <td colspan="9">No hay nodos registrados.</td>
+                            </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
 {% endblock %}
