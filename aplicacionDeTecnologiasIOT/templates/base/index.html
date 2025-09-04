@@ -1,62 +1,53 @@
-{% load static %}
 
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>{% block title %}GreenWeb{% endblock title %}</title>
-    
-    <!-- Favicon -->
+    <title>GreenWeb</title>
     <link rel="icon" href="{% static 'img/GreenWebSinFondo.png' %}" type="image/x-icon">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-
-    {% block extra_head %}{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
 <body>
-    
-    <!-- Header -->
-    <header>
-        <div id="arribaheader">
-            <div id="logo">
+
+    <div class="container_div">
+        <!-- Botones de inicio -->
+        <section class="botones_inicio">
+            <a href="{% url 'usuario:registrar_usuario' %}">Registrarse</a> 
+            <a href="">Iniciar Sesión</a>
+        </section>
+
+        <!-- Contenido dinámico -->
+        <main>
+            <h1 class="titulo">Bienvenido a GreenWeb</h1>
+
+            <figure>
                 <img src="{% static 'img/GreenWebSinFondo.png' %}" alt="Logo GreenWeb">
-            </div>
+            </figure>
 
-            <h1>GreenWeb</h1>
+            <article class="eslogan">
+                <p>
+                    “Del campo al dato con un solo código, utilizando trazabilidad inteligente para una gestión eficiente”
+                </p>
+            </article>
 
-            <div id="user-info">
-                {% if user.is_authenticated %}
-                    <button>{{ user.username }}</button>
-                    <a href="{% url 'usuario:logout' %}">
-                        <button>Salir</button>
-                    </a>
-                {% else %}
-                    {% comment %} <a href="{% url 'usuario:login' %}"> {% endcomment %}
-                        <button>Login</button>
-                    </a>
-                    {% comment %} <a href="{% url 'usuario:register' %}"> {% endcomment %}
-                        <button>Registrarse</button>
-                    </a>
-                {% endif %}
-            </div>
-        </div>        
-        
-        <nav>
-            <a href="{% url 'usuario:home' %}">Home</a>
-            <a href="#">Administración</a>
-            <a href="{% url 'nodo:lista_nodos' %}">Nodos sensores</a>
-        </nav>
-    </header>
-
-    <!-- Contenido dinámico -->
-    <main>
-        {% block content %}
-        <!-- Aquí se inyectan las páginas hijas -->
-        {% endblock %}
-    </main>
+            <article class="article_descripcion">
+                <p>
+                    GreenWeb es una aplicación web diseñada para establecimientos agropecuarios que buscan optimizar
+                    la gestión y el rendimiento de su ganado mediante el uso de tecnologías IoT y ciencia de datos.
+                    <br><br>
+                    La plataforma permite registrar usuarios pertenecientes a cada establecimiento, quienes podrán
+                    cargar, editar y administrar los collares con nodos sensores instalados en el ganado. Estos
+                    dispositivos recopilan información clave sobre la ubicación y el comportamiento de los animales.
+                    Gracias a esta información, GreenWeb brinda a los expertos herramientas valiosas para analizar
+                    los datos y tomar decisiones estratégicas que mejoren la productividad y el manejo del rodeo.
+                </p>
+            </article>
+        </main>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -110,6 +101,7 @@
     </footer>
 
     <!-- JS -->
-    <script src="{% static 'js/validaciones.js' %}"></script>
+    <!-- <script src="{% static 'js/validaciones.js' %}"></script> -->
 </body>
 </html>
+

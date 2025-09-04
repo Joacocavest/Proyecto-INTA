@@ -39,7 +39,7 @@ body {
 
 .botones_inicio {
     float: right;
-    margin-top: 20px
+    margin-top: 0.7em;
 }
 
 .botones_inicio a {

@@ -4,7 +4,8 @@ from django.contrib.auth.models import AbstractUser
 
 # MODELO USUARIO
 class Usuario(AbstractUser):
-    CUIG = models.ForeignKey("usuario.Establecimiento", on_delete=models.CASCADE, related_name='usuario_establecimiento')
+    CUIG = models.ForeignKey("usuario.Establecimiento", on_delete=models.CASCADE, related_name='usuario_establecimiento'),
+    CUIT = models.BigIntegerField(primary_key=True, unique=True, null=False, blank=False)
     nombre = models.CharField(max_length=2, blank=False)
     apellido = models.CharField(max_length=3, blank=False)
     nombre_usuario = models.CharField(max_length=3, blank=False, unique=True)
