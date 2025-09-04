@@ -1,0 +1,60 @@
+# Entorno virtual
+# venv/
+# .env/
+# .venv/
+# ENV/
+
+# Archivos de configuración sensibles
+# *.env
+*.secret
+*.local
+
+# Archivos compilados de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+
+# Base de datos SQLite (solo para desarrollo)
+#db.sqlite3
+
+# Archivos generados por Django o en producción
+/media/
+staticfiles/
+static/
+
+# Archivos de pruebas
+htmlcov/
+.tox/
+.pytest_cache/
+.coverage
+coverage.xml
+
+# Logs
+*.log
+
+# Configuración de editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Información de paquetes
+*.egg-info/
+
+# Archivos PDF, si no son parte del código fuente
+*.pdf
+
+# Archivos temporales
+*.bak
+*.tmp
+*.orig
+
+# Carpeta Postman (si tiene archivos temporales, cambiar según tu uso)
+#Postman/tmp/
