@@ -1,0 +1,23 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Nodo - GreenWeb{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/agregar_nodo.css' %}">
+{% endblock %}
+{% block content %}
+
+<section class="form-section">
+    <h2>{% if nodo %}Modificar Nodo{% else %}Agregar Nodo{% endif %}</h2>
+
+    <form method="post" class="nodo-form" action="{% if nodo %}{% url 'nodos:modificar_nodo' pk=nodo.pk %}{% else %}{% url 'nodos:crear_nodo' %}{% endif %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="form-buttons">
+            <button type="submit" class="btn-submit">{% if nodo %}Actualizar{% else %}Crear{% endif %}</button>
+            <a href="{% url 'nodos:lista_nodos' %}" class="btn-cancel">Volver a la lista</a>
+        </div>
+    </form>
+</section>
+{% endblock %}
