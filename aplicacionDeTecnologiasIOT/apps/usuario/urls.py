@@ -3,6 +3,9 @@ from apps.usuario import views
 
 app_name = 'usuario'
 urlpatterns = [
+    path('index/', views.index, name="index"),
+    path('registrar/', views.registrar_usuario, name="registrar_usuario"),
+    path('hombe/', views.home, name='home'),
     path('', views.lista_usuarios, name='lista_usuarios'),
     path('<int:pk>', views.usuario, name='usuario'),
     path('', views.lista_cuidadores, name='lista_cuidadores'),

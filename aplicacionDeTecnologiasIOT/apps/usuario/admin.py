@@ -1,30 +1,32 @@
 from django.contrib import admin
-from .models import Usuario, Cuidador, Rol, Establecimiento
+from django.contrib.auth.admin import UserAdmin
+from .models import Usuario 
+from .forms import UsuarioCreationForm, UsuarioChangeForm
 
-@admin.register(Establecimiento)
-class EstablecimientoAdmin(admin.ModelAdmin):
-    list_display = ('CUIG', 'nombre', 'provincia', 'departamento', 'localidad')
-    search_fields = ('CUIG', 'nombre', 'provincia', 'localidad')
-    list_filter = ('provincia', 'departamento')
-    fields = ('CUIG', 'nombre', 'provincia', 'departamento', 'localidad', 'direccion', 'logo')
+class UsuarioAdmin(UserAdmin):
+    add_form = UsuarioCreationForm
+    form = UsuarioChangeForm
+    model = Usuario
+    
+    # Campos que se muestran en el listado de usuarios
+    list_display = ['nombre_usuario', 'email', 'nombre', 'apellido', 'telefono', 'is_staff']
 
-@admin.register(Rol)
-class RolAdmin(admin.ModelAdmin):
-    list_display = ('id', 'nombre_rol', 'descripcion_rol')
-    search_fields = ('nombre_rol',)
-    fields = ('nombre_rol', 'descripcion_rol')
+    # Campos visibles al editar un usuario
+    fieldsets = (
+        (None, {'fields': ('nombre_usuario', 'contraseña')}),  
+        ('Información personal', {'fields': ('nombre', 'apellido', 'email', 'telefono', 'CUIG', 'id_rol')}),
+        ('Permisos', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
+    )
 
-@admin.register(Cuidador)
-class CuidadorAdmin(admin.ModelAdmin):
-    list_display = ('CUIT', 'nombre_cuidador', 'apellido_cuidador', 'CUIG', 'sector', 'email')
-    list_filter = ('CUIG', 'sector')
-    search_fields = ('nombre_cuidador', 'apellido_cuidador', 'CUIT', 'email')
-    fields = ('CUIT', 'CUIG', 'sector', 'nombre_cuidador', 'apellido_cuidador', 'email', 'telefono')
+    # Campos visibles al crear un usuario
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('nombre_usuario', 'nombre', 'apellido', 'email', 'telefono', 'CUIG', 'id_rol', 'contraseña'),
+        }),
+    )
 
-@admin.register(Usuario)
-class UsuarioAdmin(admin.ModelAdmin):
-    list_display = ('id', 'username', 'nombre', 'apellido', 'CUIG', 'id_rol', 'email', 'is_active')
-    list_filter = ('id_rol', 'CUIG', 'is_active')
-    search_fields = ('nombre', 'apellido', 'username', 'email')
-    fields = ('username', 'password', 'nombre', 'apellido', 'nombre_usuario', 'contraseña', 
-              'email', 'telefono', 'CUIG', 'id_rol', 'is_active', 'is_staff')
+    search_fields = ('nombre_usuario', 'email', 'nombre', 'apellido')
+    ordering = ('nombre_usuario',)
+
+admin.site.register(Usuario, UsuarioAdmin)

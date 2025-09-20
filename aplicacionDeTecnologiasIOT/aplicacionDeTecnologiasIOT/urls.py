@@ -22,7 +22,7 @@ from apps.usuario import views as usuario_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', usuario_views.home, name='home'),
+    path('', usuario_views.index, name='index'),
     #vistas de usuario, cuidador, establecimiento y rol:
     path('usuario/', include('apps.usuario.urls', namespace='usuario')),
     

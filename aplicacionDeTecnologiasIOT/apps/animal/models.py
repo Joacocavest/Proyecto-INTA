@@ -6,7 +6,7 @@ class Animal(models.Model):
     CUIG = models.ForeignKey("usuario.Establecimiento", on_delete=models.CASCADE, related_name='animal_establecimiento')
     id_especie = models.ForeignKey("animal.Especie", on_delete=models.CASCADE, related_name='animal_especie')
     id_raza = models.ForeignKey("animal.Raza", on_delete=models.CASCADE, related_name='animal_raza')
-    id_nodo = models.ForeignKey("nodos.Nodo", on_delete=models.CASCADE, related_name='animal_nodo', blank=True, unique=True, null=True)
+    id_nodo = models.OneToOneField("nodos.Nodo", on_delete=models.CASCADE, related_name='animal_nodo', blank=True, null=True)
     id_cuidador = models.ForeignKey("usuario.Cuidador", on_delete=models.CASCADE, related_name='animal_cuidador')
     
     def __str__(self):

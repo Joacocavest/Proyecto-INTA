@@ -1,0 +1,107 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenWeb</title>
+    <link rel="icon" href="{% static 'img/GreenWebSinFondo.png' %}" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+
+    <div class="container_div">
+        <!-- Botones de inicio -->
+        <section class="botones_inicio">
+            <a href="{% url 'usuario:registrar_usuario' %}">Registrarse</a> 
+            <a href="">Iniciar Sesión</a>
+        </section>
+
+        <!-- Contenido dinámico -->
+        <main>
+            <h1 class="titulo">Bienvenido a GreenWeb</h1>
+
+            <figure>
+                <img src="{% static 'img/GreenWebSinFondo.png' %}" alt="Logo GreenWeb">
+            </figure>
+
+            <article class="eslogan">
+                <p>
+                    “Del campo al dato con un solo código, utilizando trazabilidad inteligente para una gestión eficiente”
+                </p>
+            </article>
+
+            <article class="article_descripcion">
+                <p>
+                    GreenWeb es una aplicación web diseñada para establecimientos agropecuarios que buscan optimizar
+                    la gestión y el rendimiento de su ganado mediante el uso de tecnologías IoT y ciencia de datos.
+                    <br><br>
+                    La plataforma permite registrar usuarios pertenecientes a cada establecimiento, quienes podrán
+                    cargar, editar y administrar los collares con nodos sensores instalados en el ganado. Estos
+                    dispositivos recopilan información clave sobre la ubicación y el comportamiento de los animales.
+                    Gracias a esta información, GreenWeb brinda a los expertos herramientas valiosas para analizar
+                    los datos y tomar decisiones estratégicas que mejoren la productividad y el manejo del rodeo.
+                </p>
+            </article>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container_footer">
+            <div class="logo-titulo_footer">
+                <img class="imagen_footer" src="{% static 'img/GreenWebSinFondo.png' %}" alt="Logo GreenWeb">
+                <h2>GreenWeb</h2>
+            </div>
+
+            <div class="datos_footer">
+                <div class="nombres">
+                    <p>
+                        Espinoza Guillermo. <br>
+                        Caviedes Estrada Joaquin. <br>
+                        Cirione Erik. <br>
+                        Maidana Alejo.
+                    </p>
+                </div>
+                <div class="mails">
+                    <a href="mailto:guilleespinozagonz@gmail.com" class="mail"> guilleespinozagonz@gmail.com</a> <br>
+                    <a href="mailto:joaquincaviedes3@gmail.com" class="mail"> joaquincaviedes3@gmail.com</a> <br>
+                    <a href="mailto:erikcirione@gmail.com" class="mail"> erikcirione@gmail.com</a> <br>
+                    <a href="mailto:alejomaidana29@gmail.com" class="mail"> alejomaidana29@gmail.com</a>
+                </div>
+                <div class="whatsapp">
+                    <img src="{% static 'img/whatsapp.png' %}" alt="whatsapp" class="logo_wsp"> +54 383 4627731 <br>
+                    <img src="{% static 'img/whatsapp.png' %}" alt="whatsapp" class="logo_wsp"> +54 383 4238214 <br>
+                    <img src="{% static 'img/whatsapp.png' %}" alt="whatsapp" class="logo_wsp"> +54 383 5513938 <br>
+                    <img src="{% static 'img/whatsapp.png' %}" alt="whatsapp" class="logo_wsp"> +54 383 4390834 <br>
+                </div>
+                <div class="instagrams">
+                    <a href="https://www.instagram.com/guilleespinoza_/">
+                        <img src="{% static 'img/instagram.png' %}" alt="ig" class="logo_wsp">
+                    </a> <br>
+                    <a href="https://www.instagram.com/joaquincaviedes_es/">
+                        <img src="{% static 'img/instagram.png' %}" alt="ig" class="logo_wsp">
+                    </a> <br>
+                    <a href="https://www.instagram.com/erik.cirione/">
+                        <img src="{% static 'img/instagram.png' %}" alt="ig" class="logo_wsp">
+                    </a> <br>
+                    <a href="https://www.instagram.com/alejomaidana.ok/">
+                        <img src="{% static 'img/instagram.png' %}" alt="ig" class="logo_wsp">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <small>Todos los derechos reservados &copy; 2025 GreenWeb - Proyecto IoT y Ciencia de Datos</small>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <!-- <script src="{% static 'js/validaciones.js' %}"></script> -->
+</body>
+</html>
+

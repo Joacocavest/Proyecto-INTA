@@ -1,8 +1,27 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
 from apps.usuario.models import Usuario, Cuidador, Establecimiento, Rol
+from apps.usuario.forms import UsuarioRegistroForm
+from django.contrib import messages
+
+def index(request):
+    return render(request, "base/index.html")
 
 def home(request):
-    return render(request, "base/home.html")
+    return render(request, "usuario/home.html")
+
+#VISTA PARA REGISTRAR UN USUARIO#
+# def registrar_usuario(request):
+#     return render(request, "usuario/registrar_usuario.html")
+def registrar_usuario(request):
+    if request.method == "POST":
+        form = UsuarioRegistroForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Usuario registrado correctamente")
+            return redirect("index")  # vuelve a inicio después de registrar
+    else:
+        form = UsuarioRegistroForm()
+    return render(request, "usuario/registrar_usuario.html", {"form": form})
 
 
 #VISTA PARA LISTAR LOS USUARIOS#
