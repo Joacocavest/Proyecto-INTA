@@ -32,122 +32,86 @@
 
         <div class="container_registrarse">
             <h2>Registrarse</h2>
-
-            <form method="post" class="form_usuario">
+            {% comment %} <form method="post" class="form_usuario">
                 {% csrf_token %}
-                
-                {{ form.as_p }}  <!-- Esto renderiza todos los campos con <p> -->
-                
-                <div class="button-group">
-                    <button type="reset" class="cancelar">Cancelar</button>
-                    <button type="submit" class="aceptar">Aceptar</button>
-                </div>
+                <h3>Datos del usuario</h3>
+                <label for="nombre">Nombre:</label>
+                <input type="text" required>
+                <label for="apellido">Apellido:</label>
+                <input type="text" required>
+                <label for="cuit">CUIT:</label>
+                <input type="number" name="cuit" id="cuit" required>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" name="email" id="correo" required>
+                <label for="telefono">Teléfono:</label>
+                <input type="number" name="telefono" id="telefono" required>
+                <label for="rol">Tipo de usuario:</label>
+                <select name="rol" id="rol" required>
+                    <option value="administrador">Administrador</option>
+                    <option value="usuario">Usuario empleado</option>
+                </select>
+
+                <br><br><br>
+                <label for="nombre_usuario">Nombre de usuario:</label>
+                <input type="text" required>
+                <label for="contraseña">Contraseña: </label>
+                <input type="password" name="contraseña" id="contraseña" required>
+                <label for="repetir_contraseña">Repetir contraseña: </label>
+                <input type="password" name="repetir_contraseña" id="contraseña" required>
+
+                <br><br>
+                <label for="cuig">CUIG del establecimiento:</label>
+                <input type="text" required>
+
+                <br><br><br>
+                <input type="reset" value="Cancelar">
+                <input type="submit" value="Registrar">
+            </form> {% endcomment %}
+
+            <form method="POST" enctype="multipart/form-data" class="form_usuario">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                {% if form.errors %}
+                    <ul style="color:red;">
+                    {% for field, errors in form.errors.items %}
+                        <li>{{ field }}: {{ errors|join:", " }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+
+                <input type="submit" value="Registrar">
             </form>
+
+            {% comment %} <div>
+                <form action="#" method="post" class="form_usuario">
+                    {% csrf_token %}
+                    <h3>Datos del establecimiento</h3>
+                    <label for="nombre_establecimiento">Nombre del establecimiento:</label>
+                    <select name="nombre_establecimiento" id="nombre_establecimiento">
+                        <!--Cargar opciones dinamicamente-->
+                        <option value="1">Nombres</option>
+                    </select>
+                    <label for="provincia">Provincia:</label>
+                    <input type="text" required>
+                    <label for="departamento">Departamento:</label>
+                    <input type="text" required>
+                    <label for="localidad">Localidad:</label>
+                    <input type="text" required>
+                    <label for="direccion">Direccion:</label>
+                    <input type="text" required>
+                    <label for="logo">Logo del establecimiento:</label>
+                    <input type="file" name="logo" id="logo">
+                    
+                    <br><br><br>
+                    <input type="reset" value="Cancelar">
+                    <input type="submit" value="Registrar">
+                </form>
+            </div> {% endcomment %}
         </div>
 
 
-        {% comment %} <div class="container_registrarse">
-            <h2>Registrarse</h2>
-
-            <form action="#" method="post" class="form_usuario">
-                {% csrf_token %}
-                <div class="form-section">
-                    <h2>Datos de usuario</h2>
-                    
-                    <div class="form-group">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre">
-                    </div>
-                    <div class="form-group">
-                        <label for="apellido">Apellido:</label>
-                        <input type="text" id="apellido" name="apellido">
-                    </div>
-                    <div class="form-group">
-                        <label for="cuit">CUIT:</label>
-                        <input type="text" id="cuit" name="cuit">
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono">Teléfono:</label>
-                        <input type="text" id="telefono" name="telefono">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="rol">Rol:</label>
-                        <select id="rol" name="rol">
-                            <option value="administrador">Administrador</option>
-                            <option value="empleado">Empleado</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="nombre_usuario">Nombre de usuario:</label>
-                        <input type="text" id="nombre_usuario" name="nombre_usuario">
-                    </div>
-                    <div class="form-group">
-                        <label for="contrasena">Contraseña:</label>
-                        <input type="password" id="contrasena" name="contrasena">
-                    </div>
-                    <div class="form-group">
-                        <label for="repetir_contrasena">Repetir contraseña:</label>
-                        <input type="password" id="repetir_contrasena" name="repetir_contrasena">
-                    </div>
-                </div>
-
-                <div class="form-section">
-                    <h2>Datos del establecimiento</h2>
-                    
-                    <div class="form-group search-group">
-                        <label for="cuig">CUIG:</label>
-                        <input type="text" id="cuig" name="cuig">
-                        <button type="button">Buscar</button>
-                    </div>
-                    <div class="form-group">
-                        <label for="nombre_establecimiento">Nombre del establecimiento:</label>
-                        <select id="nombre_establecimiento" name="nombre_establecimiento">
-                            <option value="ovejas_negras">Ovejas negras</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="provincia">Provincia:</label>
-                        <select id="provincia" name="provincia">
-                            <option value="catamarca">Catamarca</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="departamento">Departamento:</label>
-                        <select id="departamento" name="departamento">
-                            <option value="tinogasta">Tinogasta</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="localidad">Localidad:</label>
-                        <select id="localidad" name="localidad">
-                            <option value="capital">San Fernando del Valle de Catamarca</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="direccion">Dirección:</label>
-                        <input type="text" id="direccion" name="direccion">
-                    </div>
-                    <div class="form-group">
-                        <label for="logo">Logo:</label>
-                        <div class="file-upload">
-                            <span>Subir archivo .png o .jpg o .jpeg</span>
-                            <label for="logo_file">Subir</label>
-                            <input type="file" id="logo_file" name="logo">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="button-group">
-                    <button type="button" class="cancelar">Cancelar</button>
-                    <button type="submit" class="aceptar">Aceptar</button>
-                </div>
-            </form>
-        </div> {% endcomment %}
-        <!--Footer-->
+        
         <footer>
             <div class="container_footer">
                 <div class="logo-titulo_footer">

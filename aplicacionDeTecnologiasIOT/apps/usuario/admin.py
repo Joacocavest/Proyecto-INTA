@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import Usuario 
+from .models import Usuario, Rol, Establecimiento, Cuidador
 from .forms import UsuarioCreationForm, UsuarioChangeForm
 
 class UsuarioAdmin(UserAdmin):
@@ -9,11 +9,11 @@ class UsuarioAdmin(UserAdmin):
     model = Usuario
     
     # Campos que se muestran en el listado de usuarios
-    list_display = ['nombre_usuario', 'email', 'nombre', 'apellido', 'telefono', 'is_staff']
+    list_display = ['username', 'email', 'CUIT', 'nombre', 'apellido', 'telefono', 'is_staff']
 
     # Campos visibles al editar un usuario
     fieldsets = (
-        (None, {'fields': ('nombre_usuario', 'contraseña')}),  
+        (None, {'fields': ('username', 'contraseña')}),  
         ('Información personal', {'fields': ('nombre', 'apellido', 'email', 'telefono', 'CUIG', 'id_rol')}),
         ('Permisos', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
     )
@@ -22,11 +22,14 @@ class UsuarioAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('nombre_usuario', 'nombre', 'apellido', 'email', 'telefono', 'CUIG', 'id_rol', 'contraseña'),
+            'fields': ('username', 'CUIT', 'nombre', 'apellido', 'email', 'telefono', 'CUIG', 'id_rol', 'contraseña'),
         }),
     )
 
-    search_fields = ('nombre_usuario', 'email', 'nombre', 'apellido')
-    ordering = ('nombre_usuario',)
+    search_fields = ('username', 'CUIT','email', 'nombre', 'apellido')
+    ordering = ('username', 'CUIT')
 
 admin.site.register(Usuario, UsuarioAdmin)
+admin.site.register(Rol)
+admin.site.register(Establecimiento)
+admin.site.register(Cuidador)
