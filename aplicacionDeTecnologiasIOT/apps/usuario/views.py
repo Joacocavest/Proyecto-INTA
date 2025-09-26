@@ -10,15 +10,15 @@ def home(request):
     return render(request, "usuario/home.html")
 
 #VISTA PARA REGISTRAR UN USUARIO#
-# def registrar_usuario(request):
-#     return render(request, "usuario/registrar_usuario.html")
 def registrar_usuario(request):
     if request.method == "POST":
-        form = UsuarioRegistroForm(request.POST)
+        form = UsuarioRegistroForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request, "Usuario registrado correctamente")
-            return redirect("index")  # vuelve a inicio después de registrar
+            return redirect("index")  #vuelve a inicio después de registrar
+        else:
+            print(form.errors)
     else:
         form = UsuarioRegistroForm()
     return render(request, "usuario/registrar_usuario.html", {"form": form})

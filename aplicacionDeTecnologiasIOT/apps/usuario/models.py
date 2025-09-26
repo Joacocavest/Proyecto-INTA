@@ -4,25 +4,23 @@ from django.contrib.auth.models import AbstractUser
 
 # MODELO USUARIO
 class Usuario(AbstractUser):
-    CUIG = models.ForeignKey("usuario.Establecimiento", on_delete=models.CASCADE, related_name='usuario_establecimiento'),
-    CUIT = models.BigIntegerField(primary_key=True, unique=True, null=False, blank=True)
-    nombre = models.CharField(max_length=2, blank=False)
-    apellido = models.CharField(max_length=3, blank=False)
-    nombre_usuario = models.CharField(max_length=3, blank=False, unique=True)
-    contraseña = models.CharField(max_length=3, blank=False, unique=True)
+    CUIG = models.ForeignKey("usuario.Establecimiento", on_delete=models.CASCADE, null=True, blank=True, related_name='usuario_establecimiento')
+    CUIT = models.BigIntegerField(unique=True, null=False, blank=False, default=11111111111)
+    nombre = models.CharField(max_length=30, blank=False)
+    apellido = models.CharField(max_length=30, blank=False)
     email = models.EmailField(unique=True, blank=False)
     telefono = models.CharField(max_length=10, blank=True)
-    id_rol = models.ForeignKey("usuario.Rol", on_delete=models.CASCADE, related_name='rol')
+    id_rol = models.ForeignKey("usuario.Rol", on_delete=models.CASCADE, related_name='rol', null=True, blank=True)
 
     def __str__(self):
-        return f'{self.nombre}, {self.apellido}, {self.nombre_usuario}, {self.CUIG} {self.email}'
+        return f'{self.nombre}, {self.apellido}, {self.CUIT}, {self.username}, {self.CUIG}, {self.email}'
 
 
 
 
 # MODELO CUIDADOR
 class Cuidador(models.Model):
-    CUIT = models.IntegerField(primary_key=True, unique=True, null=False, blank=False)
+    CUIT = models.BigIntegerField(primary_key=True, unique=True, null=False, blank=False, default=11111111111)
     CUIG = models.ForeignKey("usuario.Establecimiento", on_delete=models.CASCADE, related_name='cuidador_establecimiento')
     sector = models.CharField(max_length=15, blank=True, null=True)
     nombre_cuidador = models.CharField(max_length=2, blank=False)
