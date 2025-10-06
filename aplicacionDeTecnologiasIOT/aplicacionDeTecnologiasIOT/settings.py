@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import os
 from pathlib import Path
+import platform
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -78,17 +79,40 @@ WSGI_APPLICATION = 'aplicacionDeTecnologiasIOT.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-os.environ['PGSERVICEFILE'] = os.path.join(os.environ['APPDATA'], 'postgresql', '.pg_service.conf')
+
+if platform.system() == 'Windows':
+    appdata_dir = os.environ.get('APPDATA')
+    if appdata_dir:
+        os.environ['PGSERVICEFILE'] = os.path.join(appdata_dir, 'postgresql', '.pg_service.conf')
+        pgpass_path = os.path.join(appdata_dir, 'postgresql', 'pgpass.conf')
+    else:
+        raise RuntimeError("La variable de entorno APPDATA no está definida en Windows.")
+else:
+    # Para Linux/macOS
+    os.environ['PGSERVICEFILE'] = os.path.expanduser('~/.pg_service.conf')
+    pgpass_path = os.path.expanduser('~/.pgpass')
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'OPTIONS': {
             'service': 'servicio_postgres',
-            'passfile': os.path.join(os.environ['APPDATA'], 'postgresql', 'pgpass.conf'),
+            'passfile': pgpass_path,
         }
     }
 }
+
+# os.environ['PGSERVICEFILE'] = os.path.join(os.environ['APPDATA'], 'postgresql', '.pg_service.conf')
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'OPTIONS': {
+#             'service': 'servicio_postgres',
+#             'passfile': os.path.join(os.environ['APPDATA'], 'postgresql', 'pgpass.conf'),
+#         }
+#     }
+# }
 
 
 

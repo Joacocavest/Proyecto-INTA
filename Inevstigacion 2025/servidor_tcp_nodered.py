@@ -1,6 +1,6 @@
 import socket
 
-def start_server(host='10.130.1.205', port=65432, node_red_host='127.0.1.1', node_red_port=1880):
+def start_server(host='192.168.100.233', port=65432, node_red_host='127.0.1.1', node_red_port=1880):
     # Crear socket UDP para enviar datos a Node-RED
     node_red_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
@@ -25,5 +25,8 @@ def start_server(host='10.130.1.205', port=65432, node_red_host='127.0.1.1', nod
                     node_red_socket.sendto(data, (node_red_host, node_red_port))
                     print(f'Datos enviados a Node-RED en {node_red_host}:{node_red_port}')
 
-if _name_ == "_main_":
+# if _name_ == "_main_":
+#     start_server()
+
+if __name__ == "__main__":
     start_server()
