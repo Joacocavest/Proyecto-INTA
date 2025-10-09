@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de animales</title>
+        <link rel="icon" href="/aplicacionDeTecnologiasIOT/static/img/GReenWebSinFondo.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Inevstigacion 2025/aplicacion web INTA/front-end/static/css/base.css">
+    <link rel="stylesheet" href="../static/css/usuario.css">
+    <link rel="stylesheet" href="../static/css/registro-animales.css">
+</head>
+<body>
+    
+    <!-- Header -->
+    <header>
+        <div id="arribaheader">
+            <div id="logo">
+                <img src="../static/img/GReenWebSinFondo.png" alt="Logo GreenWeb">
+            </div>
+
+            <h1>GreenWeb</h1>
+
+
+            <div id="user-info">
+                <button>Perfil de usuario</button>
+                <button>Nombre de usuario</button>
+            </div>
+        </div>        
+        
+        <nav>
+            <a href="#">Administración</a>
+            <a href="#">Home</a>
+            <a href="#">Nodos sensores</a>
+        </nav>
+    </header>
+
+    <!-- Contenido dinámico -->
+    <main>
+        <div id="registro-animales">
+            <div id="parraforegistro">
+                <p>
+                    “Del campo al dato con un solo código, utilizando trazabilidad inteligente para una gestión eficiente”
+                </p>
+            </div>
+
+            <div>
+                <h2>Registro de Animales</h2>
+            </div>
+
+            <form action="#" method="get">
+                <div>
+                    
+                    <fieldset>
+                        <label id="datosAnimal" class="strongSubtitulos"><Strong>Datos del Animal</Strong></label> 
+                        
+                        <div id="inputs-registro-animal">
+                            
+                            <label for="cuigAnimal"></label>
+                                <input type="text" name="cuig-animal" id="cuig-animal" maxlength="15" placeholder=" 🧑‍🌾Ingrese el cuig del establecimiento" required> <br>
+
+
+                            <label for="carabanaAnimal"></label>
+                                <input type="text" name="carabanaAnimal" id="carabanaAnimal" maxlength="17"placeholder=" 🐮Ingrese la carabana del animal" required> <br>
+
+                            <label for="especieAnimal"></label>
+                                <select name="especieAnimal" id="especieAnimal" required>
+                                    <option value="0" hidden>🐣 Especie del animal</option>
+                                    <option value="1">🐄 Bovino</option>
+                                    <option value="2">🐄 Equino</option>
+                                    <option value="3">🐄 Bubalino</option>
+                                    <option value="4">🐑 Ovino</option>
+                                    <option value="5">🐑 Caprino</option>
+                                    <option value="6">🐑 Porcino</option>
+                                    <option value="7">🐓 Gallina</option>
+                                    <option value="8">🐓 Pato</option>
+                                    <option value="9">🐓 Ganso</option>
+                                </select> <br>
+
+                            <!-- CARGA SEGUN LA ESPECIE EN EL BACK ESTO ES UNA MUESTRA DE SI SE ELEGIE LA ESPECIE DE BOVINO-->
+                            <label for="razaAnimal"></label>
+                                <select name="razaAnimal" id="razaAnimal" required>
+                                    <option value="0" hidden>🧬 Raza del animal</option>
+                                    <option value="1">🐄 Angus</option>
+                                    <option value="2">🐄 Hereford</option>
+                                    <option value="3">🐄 Holando Argentino</option>
+                                </select> <br>
+
+                            <label for="cuidadorAnimal"></label>
+                                <input type="text" name="cuidadorAnimal" id="cuidadorAnimal" maxlength="15" placeholder=" 🧑‍🌾 Ingrese el ID del cuidador del animal" required> <br>
+                        </div>
+
+                        <br>
+                        <div id="botones-formularios">
+                            <button type="submit" id="boton-aceptar">Aceptar</button>
+                            <button type="reset" id="boton-cancelar">Cancelar</button>
+                        </div>
+                        
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+
+        
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div id="cosasdearriba">
+            <div id="logo-titulo">
+            <img id="imagenlogo" src="../static/img/GReenWebSinFondo.png" alt="Logo GreenWeb">
+            <h2>GreenWeb</h2>
+            </div>
+
+            <div id="contenido">
+            <p>Información del footer</p>
+            </div>
+        </div>
+
+        <div id="cosasdeabajo">
+                <p>Todos los derecho reservados &copy; 2025 GreenWeb - Proyecto IoT y Ciencia de Datos</p>
+        </div>
+    </footer>
+
+
+    <!-- JS -->
+    <!-- <script src="{% static 'js/validaciones.js' %}"></script> -->
+</body>
+</html>

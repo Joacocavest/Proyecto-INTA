@@ -97,7 +97,7 @@ input[type="file"]{
 
 #datosusuario, #datosestablecimiento{
     font-weight:none;
-    font-size: 100%;
+    font-size: 25px;
     padding: 0px;
     
     display: flex;
@@ -159,4 +159,8 @@ h2{
     font-size: 300%;
     background: none;
     margin-top: 0;
+}
+
+.strongSubtitulos{
+    color: #ffffff;
 }
