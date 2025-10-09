@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lectura Sensores GreenWeb</title>
+        <link rel="icon" href="/aplicacionDeTecnologiasIOT/static/img/GReenWebSinFondo.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Inevstigacion 2025/aplicacion web INTA/front-end/static/css/base.css">
+    <link rel="stylesheet" href="/Inevstigacion 2025/aplicacion web INTA/front-end/static/css/Lecturas_Nodo.css">
+
+
+</head>
+<body>
+    
+    <!-- Header -->
+    <header>
+        <div id="arribaheader">
+            <div id="logo">
+                <img src="../static/img/GReenWebSinFondo.png" alt="Logo GreenWeb">
+            </div>
+
+            <h1>GreenWeb</h1>
+
+
+            <div id="user-info">
+                <button>Perfil de usuario</button>
+                <button>Nombre de usuario</button>
+            </div>
+        </div>        
+        
+        <nav>
+            <a href="#">Administración</a>
+            <a href="#">Home</a>
+            <a href="#">Nodos sensores</a>
+        </nav>
+    </header>
+
+    <!-- Contenido dinámico -->
+    <main>
+        <section>
+            <h2>Lectura Nodos Sensores</h2>
+
+           
+            <div>
+                <button class="botones_link">Buscar Lectura</button>
+                <select name="sel_especie" id="sel_especie" >
+                        <option value="" disabled selected hidden>Seleccione el ID</option>
+                        <option value="ovino">3333333</option>
+                        <option value="bovino">11111111</option>
+                </select>
+            </div>
+
+            <div class="div_input">
+                <input type="date" >
+                <input type="date">
+                <label for="">Filtrar Fecha</label>
+            </div>
+
+            <div class="div_input">
+                <input type="time">
+                <input type="time">
+                <label for="">Filtrar Hora</label>
+            </div>
+
+            <br>
+
+            <div class="tabla-container">
+                <table id="tabla_sensores">
+                    <thead>
+                        <tr>
+                            <th>Id</td>
+                            <th>Latitud</td>
+                            <th>Longitud</td>
+                            <th>Fecha</td>
+                            <th>Hora</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AB2345555</td>
+                            <td>475888373 W</td>
+                            <td>475888373 S</td>
+                            <td>23/112003</td>
+                            <td>12:30</td>
+                        </tr>
+                        <tr>
+                            <td>AB2345555</td>
+                            <td>475888373 W</td>
+                            <td>475888373 S</td>
+                            <td>23/112003</td>
+                            <td>12:30</td>
+                        </tr>
+                        <tr>
+                            <td>AB2345555</td>
+                            <td>475888373 W</td>
+                            <td>475888373 S</td>
+                            <td>23/112003</td>
+                            <td>12:30</td>
+                        </tr>
+                        <tr>
+                            <td>AB2345555</td>
+                            <td>475888373 W</td>
+                            <td>475888373 S</td>
+                            <td>23/112003</td>
+                            <td>12:30</td>
+                        </tr>
+                        <tr>
+                            <td>AB2345555</td>
+                            <td>475888373 W</td>
+                            <td>475888373 S</td>
+                            <td>23/112003</td>
+                            <td>12:30</td>
+                        </tr>
+                        <tr>
+                            <td>AB2345555</td>
+                            <td>475888373 W</td>
+                            <td>475888373 S</td>
+                            <td>23/112003</td>
+                            <td>12:30</td>
+                        </tr>
+                        
+                
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div id="cosasdearriba">
+            <div id="logo-titulo">
+            <img id="imagenlogo" src="../static/img/GReenWebSinFondo.png" alt="Logo GreenWeb">
+            <h2>GreenWeb</h2>
+            </div>
+
+            <div id="contenido">
+            <p>Información del footer</p>
+            </div>
+        </div>
+
+        <div id="cosasdeabajo">
+                <p>Todos los derecho reservados &copy; 2025 GreenWeb - Proyecto IoT y Ciencia de Datos</p>
+        </div>
+    </footer>
+
+
+    <!-- JS -->
+    <!-- <script src="{% static 'js/validaciones.js' %}"></script> -->
+</body>
+</html>

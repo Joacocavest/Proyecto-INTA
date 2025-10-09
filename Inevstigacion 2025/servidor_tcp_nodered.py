@@ -25,5 +25,5 @@ def start_server(host='10.130.1.205', port=65432, node_red_host='127.0.1.1', nod
                     node_red_socket.sendto(data, (node_red_host, node_red_port))
                     print(f'Datos enviados a Node-RED en {node_red_host}:{node_red_port}')
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     start_server()
