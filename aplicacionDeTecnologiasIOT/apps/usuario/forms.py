@@ -89,4 +89,13 @@ class UsuarioRegistroForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         from .models import Rol
-        self.fields['id_rol'].queryset = Rol.objects.filter(nombre_rol__in=["administrador", "usuario"])
+        self.fields['id_rol'].queryset = Rol.objects.filter(nombre_rol__in=["Administrador", "Usuario"])
+
+    def clean_CUIT(self):
+        cuit = self.cleaned_data.get('CUIT')
+        if not cuit:
+            raise forms.ValidationError("El CUIT es obligatorio.")
+        s = str(cuit)
+        if len(s) != 11:
+            raise forms.ValidationError("El CUIT debe tener 11 dígitos.")
+        return cuit
