@@ -22,7 +22,7 @@ class UsuarioAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('username', 'CUIT', 'nombre', 'apellido', 'email', 'telefono', 'CUIG', 'id_rol', 'contraseña'),
+            'fields': ('username', 'CUIT', 'nombre', 'apellido', 'email', 'telefono', 'CUIG', 'id_rol', 'password1', 'password2'),
         }),
     )
 
