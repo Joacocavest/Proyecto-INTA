@@ -30,58 +30,127 @@
             </div>
         </header>
 
-        <div class="container_registrarse">
+        <div class="registrarse">
             <h2>Registrarse</h2>
-            {% comment %} <form method="post" class="form_usuario">
-                {% csrf_token %}
-                <h3>Datos del usuario</h3>
-                <label for="nombre">Nombre:</label>
-                <input type="text" required>
-                <label for="apellido">Apellido:</label>
-                <input type="text" required>
-                <label for="cuit">CUIT:</label>
-                <input type="number" name="cuit" id="cuit" required>
-                <label for="email">Correo electrónico:</label>
-                <input type="email" name="email" id="correo" required>
-                <label for="telefono">Teléfono:</label>
-                <input type="number" name="telefono" id="telefono" required>
-                <label for="rol">Tipo de usuario:</label>
-                <select name="rol" id="rol" required>
-                    <option value="administrador">Administrador</option>
-                    <option value="usuario">Usuario empleado</option>
-                </select>
+        </div>
+        
+        <div class="container_registrarse">
 
-                <br><br><br>
-                <label for="nombre_usuario">Nombre de usuario:</label>
-                <input type="text" required>
-                <label for="contraseña">Contraseña: </label>
-                <input type="password" name="contraseña" id="contraseña" required>
-                <label for="repetir_contraseña">Repetir contraseña: </label>
-                <input type="password" name="repetir_contraseña" id="contraseña" required>
+            <div>
+                <form method="POST" enctype="multipart/form-data" class="form_usuario">
+                    {% csrf_token %}
 
-                <br><br>
-                <label for="cuig">CUIG del establecimiento:</label>
-                <input type="text" required>
+                    <p>
+                        {{ form.nombre.label_tag }}
+                        {{ form.nombre }}
+                    </p>
 
-                <br><br><br>
-                <input type="reset" value="Cancelar">
-                <input type="submit" value="Registrar">
-            </form> {% endcomment %}
+                    <p>
+                        {{ form.apellido.label_tag }}
+                        {{ form.apellido }}
+                    </p>
 
-            <form method="POST" enctype="multipart/form-data" class="form_usuario">
-                {% csrf_token %}
-                {{ form.as_p }}
+                    <p>
+                        {{ form.CUIT.label_tag }}
+                        {{ form.CUIT }}
+                    </p>
 
-                {% if form.errors %}
-                    <ul style="color:red;">
-                    {% for field, errors in form.errors.items %}
-                        <li>{{ field }}: {{ errors|join:", " }}</li>
-                    {% endfor %}
-                    </ul>
-                {% endif %}
+                    <p>
+                        {{ form.email.label_tag }}
+                        {{ form.email }}
+                    </p>
 
-                <input type="submit" value="Registrar">
-            </form>
+                    <p>
+                        {{ form.telefono.label_tag }}
+                        {{ form.telefono }}
+                    </p>
+
+                    <p>
+                        {{ form.id_rol.label_tag }}
+                        {{ form.id_rol }}
+                    </p>
+
+                    <div class="cuig-section" style="display: flex; flex-direction: column; gap: 10px;">
+                        <label>¿A qué tipo de productor pertenecés?</label>
+
+                        <div style="display: flex; gap: 20px; align-items: center;">
+                            <label>
+                                <input type="radio" name="tipo_productor" id="radioSenasa" value="senasa">
+                                Establecimiento reconocido por el SENASA
+                            </label>
+                            <label>
+                                <input type="radio" name="tipo_productor" id="radioParticular" value="particular">
+                                Productor particular (sin CUIG)
+                            </label>
+                        </div>
+
+                        <div id="cuig-container" style="display: none; align-items: center; gap: 10px;">
+                            <label for="id_CUIG">CUIG:</label>
+                            <input type="text" name="CUIG" id="id_CUIG" maxlength="20">
+                            <button type="button" id="btnBuscarCUIG"
+                                style="padding: 5px 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px;">
+                                Buscar
+                            </button>
+                        </div>
+
+                        <!-- Opciones de establecimiento particular -->
+                        <div id="opciones-particular" style="display: none; flex-direction: column; gap: 10px;">
+                            <label>Seleccioná un establecimiento particular existente o creá uno nuevo:</label>
+
+                            <!-- Selector de establecimientos AUX existentes -->
+                            <select id="selectAuxiliar" style="padding: 5px; width: 250px;">
+                                <option value="">-- Elegir existente --</option>
+                            </select>
+
+                            <!-- Campo para crear un nuevo establecimiento -->
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <input type="text" id="nuevoAuxiliarNombre" placeholder="Nuevo establecimiento (opcional)">
+                                <button type="button" id="btnCrearAuxiliar" 
+                                    style="padding: 5px 10px; background-color: #2196F3; color: white; border: none; border-radius: 5px;">
+                                    Crear nuevo
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    {% comment %} <div style="display: flex; align-items: center; gap: 10px;">
+                        {{ form.CUIG.label_tag }}
+                        {{ form.CUIG }}
+                        <button type="button" id="btnBuscarCUIG"
+                            style="padding: 5px 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px;">
+                            Buscar
+                        </button>
+                    </div> {% endcomment %}
+
+                    <p>
+                        {{ form.username.label_tag }}
+                        {{ form.username }}
+                    </p>
+
+                    <p>
+                        {{ form.password1.label_tag }}
+                        {{ form.password1 }}
+                    </p>
+
+                    <p>
+                        {{ form.password2.label_tag }}
+                        {{ form.password2 }}
+                    </p>
+
+                    {% if form.errors %}
+                        <ul style="color:red;">
+                        {% for field, errors in form.errors.items %}
+                            <li>{{ field }}: {{ errors|join:", " }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                    <input type="submit" value="Registrar">
+                </form>
+
+            </div>
 
             {% comment %} <div>
                 <form action="#" method="post" class="form_usuario">
@@ -109,58 +178,62 @@
                 </form>
             </div> {% endcomment %}
         </div>
-
-
-        
-        <footer>
-            <div class="container_footer">
-                <div class="logo-titulo_footer">
-                    <img class="imagen_footer" src="{% static 'img/GreenWebSinFondo.png' %}" alt="Logo GreenWeb">
-                    <h2>GreenWeb</h2>
-                </div>
-
-                <div class="datos_footer">
-                    <div class="nombres">
-                        <p>
-                            Espinoza Guillermo. <br>
-                            Caviedes Estrada Joaquin. <br>
-                            Cirione Erik. <br>
-                            Maidana Alejo.
-                        </p>
-                    </div>
-                    <div class="mails">
-                        <a href="mailto:guilleespinozagonz@gmail.com" class="mail"> guilleespinozagonz@gmail.com</a> <br>
-                        <a href="mailto:joaquincaviedes3@gmail.com" class="mail"> joaquincaviedes3@gmail.com</a> <br>
-                        <a href="mailto:erikcirione@gmail.com" class="mail"> erikcirione@gmail.com</a> <br>
-                        <a href="mailto:alejomaidana29@gmail.com" class="mail"> alejomaidana29@gmail.com</a>
-                    </div>
-                    <div class="whatsapp">
-                        <img src="{% static 'img/whatsapp.png' %}" alt="whatsapp" class="logo_wsp"> +54 383 4627731 <br>
-                        <img src="{% static 'img/whatsapp.png' %}" alt="whatsapp" class="logo_wsp"> +54 383 4238214 <br>
-                        <img src="{% static 'img/whatsapp.png' %}" alt="whatsapp" class="logo_wsp"> +54 383 5513938 <br>
-                        <img src="{% static 'img/whatsapp.png' %}" alt="whatsapp" class="logo_wsp"> +54 383 4390834 <br>
-                    </div>
-                    <div class="instagrams">
-                        <a href="https://www.instagram.com/guilleespinoza_/">
-                            <img src="{% static 'img/instagram.png' %}" alt="ig" class="logo_wsp">
-                        </a> <br>
-                        <a href="https://www.instagram.com/joaquincaviedes_es/">
-                            <img src="{% static 'img/instagram.png' %}" alt="ig" class="logo_wsp">
-                        </a> <br>
-                        <a href="https://www.instagram.com/erik.cirione/">
-                            <img src="{% static 'img/instagram.png' %}" alt="ig" class="logo_wsp">
-                        </a> <br>
-                        <a href="https://www.instagram.com/alejomaidana.ok/">
-                            <img src="{% static 'img/instagram.png' %}" alt="ig" class="logo_wsp">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="copyright">
-                <small>Todos los derechos reservados &copy; 2025 GreenWeb - Proyecto IoT y Ciencia de Datos</small>
-            </div>
-        </footer>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container_footer">
+            <div class="logo-titulo_footer">
+                <img class="imagen_footer" src="{% static 'img/GreenWebSinFondo.png' %}" alt="Logo GreenWeb">
+                <h2>GreenWeb</h2>
+            </div>
+
+            <div class="datos_footer">
+                <div class="nombres">
+                    <p>
+                        Espinoza Guillermo. <br>
+                        Caviedes Estrada Joaquin. <br>
+                        Cirione Erik. <br>
+                        Maidana Alejo.
+                    </p>
+                </div>
+                <div class="mails">
+                    <a href="mailto:guilleespinozagonz@gmail.com" class="mail"> guilleespinozagonz@gmail.com</a> <br>
+                    <a href="mailto:joaquincaviedes3@gmail.com" class="mail"> joaquincaviedes3@gmail.com</a> <br>
+                    <a href="mailto:erikcirione@gmail.com" class="mail"> erikcirione@gmail.com</a> <br>
+                    <a href="mailto:alejomaidana29@gmail.com" class="mail"> alejomaidana29@gmail.com</a>
+                </div>
+                <div class="whatsapp">
+                    <img src="{% static 'img/whatsapp.png' %}" alt="whatsapp" class="logo_wsp"> +54 383 4627731 <br>
+                    <img src="{% static 'img/whatsapp.png' %}" alt="whatsapp" class="logo_wsp"> +54 383 4238214 <br>
+                    <img src="{% static 'img/whatsapp.png' %}" alt="whatsapp" class="logo_wsp"> +54 383 5513938 <br>
+                    <img src="{% static 'img/whatsapp.png' %}" alt="whatsapp" class="logo_wsp"> +54 383 4390834 <br>
+                </div>
+                <div class="instagrams">
+                    <a href="https://www.instagram.com/guilleespinoza_/">
+                        <img src="{% static 'img/instagram.png' %}" alt="ig" class="logo_wsp">
+                    </a> <br>
+                    <a href="https://www.instagram.com/joaquincaviedes_es/">
+                        <img src="{% static 'img/instagram.png' %}" alt="ig" class="logo_wsp">
+                    </a> <br>
+                    <a href="https://www.instagram.com/erik.cirione/">
+                        <img src="{% static 'img/instagram.png' %}" alt="ig" class="logo_wsp">
+                    </a> <br>
+                    <a href="https://www.instagram.com/alejomaidana.ok/">
+                        <img src="{% static 'img/instagram.png' %}" alt="ig" class="logo_wsp">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <small>Todos los derechos reservados &copy; 2025 GreenWeb - Proyecto IoT y Ciencia de Datos</small>
+        </div>
+    </footer>
+
+
+<script src="{% static 'js/registrar_usuario.js' %}"></script>
+
+
 </body>
 </html>
