@@ -4,16 +4,19 @@ from django.contrib.auth.models import AbstractUser
 
 # MODELO USUARIO
 class Usuario(AbstractUser):
-    CUIG = models.ForeignKey("usuario.Establecimiento", on_delete=models.CASCADE, null=True, blank=True, related_name='usuario_establecimiento')
-    CUIT = models.BigIntegerField(unique=True, null=False, blank=False)
-    nombre = models.CharField(max_length=30, blank=False)
-    apellido = models.CharField(max_length=30, blank=False)
-    email = models.EmailField(unique=True, blank=False)
+    CUIG = models.ForeignKey("usuario.Establecimiento", on_delete=models.CASCADE, null=True, blank=True, related_name='usuarios')
+    CUIT = models.BigIntegerField(unique=True)
+    nombre = models.CharField(max_length=30)
+    apellido = models.CharField(max_length=30)
+    email = models.EmailField(unique=True)
     telefono = models.CharField(max_length=20, blank=True)
-    id_rol = models.ForeignKey("usuario.Rol", on_delete=models.SET_NULL, related_name='rol', null=True, blank=True)
+    id_rol = models.ForeignKey("usuario.Rol", on_delete=models.SET_NULL, related_name='usuario', null=True, blank=True)
+    
+    USERNAME_FIELD = 'username'  #o 'email' si queremos usar email como login
+    REQUIRED_FIELDS = ['email', 'CUIT', 'nombre', 'apellido']
 
     def __str__(self):
-        return f'{self.nombre}, {self.apellido}, {self.CUIT}, {self.username}, {self.CUIG}, {self.email}'
+        return f'{self.nombre} {self.apellido} ({self.username}) - {self.CUIG if self.CUIG else "Sin Establecimiento"}'
 
 
 
@@ -54,6 +57,10 @@ class Establecimiento(models.Model):
     direccion = models.CharField(max_length=100)
     nombre = models.CharField(max_length=100)
     logo = models.ImageField(upload_to="establecimientos/logos/", blank=True, null=True)
+    
+    #campo opcional: quién creó este establecimiento
+    creado_por = models.ForeignKey("usuario.Usuario", on_delete=models.SET_NULL, null=True, blank=True, related_name="establecimientos_creados"
+    )
 
     def __str__(self):
         return f"{self.nombre} ({self.CUIG})"

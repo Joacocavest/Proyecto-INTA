@@ -22,7 +22,7 @@ Base de datos SQLite (solo para desarrollo)
 Archivos generados por Django o en producción
 /media/
 staticfiles/
-static/
+# static/
 
 Archivos de pruebas
 htmlcov/

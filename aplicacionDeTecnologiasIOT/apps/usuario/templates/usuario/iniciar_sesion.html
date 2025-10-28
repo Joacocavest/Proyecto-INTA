@@ -1,52 +1,61 @@
 
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GreenWeb</title>
+    <title>Iniciar sesión - GreenWeb</title>
     <link rel="icon" href="{% static 'img/GreenWebSinFondo.png' %}" type="image/x-icon">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head>
 <body>
-
     <div class="container_div">
-        <!-- Botones de inicio -->
-        <section class="botones_inicio">
-            <a href="{% url 'usuario:registrar_usuario' %}">Registrarse</a> 
-            <a href="{% url 'usuario:iniciar_sesion' %}">Iniciar Sesión</a>
-        </section>
-
-        <!-- Contenido dinámico -->
-        <main>
-            <h1 class="titulo">Bienvenido a GreenWeb</h1>
-
-            <figure>
-                <img src="{% static 'img/GreenWebSinFondo.png' %}" alt="Logo GreenWeb">
-            </figure>
-
-            <article class="eslogan">
+        <header class="header">
+            <div class="logo-titulo_header">
+                <img class="imagen_header" src="{% static 'img/GreenWebSinFondo.png' %}" alt="Logo GreenWeb">
+                <h2>GreenWeb</h2>
+            </div>
+            <div class="eslogan">
                 <p>
                     “Del campo al dato con un solo código, utilizando trazabilidad inteligente para una gestión eficiente”
                 </p>
-            </article>
+            </div>
+            <!-- Botones de inicio -->
+            <div class="botones_inicio">
+                <a href="{% url 'usuario:index' %}">Inicio</a> 
+                <a href="{% url 'usuario:registrar_usuario' %}">Registrarse</a>
+            </div>
+        </header>
 
-            <article class="article_descripcion">
-                <p>
-                    GreenWeb es una aplicación web diseñada para establecimientos agropecuarios que buscan optimizar
-                    la gestión y el rendimiento de su ganado mediante el uso de tecnologías IoT y ciencia de datos.
-                    <br><br>
-                    La plataforma permite registrar usuarios pertenecientes a cada establecimiento, quienes podrán
-                    cargar, editar y administrar los collares con nodos sensores instalados en el ganado. Estos
-                    dispositivos recopilan información clave sobre la ubicación y el comportamiento de los animales.
-                    Gracias a esta información, GreenWeb brinda a los expertos herramientas valiosas para analizar
-                    los datos y tomar decisiones estratégicas que mejoren la productividad y el manejo del rodeo.
-                </p>
-            </article>
-        </main>
+        <div class="login-container">
+            <h1>Iniciar sesión</h1>
+
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li class="{{ message.tags }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            <form method="POST">
+                {% csrf_token %}
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Iniciar sesión</button>
+            </form>
+
+            <p>¿No tenés cuenta? <a href="{% url 'usuario:registrar_usuario' %}">Registrate</a></p>
+            <p><a href="{% url 'index' %}">Volver al inicio</a></p>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -99,9 +108,5 @@
             <small>Todos los derechos reservados &copy; 2025 GreenWeb - Proyecto IoT y Ciencia de Datos</small>
         </div>
     </footer>
-
-    <!-- JS -->
-    <!-- <script src="{% static 'js/validaciones.js' %}"></script> -->
 </body>
 </html>
-

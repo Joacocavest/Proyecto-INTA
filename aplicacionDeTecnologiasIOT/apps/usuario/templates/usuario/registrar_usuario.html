@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GreenWeb</title>
+    <title>Registrar usuario - GreenWeb</title>
     <link rel="icon" href="{% static 'img/GreenWebSinFondo.png' %}" type="image/x-icon">
 
     <!-- CSS -->
@@ -26,7 +26,7 @@
             <!-- Botones de inicio -->
             <div class="botones_inicio">
                 <a href="{% url 'usuario:index' %}">Inicio</a> 
-                <a href="">Iniciar Sesión</a>
+                <a href="{% url 'usuario:iniciar_sesion' %}">Iniciar Sesión</a>
             </div>
         </header>
 
@@ -70,7 +70,7 @@
                         {{ form.id_rol }}
                     </p>
 
-                    <div class="cuig-section" style="display: flex; flex-direction: column; gap: 10px;">
+                    {% comment %} <div class="cuig-section" style="display: flex; flex-direction: column; gap: 10px;">
                         <label>¿A qué tipo de productor pertenecés?</label>
 
                         <div style="display: flex; gap: 20px; align-items: center;">
@@ -112,7 +112,7 @@
                             </div>
                         </div>
 
-                    </div>
+                    </div> {% endcomment %}
 
 
                     {% comment %} <div style="display: flex; align-items: center; gap: 10px;">
@@ -151,32 +151,6 @@
                 </form>
 
             </div>
-
-            {% comment %} <div>
-                <form action="#" method="post" class="form_usuario">
-                    {% csrf_token %}
-                    <h3>Datos del establecimiento</h3>
-                    <label for="nombre_establecimiento">Nombre del establecimiento:</label>
-                    <select name="nombre_establecimiento" id="nombre_establecimiento">
-                        <!--Cargar opciones dinamicamente-->
-                        <option value="1">Nombres</option>
-                    </select>
-                    <label for="provincia">Provincia:</label>
-                    <input type="text" required>
-                    <label for="departamento">Departamento:</label>
-                    <input type="text" required>
-                    <label for="localidad">Localidad:</label>
-                    <input type="text" required>
-                    <label for="direccion">Direccion:</label>
-                    <input type="text" required>
-                    <label for="logo">Logo del establecimiento:</label>
-                    <input type="file" name="logo" id="logo">
-                    
-                    <br><br><br>
-                    <input type="reset" value="Cancelar">
-                    <input type="submit" value="Registrar">
-                </form>
-            </div> {% endcomment %}
         </div>
     </div>
 
@@ -230,9 +204,6 @@
             <small>Todos los derechos reservados &copy; 2025 GreenWeb - Proyecto IoT y Ciencia de Datos</small>
         </div>
     </footer>
-
-
-<script src="{% static 'js/registrar_usuario.js' %}"></script>
 
 
 </body>

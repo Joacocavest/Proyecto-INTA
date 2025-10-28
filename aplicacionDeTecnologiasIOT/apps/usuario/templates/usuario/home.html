@@ -8,6 +8,11 @@
 {% endblock %}
 
 {% block content %}
+
+{% if user.is_authenticated %}
+    <a href="{% url 'usuario:cerrar_sesion' %}">Cerrar sesión</a>
+{% endif %}
+
 <article>
     <h2>Bienvenido a GreenWeb Catamarca</h2>
     <p>
