@@ -1,0 +1,24 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Solicitar Establecimiento - GreenWeb Catamarca{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <h2>Solicitar alta de establecimiento</h2>
+    <p>Completá los datos del establecimiento para enviar tu solicitud.</p>
+    <form method="POST">
+        {% csrf_token %}
+        <p>Nombre: <input type="text" name="nombre_establecimiento"></p>
+        <p>Provincia: <input type="text" name="provincia"></p>
+        <p>Departamento: <input type="text" name="departamento"></p>
+        <p>Localidad: <input type="text" name="localidad"></p>
+        <p>Dirección: <input type="text" name="direccion"></p>
+        <button type="submit">Enviar solicitud</button>
+    </form>
+
+{% endblock %}

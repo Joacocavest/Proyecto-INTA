@@ -10,7 +10,7 @@
     <link rel="icon" href="{% static 'img/GreenWebSinFondo.png' %}" type="image/x-icon">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/usuario.css' %}">
 </head>
 <body>
     <div class="container_div">
@@ -31,8 +31,11 @@
             </div>
         </header>
 
-        <div class="login-container">
-            <h1>Iniciar sesión</h1>
+        <div class="registrarse">
+            <h2>Iniciar sesión</h2>
+        </div>
+
+        <div class="container_login">
 
             {% if messages %}
                 <ul class="messages">
@@ -42,19 +45,31 @@
                 </ul>
             {% endif %}
 
-            <form method="POST">
-                {% csrf_token %}
-                <label for="username">Usuario:</label>
-                <input type="text" id="username" name="username" required>
+            <div class="container_form">
+                <form method="POST" class="form_usuario">
+                    {% csrf_token %}
+                    <p>
+                        <label for="username">Usuario:</label>
+                        <input type="text" id="username" name="username" required>
+                    </p>
 
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" required>
+                    <p>
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" name="password" required>
+                    </p>
 
-                <button type="submit">Iniciar sesión</button>
-            </form>
 
-            <p>¿No tenés cuenta? <a href="{% url 'usuario:registrar_usuario' %}">Registrate</a></p>
-            <p><a href="{% url 'index' %}">Volver al inicio</a></p>
+                    <button type="submit">Iniciar sesión</button>
+                </form>
+
+                <div class="btns_aux_registrar">
+                    <p>¿No tenés cuenta? <i><a href="{% url 'usuario:registrar_usuario' %}">Registrate</a></i>
+                    </p>
+                    <p><i><a href="{% url 'index' %}">Volver al inicio</a></i>
+                    </p>
+                </div>
+            </div>
+
         </div>
     </div>
 

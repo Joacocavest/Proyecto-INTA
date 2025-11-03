@@ -1,11 +1,62 @@
+
+
+.informacion_usuario{
+    color: #181f0d;
+    padding: 1em;
+    margin: auto;
+    border-radius: 15px;
+    background: #a4bc00;
+}
+
+.informacion_usuario p{
+    font-weight: bold;
+}
+
+.opciones_establecimiento{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1;
+
+}
+
+.opciones_establecimiento a{
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #181f0d;
+    border-radius: 20px;
+    padding: 0.2em;
+    margin-left: 1em;
+    border: 3px solid #181f0d;
+}
+.opciones_establecimiento a:hover{
+    background-color: #546f01;
+}
+
+.saludo{
+    background-color: #546f01;
+    border-radius: 20px;
+    color: #f5f5f5;
+    padding: 0.5em 1em;
+}
+
+.saludo i{
+    color: #181f0d;
+}
+
+
+
+
+
 /* Estilos específicos del Home */
 
-.seccion-destacada {
+.sobre_greenweb {
     margin-top: 40px;
     text-align: center;
 }
 
-.seccion-destacada h3 {
+.sobre_greenweb h3 {
     font-size: 28px;
     margin-bottom: 20px;
     color: #181f0d;

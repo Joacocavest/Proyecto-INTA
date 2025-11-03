@@ -1,91 +1,45 @@
-{% comment %} 
+{% extends "base/base.html" %}
+{% load static %}
 
-{% extends "base.html" %}
+{% block title %}Crear establecimiento - GreenWeb Catamarca{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/crear_establecimiento.css' %}">
+{% endblock %}
+
 {% block content %}
-<h2>Crear Establecimiento</h2>
-
-<form method="POST">
-    {% csrf_token %}
-    <label>Nombre del establecimiento:</label>
-    <input type="text" name="nombre" required>
-
-    <label>Provincia:</label>
-    <input type="text" name="provincia" required>
-
-    <label>Departamento:</label>
-    <input type="text" name="departamento" required>
-
-    <label>Localidad:</label>
-    <input type="text" name="localidad" required>
-
-    <label>Dirección:</label>
-    <input type="text" name="direccion" required>
-
-    <p>Tipo de establecimiento:</p>
-    <label><input type="radio" name="tipo" value="senasa" checked> Reconocido por SENASA</label>
-    <label><input type="radio" name="tipo" value="auxiliar"> Productor particular</label>
-
-    <div id="campoCUIG">
-        <label for="CUIG">CUIG (si es SENASA):</label>
-        <input type="text" name="CUIG" id="CUIG">
-    </div>
-
-    <input type="submit" value="Crear">
-</form>
-
-<script>
-    document.querySelectorAll('input[name="tipo"]').forEach(radio => {
-        radio.addEventListener('change', e => {
-            document.getElementById('campoCUIG').style.display = 
-                e.target.value === 'senasa' ? 'block' : 'none';
-        });
-    });
-</script>
-
-{% endblock %} {% endcomment %}
-
-
-{% extends "base.html" %}
-{% block content %}
-    <div class="container" style="max-width: 600px; margin: auto;">
-        <h2>Registrar nuevo establecimiento</h2>
-        <form method="POST" enctype="multipart/form-data">
+    <div class="container">
+        <h2 class="titulo">Registrar nuevo establecimiento <i>particular</i></h2>
+        <form method="POST" class="formulario">
             {% csrf_token %}
 
-            <label>Nombre del establecimiento:</label>
-            <input type="text" name="nombre" required>
+            <p>
+                <label>Nombre del establecimiento:</label>
+                <input type="text" name="nombre" required>
+            </p>
 
-            <label>Provincia:</label>
-            <input type="text" name="provincia" required>
-
-            <label>Departamento:</label>
-            <input type="text" name="departamento" required>
-
-            <label>Localidad:</label>
-            <input type="text" name="localidad" required>
-
-            <label>Dirección:</label>
-            <input type="text" name="direccion" required>
-
-            <p>Tipo de establecimiento:</p>
-            <label><input type="radio" name="tipo" value="senasa" checked> Reconocido por SENASA</label>
-            <label><input type="radio" name="tipo" value="auxiliar"> Productor particular</label>
-
-            <div id="campoCUIG">
-                <label for="CUIG">CUIG (solo para SENASA):</label>
-                <input type="text" name="CUIG" id="CUIG">
-            </div>
+            <p>
+                <label>Provincia:</label>
+                <input type="text" name="provincia" required>
+            </p>
+            
+            <p>
+                <label>Departamento:</label>
+                <input type="text" name="departamento" required>
+            </p>
+            
+            <p>
+                <label>Localidad:</label>
+                <input type="text" name="localidad" required>
+            </p>
+            
+            <p>
+                <label>Dirección:</label>
+                <input type="text" name="direccion" required>
+            </p>
 
             <button type="submit">Crear establecimiento</button>
+            
         </form>
     </div>
-
-    <script>
-        document.querySelectorAll('input[name="tipo"]').forEach(radio => {
-            radio.addEventListener('change', e => {
-                document.getElementById('campoCUIG').style.display =
-                    e.target.value === 'senasa' ? 'block' : 'none';
-            });
-        });
-    </script>
 {% endblock %}
