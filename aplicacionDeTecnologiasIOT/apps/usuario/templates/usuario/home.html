@@ -9,34 +9,55 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
-    <a href="{% url 'usuario:cerrar_sesion' %}">Cerrar sesión</a>
-{% endif %}
-
-<article>
-    <h2>Bienvenido a GreenWeb Catamarca</h2>
+<article class="informacion_usuario">
+    <h2 class="saludo">Bienvenido a GreenWeb Catamarca 
+        {% if user.is_authenticated %}
+            "<i>{{ user.nombre }} {{ user.apellido }}</i>"
+        {% endif %}
+    </h2>
     <p>
-        La integración de <strong>IoT</strong> y <strong>Ciencia de Datos</strong> 
-        en la agricultura y ganadería de Catamarca permite mejorar la 
-        sostenibilidad, aumentar la productividad y optimizar recursos.
+        {% if user.is_authenticated %}
+            {% if user.CUIG %}
+                Establecimiento: {{ user.CUIG.nombre }}
+            {% else %}
+                Establecimiento: <i>No perteneces a ningún establecimiento</i>
+                <div class="opciones_establecimiento">
+                    <a href="{% url 'usuario:crear_establecimiento' %}">Crear establecimiento propio</a>
+                    <a href="{% url 'usuario:crear_establecimiento' %}">Unirse a un establecimiento</a>
+                    <a href="{% url 'usuario:crear_establecimiento' %}">Crear establecimiento inscripto en SENASA</a>
+                    {% comment %} solicitar_establecimiento {% endcomment %}
+                </div>
+                
+            {% endif %}
+            <br>
+            Rol dentro del establecimiento: <i>{{ user.id_rol }}</i>
+        {% endif %}
     </p>
 </article>
 
-<section class="seccion-destacada">
+<section>
+    <p>
+        La integración del <strong>Internet de las cosas (IoT)</strong> y <strong>Ciencia de Datos</strong> 
+        en la agricultura y ganadería de la región permite mejorar la 
+        sostenibilidad, aumentar la productividad y optimizar recursos.
+    </p>
+</section>
+
+<section class="sobre_greenweb">
     <h3>¿Qué hacemos?</h3>
     <div class="cards">
         <div class="card">
-            <img src="{% static 'img/sensores.jpg' %}" alt="Sensores IoT">
+            <img src="{% static 'img/COLLAR-GPS-1-400x300.jpg' %}" alt="Sensores IoT">
             <h4>Nodos Sensores</h4>
             <p>Capturan datos precisos del suelo, clima y ganado.</p>
         </div>
         <div class="card">
-            <img src="{% static 'img/datos.jpg' %}" alt="Ciencia de datos">
+            <img src="{% static 'img/ciencia_de_datos.webp' %}" alt="Ciencia de datos">
             <h4>Ciencia de Datos</h4>
             <p>Procesamos información para tomar decisiones inteligentes.</p>
         </div>
         <div class="card">
-            <img src="{% static 'img/productividad.jpg' %}" alt="Producción agrícola">
+            <img src="{% static 'img/produccion_ganadera.jpeg' %}" alt="Producción ganadera">
             <h4>Productividad</h4>
             <p>Optimización de procesos para aumentar la calidad y producción.</p>
         </div>
