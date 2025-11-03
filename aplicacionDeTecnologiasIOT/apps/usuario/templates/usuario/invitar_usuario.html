@@ -1,0 +1,14 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Invitar usuario{% endblock %}
+
+{% block content %}
+<h2>Invitar nuevo usuario</h2>
+
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Enviar invitación</button>
+</form>
+{% endblock %}

@@ -20,34 +20,57 @@
     
     <!-- Header -->
     <header>
-        <div id="arribaheader">
-            <div id="logo">
+        <div class="header_container">
+            <div class="logo">
                 <img src="{% static 'img/GreenWebSinFondo.png' %}" alt="Logo GreenWeb">
             </div>
 
             <h1>GreenWeb</h1>
 
-            <div id="user-info">
+            <div class="user-info">
                 {% if user.is_authenticated %}
-                    <button>{{ user.username }}</button>
-                    {% comment %} <a href="{% url 'usuario:logout' %}"> {% endcomment %}
-                        <button>Salir</button>
+                    <p>
+                        {{ user.username }}
+                        <button>Ver mi perfil</button>
+                    </p>
+
+                    <button><a href="{% url 'usuario:cerrar_sesion' %}">Cerrar sesión</a></button>
                     </a>
                 {% else %}
-                    {% comment %} <a href="{% url 'usuario:login' %}"> {% endcomment %}
                         <button>Login</button>
                     </a>
-                    {% comment %} <a href="{% url 'usuario:register' %}"> {% endcomment %}
                         <button>Registrarse</button>
                     </a>
                 {% endif %}
             </div>
         </div>        
         
-        <nav>
+        <nav class="navbar">
             <a href="{% url 'usuario:home' %}">Home</a>
-            <a href="#">Administración</a>
-            <a href="{% url 'nodo:lista_nodos' %}">Nodos sensores</a>
+
+            <div class="dropdown">
+                <a href="#">Administración ▾</a>
+                <div class="dropdown-content">
+                    <a href="#">Establecimiento</a>
+
+                    {% if user.is_authenticated %}
+                        {% if user.id_rol.nombre_rol == "Administrador" or user.is_superuser %}
+                            <a href="#">Empleados</a>
+                        {% elif user.id_rol.nombre_rol == "Empleado" %}
+                            <a href="#" class="disabled">Empleados</a>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="#">Nodos sensores ▾</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'nodo:lista_nodos' %}">Ver collares</a>
+                    <a href="#">Ver lecturas</a>
+                    <a href="#">Mapa de calor</a>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -60,19 +83,52 @@
 
     <!-- Footer -->
     <footer>
-        <div id="cosasdearriba">
-            <div id="logo-titulo">
-                <img id="imagenlogo" src="{% static 'img/GreenWebSinFondo.png' %}" alt="Logo GreenWeb">
+        <div class="container_footer">
+            <div class="logo-titulo_footer">
+                <img class="imagen_footer" src="{% static 'img/GreenWebSinFondo.png' %}" alt="Logo GreenWeb">
                 <h2>GreenWeb</h2>
             </div>
 
-            <div id="contenido">
-                <p>Información del footer</p>
+            <div class="datos_footer">
+                <div class="nombres">
+                    <p>
+                        Espinoza Guillermo. <br>
+                        Caviedes Estrada Joaquin. <br>
+                        Cirione Erik. <br>
+                        Maidana Alejo.
+                    </p>
+                </div>
+                <div class="mails">
+                    <a href="mailto:guilleespinozagonz@gmail.com" class="mail"> guilleespinozagonz@gmail.com</a> <br>
+                    <a href="mailto:joaquincaviedes3@gmail.com" class="mail"> joaquincaviedes3@gmail.com</a> <br>
+                    <a href="mailto:erikcirione@gmail.com" class="mail"> erikcirione@gmail.com</a> <br>
+                    <a href="mailto:alejomaidana29@gmail.com" class="mail"> alejomaidana29@gmail.com</a>
+                </div>
+                <div class="whatsapp">
+                    <img src="{% static 'img/whatsapp.png' %}" alt="whatsapp" class="logo_wsp"> +54 383 4627731 <br>
+                    <img src="{% static 'img/whatsapp.png' %}" alt="whatsapp" class="logo_wsp"> +54 383 4238214 <br>
+                    <img src="{% static 'img/whatsapp.png' %}" alt="whatsapp" class="logo_wsp"> +54 383 5513938 <br>
+                    <img src="{% static 'img/whatsapp.png' %}" alt="whatsapp" class="logo_wsp"> +54 383 4390834 <br>
+                </div>
+                <div class="instagrams">
+                    <a href="https://www.instagram.com/guilleespinoza_/">
+                        <img src="{% static 'img/instagram.png' %}" alt="ig" class="logo_wsp">
+                    </a> <br>
+                    <a href="https://www.instagram.com/joaquincaviedes_es/">
+                        <img src="{% static 'img/instagram.png' %}" alt="ig" class="logo_wsp">
+                    </a> <br>
+                    <a href="https://www.instagram.com/erik.cirione/">
+                        <img src="{% static 'img/instagram.png' %}" alt="ig" class="logo_wsp">
+                    </a> <br>
+                    <a href="https://www.instagram.com/alejomaidana.ok/">
+                        <img src="{% static 'img/instagram.png' %}" alt="ig" class="logo_wsp">
+                    </a>
+                </div>
             </div>
         </div>
 
-        <div id="cosasdeabajo">
-            <p>Todos los derechos reservados &copy; 2025 GreenWeb - Proyecto IoT y Ciencia de Datos</p>
+        <div class="copyright">
+            <small>Todos los derechos reservados &copy; 2025 GreenWeb - Proyecto IoT y Ciencia de Datos</small>
         </div>
     </footer>
 

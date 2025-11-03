@@ -100,25 +100,184 @@ body {
 }
 
 .container_registrarse{
-    margin: auto;
-    width: 70%;
+    background-color: #445801c9;
+    border-radius: 15px;
+    margin-top: 0em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 8em;
+    width: 50%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 }
 
 
+.container_form{
+    width: 60%;
+    height: 100%;
+}
+
+
 .form_usuario{
-    background-color: #445801c9;
     padding: 1em;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    border-radius: 15px;
     margin-bottom: 2em;
 }
 
+
+/* === FORMULARIO REGISTRAR === */
+.container_registrarse .form_usuario p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px; /* separa label del input */
+    margin-bottom: 15px;
+}
+
+/* Asegura que los label no se peguen al borde */
+.container_registrarse label {
+    width: 100px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Hace que los inputs ocupen el resto del espacio */
+.container_registrarse input[type="text"],
+.container_registrarse input[type="password"],
+.container_registrarse input[type="number"],
+.container_registrarse input[type="email"]{
+    flex-grow: 1;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+/*Estilos para el select del formulario de registro */
+.container_registrarse select {
+    flex-grow: 1;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    color: #181f0d;
+    font-size: 14px;
+    cursor: pointer;
+}
+.container_registrarse select:focus {
+    outline: none;
+    box-shadow: 0 0 5px #181f0d;
+}
+
+/* Centrar el botón */
+.container_registrarse input[type="submit"] {
+    width: 50%;
+    margin: 1em auto 0 auto;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+}
+
+.container_registrarse input[type="submit"]:focus{
+    background-color: #181f0d;
+}
+
+
+
+
+
+
+
+
+
+
+.container_login{
+    background-color: #445801c9;
+    border-radius: 15px;
+    margin-top: 0em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 8em;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/* === FORMULARIO LOGIN === */
+.container_login .form_usuario p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px; /* separa label del input */
+    margin-bottom: 15px;
+}
+
+/* Asegura que los label no se peguen al borde */
+.container_login label {
+    width: 100px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Hace que los inputs ocupen el resto del espacio */
+.container_login input[type="text"],
+.container_login input[type="password"] {
+    flex-grow: 1;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Centrar el botón */
+.container_login button {
+    width: 50%;
+    margin: 1em auto 0 auto;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+}
+
+.container_login button:focus{
+    background-color: #181f0d;
+}
+
+.btns_aux_registrar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+
+.btns_aux_registrar p a{
+    background-color: #a4bc00;
+    text-decoration: none;
+    color: #181f0d;
+    padding-left: 2px;
+    padding-right: 5px;
+    border-radius: 10px;
+}
+.btns_aux_registrar p a:hover{
+    color: #a4bc00;
+    background-color: #181f0d;
+}
 
 
 

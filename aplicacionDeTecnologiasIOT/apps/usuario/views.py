@@ -17,16 +17,22 @@ def home(request):
 #VISTA PARA REGISTRAR UN USUARIO#
 def registrar_usuario(request):
     if request.method == "POST":
-        form = UsuarioRegistroForm(request.POST, request.FILES)
+        form = UsuarioRegistroForm(request.POST)
         if form.is_valid():
-            form.save()
-            messages.success(request, "Usuario registrado correctamente")
-            return redirect("index")  #vuelve a inicio después de registrar
+            user = form.save(commit=False)
+            user.is_active = True
+            user.id_rol = None      # Sin rol aún
+            user.CUIG = None        # Sin establecimiento aun
+            user.save()
+
+            messages.info(request, "Usuario registrado correctamente, ahora inicia sesión")
+            return redirect("usuario:iniciar_sesion")
         else:
             print(form.errors)
     else:
         form = UsuarioRegistroForm()
     return render(request, "usuario/registrar_usuario.html", {"form": form})
+
 
 #VISTA PARA INICIAR SESION
 def iniciar_sesion(request):
@@ -74,33 +80,144 @@ def cuidador(request, pk):
     return render(request, 'cuidador/cuidador.html', {'cuidador':cuidador})
 
 
-#VISTA PARA CREAR UN ESTABLECIMIENTO
+
+
+#VISTA PARA SOLICITAR ESTABLECIMIENTO
+# @login_required
+# def solicitud_establecimiento(request):
+#     usuario = request.user
+
+#     # Solo usuarios pendientes pueden crear una solicitud
+#     if usuario.estado != "pendiente":
+#         messages.warning(request, "Ya tienes un establecimiento o no estás autorizado para crear una nueva solicitud.")
+#         return redirect("index")
+
+#     if request.method == "POST":
+#         form = SolicitudEstablecimientoForm(request.POST)
+#         if form.is_valid():
+#             solicitud = form.save(commit=False)
+#             solicitud.usuario = usuario
+#             solicitud.estado = "pendiente"
+#             solicitud.save()
+
+#             messages.success(request, "Tu solicitud fue enviada y está pendiente de revisión.")
+#             return redirect("index")
+#     else:
+#         form = SolicitudEstablecimientoForm()
+
+#     return render(request, "establecimiento/solicitud_establecimiento.html", {"form": form})
+
+
+# #VISTA PARA APROBAR SOLICITUD
+# @user_passes_test(lambda u: u.is_superuser)
+# def aprobar_solicitud(request, solicitud_id):
+#     solicitud = get_object_or_404(SolicitudEstablecimiento, pk=solicitud_id)
+#     usuario = solicitud.usuario
+
+#     # Crear el establecimiento
+#     establecimiento = Establecimiento.objects.create(
+#         CUIG=f"AUX{Establecimiento.objects.count()+1:04d}",
+#         nombre=solicitud.nombre_establecimiento,
+#         provincia=solicitud.provincia,
+#         departamento=solicitud.departamento,
+#         localidad=solicitud.localidad,
+#         direccion=solicitud.direccion,
+#         creado_por=usuario
+#     )
+
+#     # Activar usuario y asignarle rol admin
+#     usuario.CUIG = establecimiento
+#     usuario.is_active = True
+#     usuario.estado = "Activo"
+#     rol_admin = Rol.objects.get(nombre_rol="Administrador")
+#     usuario.id_rol = rol_admin
+#     usuario.save()
+
+#     solicitud.estado = "Aprobada"
+#     solicitud.save()
+
+#     messages.success(request, f"Solicitud aprobada. Establecimiento {establecimiento.nombre} creado.")
+#     return redirect("admin:index")
+
+
+
+# #VISTA PARA INVITAR USUARIO
+# @login_required
+# def invitar_usuario(request):
+#     usuario = request.user
+
+#     # 🔒 Solo los administradores pueden invitar
+#     if usuario.id_rol.nombre != "Administrador":
+#         messages.error(request, "No tenés permiso para invitar usuarios.")
+#         return redirect("usuario:home")
+
+#     if request.method == "POST":
+#         form = InvitacionUsuarioForm(request.POST, establecimiento=usuario.CUIG, invitado_por=usuario)
+#         if form.is_valid():
+#             invitacion = form.save()
+#             messages.success(request, f"Invitación enviada a {invitacion.email}.")
+#             return redirect("usuario:home")
+#     else:
+#         form = InvitacionUsuarioForm()
+
+#     return render(request, "usuario/invitar_usuario.html", {"form": form})
+
+
+
+# #VISTA PARA ACEPTAR INFORMACION
+# def aceptar_invitacion(request, token):
+#     invitacion = get_object_or_404(InvitacionUsuario, token=token, estado="pendiente")
+
+#     if request.method == "POST":
+#         password = request.POST.get("password")
+#         usuario = Usuario.objects.create_user(
+#             username=invitacion.email,
+#             email=invitacion.email,
+#             password=password,
+#             nombre="",
+#             apellido="",
+#             CUIT=0,
+#         )
+#         invitacion.aceptar(usuario)
+#         messages.success(request, "Invitación aceptada. Ya podés iniciar sesión.")
+#         return redirect("usuario:iniciar_sesion")
+
+#     return render(request, "usuario/aceptar_invitacion.html", {"invitacion": invitacion})
+
+
+
+
+
+# VISTA PARA CREAR UN ESTABLECIMIENTO PARTICULAR
 @login_required
 def crear_establecimiento(request):
+    # Si el usuario ya tiene CUIG, no debería volver a crear uno
+    if request.user.CUIG:
+        messages.warning(request, "Ya perteneces a un establecimiento.")
+        return redirect("usuario:home")
+
     if request.method == "POST":
         nombre = request.POST.get("nombre")
         provincia = request.POST.get("provincia")
         departamento = request.POST.get("departamento")
         localidad = request.POST.get("localidad")
         direccion = request.POST.get("direccion")
-        tipo = request.POST.get("tipo")  #senasa o auxiliar
-        cuig = request.POST.get("CUIG")  #solo si es senasa
 
-        #Si es particular (AUX)
-        if tipo == "auxiliar":
-            #Buscar último AUX creado
-            ultimo = (
-                Establecimiento.objects
-                .filter(CUIG__startswith="AUX")
-                .annotate(num_part=Cast(Substr("CUIG", 4), IntegerField()))
-                .aggregate(max_num=Max("num_part"))
-                .get("max_num")
-            )
-            next_num = (ultimo or 0) + 1
-            cuig = f"AUX{next_num:04d}"
+        #1 Generar un nuevo CUIG único
+        ultimo_establecimiento = Establecimiento.objects.filter(CUIG__startswith="AUX").order_by("-CUIG").first()
 
+        if ultimo_establecimiento:
+            # Extraer número de CUIG (ej: "AUX0002" → 2)
+            ultimo_numero = int(ultimo_establecimiento.CUIG.replace("AUX", ""))
+            nuevo_numero = ultimo_numero + 1
+        else:
+            nuevo_numero = 1  # Si no hay ninguno aún
+
+        nuevo_CUIG = f"AUX{nuevo_numero:04d}"
+
+        # 2 Crear el establecimiento
         establecimiento = Establecimiento.objects.create(
-            CUIG=cuig,
+            CUIG=nuevo_CUIG,
             nombre=nombre,
             provincia=provincia,
             departamento=departamento,
@@ -109,14 +226,19 @@ def crear_establecimiento(request):
             creado_por=request.user
         )
 
-        #Asignar el establecimiento al usuario creador
+        # 3 Asignar el CUIG y el rol de Administrador al usuario creador
+        rol_admin = Rol.objects.get(nombre_rol="Administrador")
         request.user.CUIG = establecimiento
+        request.user.id_rol = rol_admin
         request.user.save()
 
-        messages.success(request, f"Establecimiento {establecimiento.nombre} creado exitosamente con CUIG {establecimiento.CUIG}.")
-        return redirect("home")
+        # 4 Confirmar éxito
+        messages.success(request, f"Establecimiento '{nombre}' creado exitosamente con CUIG {nuevo_CUIG}.")
+        return redirect("usuario:home")
 
-    return render(request, "establecimiento/crear_establecimiento.html")
+    # 5 Si no es POST, mostrar el formulario
+    return render(request, "usuario/crear_establecimiento.html")
+
 
 #VISTA PARA LISTAR LOS ESTABLECIMIENTOS#
 def lista_establecimientos(request):

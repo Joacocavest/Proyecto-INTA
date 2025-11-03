@@ -36,7 +36,7 @@
         
         <div class="container_registrarse">
 
-            <div>
+            <div class="container_form">
                 <form method="POST" enctype="multipart/form-data" class="form_usuario">
                     {% csrf_token %}
 
@@ -63,11 +63,6 @@
                     <p>
                         {{ form.telefono.label_tag }}
                         {{ form.telefono }}
-                    </p>
-
-                    <p>
-                        {{ form.id_rol.label_tag }}
-                        {{ form.id_rol }}
                     </p>
 
                     {% comment %} <div class="cuig-section" style="display: flex; flex-direction: column; gap: 10px;">
@@ -125,17 +120,20 @@
                     </div> {% endcomment %}
 
                     <p>
-                        {{ form.username.label_tag }}
+                        <label for="id_username">Nombre de usuario:</label>
+                        {% comment %} {{ form.username.label_tag }} {% endcomment %}
                         {{ form.username }}
                     </p>
 
                     <p>
-                        {{ form.password1.label_tag }}
+                        <label for="id_password1">Contraseña:</label>
+                        {% comment %} {{ form.password1.label_tag }} {% endcomment %}
                         {{ form.password1 }}
                     </p>
 
                     <p>
-                        {{ form.password2.label_tag }}
+                        <label for="id_password2">Repetir contraseña:</label>
+                        {% comment %} {{ form.password2.label_tag }} {% endcomment %}
                         {{ form.password2 }}
                     </p>
 
