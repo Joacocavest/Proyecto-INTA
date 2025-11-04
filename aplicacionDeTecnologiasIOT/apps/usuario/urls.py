@@ -15,10 +15,10 @@ urlpatterns = [
     path('cuidadores/', views.lista_cuidadores, name='lista_cuidadores'),
     path('cuidador/<int:pk>/', views.cuidador, name='cuidador'),
     
-    # path("solicitud-establecimiento/", views.solicitud_establecimiento, name="solicitud_establecimiento"),
+    
     path('crear_establecimiento/', views.crear_establecimiento, name='crear_establecimiento'),
-    # path("invitar/", views.invitar_usuario, name="invitar_usuario"),
-    # path("aceptar-invitacion/<str:token>/", views.aceptar_invitacion, name="aceptar_invitacion"),
+    path("unirse_establecimiento/", views.unirse_establecimiento, name="unirse_establecimiento"),
+    path("ver_solicitudes_union/", views.ver_solicitudes_union, name="ver_solicitudes_union"),
     path('establecimientos/', views.lista_establecimientos, name='lista_establecimientos'),
     path('establecimiento/<str:pk>/', views.establecimiento, name='establecimiento'),
     path('buscar_establecimiento/', views.buscar_establecimiento, name='buscar_establecimiento'),
