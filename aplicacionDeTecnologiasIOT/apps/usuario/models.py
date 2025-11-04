@@ -68,55 +68,37 @@ class Establecimiento(models.Model):
     def __str__(self):
         return f"{self.nombre} ({self.CUIG})"
     
-# #MODELO PARA ENVIAR UNA SOLICITUD DE ACEPTACIÓN DEL ESTABLECIMIENTO
-# class SolicitudEstablecimiento(models.Model):
-#     usuario = models.ForeignKey("usuario.Usuario", on_delete=models.CASCADE)
-#     nombre_establecimiento = models.CharField(max_length=100)
-#     CUIG = models.CharField(max_length=20, unique=True)
-#     provincia = models.CharField(max_length=50)
-#     departamento = models.CharField(max_length=50)
-#     localidad = models.CharField(max_length=50)
-#     direccion = models.CharField(max_length=100)
-#     fecha_solicitud = models.DateTimeField(auto_now_add=True)
-#     estado = models.CharField(
-#         max_length=20,
-#         choices=[("Pendiente", "Pendiente"), ("Aprobada", "Aprobada"), ("Rechazada", "Rechazada")],
-#         default="Pendiente")
-
-#     def __str__(self):
-#         return f"{self.nombre_establecimiento} ({self.CUIG}) ({self.estado})"
     
     
-#     def aprobar(self):
-#         """Crea el establecimiento y activa al usuario como administrador."""
-#         from usuario.models import Rol, Establecimiento  # Import aquí para evitar dependencias circulares
+    
+#MODELO PARA ENVIAR UNA SOLICITUD DE UNION A UN ESTABLECIMIENTO
+class SolicitudUnion(models.Model):
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    establecimiento = models.ForeignKey(Establecimiento, on_delete=models.CASCADE)
+    estado = models.CharField(
+        max_length=20,
+        choices=[
+            ("Pendiente", "Pendiente"),
+            ("Aprobada", "Aprobada"),
+            ("Rechazada", "Rechazada")
+        ],
+        default="Pendiente"
+    )
+    fecha_solicitud = models.DateTimeField(auto_now_add=True)
+    revisado_por = models.ForeignKey(
+        Usuario,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="solicitudes_revisadas"
+    )
+    fecha_revision = models.DateTimeField(null=True, blank=True)
 
-#         # 1 Crear establecimiento real
-#         establecimiento, created = Establecimiento.objects.get_or_create(
-#             CUIG=self.CUIG,
-#             defaults={
-#                 "nombre": self.nombre_establecimiento,
-#                 "provincia": self.provincia,
-#                 "departamento": self.departamento,
-#                 "localidad": self.localidad,
-#                 "direccion": self.direccion,
-#             },
-#         )
+    def __str__(self):
+        return f"{self.usuario.username} → {self.establecimiento.nombre} ({self.estado})"
 
-#         # 2 Activar usuario y asignar rol administrador
-#         rol_admin = Rol.objects.get_or_create(nombre="Administrador")[0]
-#         usuario = self.usuario
-#         usuario.is_active = True
-#         usuario.id_rol = rol_admin
-#         usuario.CUIG = establecimiento
-#         usuario.estado = "activo"
-#         usuario.save()
 
-#         # 3 Cambiar estado de la solicitud
-#         self.estado = "aprobada"
-#         self.save()
 
-#         return establecimiento
     
 # # MODELO PARA INVITAR A USUARIOS
 # class InvitacionUsuario(models.Model):

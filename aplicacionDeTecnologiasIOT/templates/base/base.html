@@ -49,13 +49,25 @@
             <a href="{% url 'usuario:home' %}">Home</a>
 
             <div class="dropdown">
-                <a href="#">Administración ▾</a>
+                <a href="#">
+                    Administración
+                    {% if solicitudes_pendientes > 0 %}
+                        <span class="contador">{{ solicitudes_pendientes }}</span>
+                    {% endif %}
+                    ▾
+                </a>
                 <div class="dropdown-content">
                     <a href="#">Establecimiento</a>
 
                     {% if user.is_authenticated %}
                         {% if user.id_rol.nombre_rol == "Administrador" or user.is_superuser %}
                             <a href="#">Empleados</a>
+                            <a href="{% url 'usuario:ver_solicitudes_union' %}">
+                                Ver solicitudes
+                                {% if solicitudes_pendientes > 0 %}
+                                    <span class="contador">{{ solicitudes_pendientes }}</span>
+                                {% endif %}
+                            </a>
                         {% elif user.id_rol.nombre_rol == "Empleado" %}
                             <a href="#" class="disabled">Empleados</a>
                         {% endif %}

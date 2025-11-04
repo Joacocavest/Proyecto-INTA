@@ -1,0 +1,54 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Unirse a un establecimiento - GreenWeb Catamarca{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/crear_establecimiento.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container_unirse_establecimiento">
+        <article class="container_form">
+            <h2 class = "titulo">Unirse a un establecimiento</h2>
+
+            <form method="get" class="formulario_filter_establecimiento">
+                <p class="filtrar_establecimientos">
+                    <label>Filtrar por tipo:</label>
+                    <select name="tipo" onchange="this.form.submit()">
+                        <option value="">Todos</option>
+                        <option value="particular">Particulares</option>
+                        <option value="senasa">Con Licencia SENASA</option>
+                    </select>
+                </p>
+            </form>
+        </article>
+
+        <table class="tabla_establecimientos">
+            <tr>
+                <th>CUIG</th>
+                <th>Nombre</th>
+                <th>Provincia</th>
+                <th>Tipo</th>
+                <th>Acción</th>
+            </tr>
+            <tbody>
+                {% for est in establecimientos %}
+                <tr>
+                    <td>{{ est.CUIG }}</td>
+                    <td>{{ est.nombre }}</td>
+                    <td>{{ est.provincia }}</td>
+                    <td>{{ est.tipo }}</td>
+                    <td>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="establecimiento_id" value="{{ est.CUIG }}">
+                        <button type="submit">Enviar solicitud</button>
+                    </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
