@@ -41,7 +41,6 @@
     border-radius: 5px;
     border: none;
 }
-
 .formulario button{
     color: #ffffff;
     background-color: #181f0d;
@@ -56,4 +55,181 @@
 
 .formulario button:hover{
     background-color: #546f01;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*En unirse a establecimiento: */
+.container_unirse_establecimiento{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.container_form{
+    color: #181f0d;
+    padding: 1em;
+    border-radius: 15px;
+    background: #a4bc00;
+    font-weight: bold;
+    width: 100%;
+}
+.formulario_filter_establecimiento{
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 0.2em;
+}
+.formulario_filter_establecimiento p select{
+    padding: 5px;
+    border-radius: 5px;
+    border: 3px solid #181f0d;
+    background-color: #181f0d;
+    color: #ffffff;
+    cursor: pointer;
+}
+.formulario_filter_establecimiento p select:focus{
+    background-color: #546f01;
+    font-weight: bold;
+}
+.filtrar_establecimientos{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px; /* separa label del input */
+    margin-bottom: 0.2em;
+}
+.tabla_establecimientos{
+    width: 100%;
+    margin: 2em auto;
+    border-collapse: collapse;
+    font-size: 16px;
+    background-color: #546f01;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Encabezado */
+.tabla_establecimientos th {
+    background-color: #a4bc00;
+    color: #181f0d;
+    text-align: left;
+    padding: 0.6em 1em;
+    font-weight: bold;
+    border-bottom: 2px solid #556b2f;
+}
+
+/* Celdas */
+.tabla_establecimientos td {
+    padding: 0.5em 0.5em;
+    color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Hover sobre filas */
+.tabla_establecimientos tr:hover {
+    color: #181f0d;
+    background-color: #d4e157;
+    transition: 0.2s ease;
+}
+.tabla_establecimientos tbody tr:hover td{
+    color: #181f0d;
+    font-weight: bold;
+}
+/* Botón dentro de la tabla */
+.tabla_establecimientos button {
+    background-color: #a4bc00;
+    color: #181f0d;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.tabla_establecimientos button:hover {
+    background-color: #99cc33;
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* En ver solitudes de union a un establecimiento */
+.titulo_solicitudes{
+    color: #181f0d;
+    padding: 0.6em;
+    border-radius: 15px;
+    background: #a4bc00;
+    font-weight: bold;
+    width: 100%;
+}
+.tabla_solicitudes{
+    width: 100%;
+    margin: 2em auto;
+    border-collapse: collapse;
+    font-size: 16px;
+    background-color: #546f01;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Encabezado */
+.tabla_solicitudes th {
+    background-color: #a4bc00;
+    color: #181f0d;
+    text-align: left;
+    padding: 0.6em 1em;
+    font-weight: bold;
+    border-bottom: 2px solid #556b2f;
+}
+/* Celdas */
+.tabla_solicitudes td {
+    padding: 0.5em 0.5em;
+    color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Hover sobre filas */
+.tabla_solicitudes tr:hover {
+    color: #181f0d;
+    background-color: #d4e157;
+    transition: 0.2s ease;
+}
+.tabla_solicitudes tbody tr:hover td{
+    color: #181f0d;
+    font-weight: bold;
+}
+/* Botón dentro de la tabla */
+.tabla_solicitudes button {
+    background-color: #a4bc00;
+    color: #181f0d;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.tabla_solicitudes button:hover {
+    background-color: #99cc33;
+    transform: scale(1.05);
+    transition: 0.2s;
 }

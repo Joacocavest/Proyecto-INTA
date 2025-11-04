@@ -1,0 +1,54 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Solicitudes de unión - GreenWeb{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/crear_establecimiento.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container_solicitudes">
+        <div class="titulo_solicitudes">
+            <h2 class="titulo">Solicitudes de unión pendientes</h2>
+        </div>
+
+        {% if solicitudes %}
+        <table class="tabla_solicitudes">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for s in solicitudes %}
+                <tr>
+                    <td>{{ s.usuario.username }}</td>
+                    <td>{{ s.fecha_solicitud|date:"d/m/Y H:i" }}</td>
+                    <td>
+                        <form method="post" style="display:inline;">
+                            {% csrf_token %}
+                            <input type="hidden" name="solicitud_id" value="{{ s.id }}">
+                            
+                            <select name="rol_id" required>
+                                <option value="">-- Seleccionar rol --</option>
+                                {% for rol in roles %}
+                                    <option value="{{ rol.id }}">{{ rol.nombre_rol }}</option>
+                                {% endfor %}
+                            </select>
+
+                            <button type="submit" name="accion" value="aprobar" class="btn btn-success">✅ Aprobar</button>
+                            <button type="submit" name="accion" value="rechazar" class="btn btn-danger">❌ Rechazar</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No hay solicitudes pendientes.</p>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, redirect, render
-from apps.usuario.models import Usuario, Cuidador, Establecimiento, Rol
+from apps.usuario.models import Usuario, Cuidador, Establecimiento, Rol, SolicitudUnion
 from apps.usuario.forms import UsuarioRegistroForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -7,6 +7,7 @@ from django.http import JsonResponse
 from django.db.models import Max, IntegerField
 from django.db.models.functions import Substr, Cast
 from django.contrib.auth.decorators import login_required
+from django.utils import timezone
 
 def index(request):
     return render(request, "base/index.html")
@@ -82,107 +83,7 @@ def cuidador(request, pk):
 
 
 
-#VISTA PARA SOLICITAR ESTABLECIMIENTO
-# @login_required
-# def solicitud_establecimiento(request):
-#     usuario = request.user
 
-#     # Solo usuarios pendientes pueden crear una solicitud
-#     if usuario.estado != "pendiente":
-#         messages.warning(request, "Ya tienes un establecimiento o no estás autorizado para crear una nueva solicitud.")
-#         return redirect("index")
-
-#     if request.method == "POST":
-#         form = SolicitudEstablecimientoForm(request.POST)
-#         if form.is_valid():
-#             solicitud = form.save(commit=False)
-#             solicitud.usuario = usuario
-#             solicitud.estado = "pendiente"
-#             solicitud.save()
-
-#             messages.success(request, "Tu solicitud fue enviada y está pendiente de revisión.")
-#             return redirect("index")
-#     else:
-#         form = SolicitudEstablecimientoForm()
-
-#     return render(request, "establecimiento/solicitud_establecimiento.html", {"form": form})
-
-
-# #VISTA PARA APROBAR SOLICITUD
-# @user_passes_test(lambda u: u.is_superuser)
-# def aprobar_solicitud(request, solicitud_id):
-#     solicitud = get_object_or_404(SolicitudEstablecimiento, pk=solicitud_id)
-#     usuario = solicitud.usuario
-
-#     # Crear el establecimiento
-#     establecimiento = Establecimiento.objects.create(
-#         CUIG=f"AUX{Establecimiento.objects.count()+1:04d}",
-#         nombre=solicitud.nombre_establecimiento,
-#         provincia=solicitud.provincia,
-#         departamento=solicitud.departamento,
-#         localidad=solicitud.localidad,
-#         direccion=solicitud.direccion,
-#         creado_por=usuario
-#     )
-
-#     # Activar usuario y asignarle rol admin
-#     usuario.CUIG = establecimiento
-#     usuario.is_active = True
-#     usuario.estado = "Activo"
-#     rol_admin = Rol.objects.get(nombre_rol="Administrador")
-#     usuario.id_rol = rol_admin
-#     usuario.save()
-
-#     solicitud.estado = "Aprobada"
-#     solicitud.save()
-
-#     messages.success(request, f"Solicitud aprobada. Establecimiento {establecimiento.nombre} creado.")
-#     return redirect("admin:index")
-
-
-
-# #VISTA PARA INVITAR USUARIO
-# @login_required
-# def invitar_usuario(request):
-#     usuario = request.user
-
-#     # 🔒 Solo los administradores pueden invitar
-#     if usuario.id_rol.nombre != "Administrador":
-#         messages.error(request, "No tenés permiso para invitar usuarios.")
-#         return redirect("usuario:home")
-
-#     if request.method == "POST":
-#         form = InvitacionUsuarioForm(request.POST, establecimiento=usuario.CUIG, invitado_por=usuario)
-#         if form.is_valid():
-#             invitacion = form.save()
-#             messages.success(request, f"Invitación enviada a {invitacion.email}.")
-#             return redirect("usuario:home")
-#     else:
-#         form = InvitacionUsuarioForm()
-
-#     return render(request, "usuario/invitar_usuario.html", {"form": form})
-
-
-
-# #VISTA PARA ACEPTAR INFORMACION
-# def aceptar_invitacion(request, token):
-#     invitacion = get_object_or_404(InvitacionUsuario, token=token, estado="pendiente")
-
-#     if request.method == "POST":
-#         password = request.POST.get("password")
-#         usuario = Usuario.objects.create_user(
-#             username=invitacion.email,
-#             email=invitacion.email,
-#             password=password,
-#             nombre="",
-#             apellido="",
-#             CUIT=0,
-#         )
-#         invitacion.aceptar(usuario)
-#         messages.success(request, "Invitación aceptada. Ya podés iniciar sesión.")
-#         return redirect("usuario:iniciar_sesion")
-
-#     return render(request, "usuario/aceptar_invitacion.html", {"invitacion": invitacion})
 
 
 
@@ -240,6 +141,107 @@ def crear_establecimiento(request):
     return render(request, "usuario/crear_establecimiento.html")
 
 
+
+# VISTA PARA UNIRSE A UN ESTABLECIMIENTO
+@login_required
+def unirse_establecimiento(request):
+    tipo = request.GET.get("tipo")
+    establecimientos = Establecimiento.objects.all()
+
+    # Filtrado opcional
+    if tipo == "particular":
+        establecimientos = establecimientos.filter(CUIG__startswith="AUX")
+    elif tipo == "senasa":
+        establecimientos = establecimientos.exclude(CUIG__startswith="AUX")
+
+    if request.method == "POST":
+        cuig = request.POST.get("establecimiento_id")
+        rol_id = request.POST.get("rol_id")  # si más adelante agregás roles específicos
+
+        # Buscar por CUIG
+        establecimiento = get_object_or_404(Establecimiento, CUIG=cuig)
+        rol = Rol.objects.get(id=rol_id) if rol_id else None
+
+        # Evitar solicitudes duplicadas
+        if SolicitudUnion.objects.filter(usuario=request.user, establecimiento=establecimiento, estado="Pendiente").exists():
+            messages.warning(request, "Ya enviaste una solicitud pendiente a este establecimiento.")
+            return redirect("usuario:unirse_establecimiento")
+
+        # Crear solicitud
+        SolicitudUnion.objects.create(
+            usuario=request.user,
+            establecimiento=establecimiento,
+        )
+
+        messages.success(request, f"Solicitud enviada al establecimiento '{establecimiento.nombre}'.")
+        return redirect("usuario:home")
+
+    return render(request, "usuario/unirse_establecimiento.html", {
+        "establecimientos": establecimientos
+    })
+
+
+
+# VISTA PARA VER LAS SOLICITUDES DE UNION A UN ESTABLECIMIENTO
+@login_required
+def ver_solicitudes_union(request):
+    # 1. Validar que el usuario sea Administrador con CUIG
+    if not request.user.CUIG or request.user.id_rol.nombre_rol != "Administrador":
+        messages.error(request, "No tienes permisos para acceder a esta sección.")
+        return redirect("usuario:home")
+
+    # 2. Solicitudes pendientes
+    solicitudes = SolicitudUnion.objects.filter(
+        establecimiento=request.user.CUIG,
+        estado="Pendiente"
+    )
+
+    # 3. Traer roles disponibles (excepto administrador)
+    roles_disponibles = Rol.objects.all()
+
+    # 4. Procesar aprobación/rechazo
+    if request.method == "POST":
+        solicitud_id = request.POST.get("solicitud_id")
+        accion = request.POST.get("accion")
+        rol_id = request.POST.get("rol_id")
+
+        solicitud = get_object_or_404(SolicitudUnion, id=solicitud_id)
+
+        if solicitud.establecimiento != request.user.CUIG:
+            messages.error(request, "No puedes gestionar solicitudes de otro establecimiento.")
+            return redirect("usuario:ver_solicitudes_union")
+
+        if accion == "aprobar":
+            if not rol_id:
+                messages.warning(request, "Debes seleccionar un rol antes de aprobar.")
+                return redirect("usuario:ver_solicitudes_union")
+
+            rol = get_object_or_404(Rol, id=rol_id)
+            solicitud.estado = "Aprobada"
+            solicitud.usuario.CUIG = solicitud.establecimiento
+            solicitud.usuario.id_rol = rol
+            solicitud.usuario.save()
+            messages.success(request, f"Solicitud aprobada para {solicitud.usuario.username} con rol {rol.nombre_rol}.")
+        
+        elif accion == "rechazar":
+            solicitud.estado = "Rechazada"
+            messages.info(request, f"Solicitud rechazada para {solicitud.usuario.username}.")
+
+        solicitud.revisado_por = request.user
+        solicitud.fecha_revision = timezone.now()
+        solicitud.save()
+
+        return redirect("usuario:ver_solicitudes_union")
+
+    # 5. Renderizar
+    return render(request, "usuario/ver_solicitudes_union.html", {
+        "solicitudes": solicitudes,
+        "roles": roles_disponibles
+    })
+
+
+
+
 #VISTA PARA LISTAR LOS ESTABLECIMIENTOS#
 def lista_establecimientos(request):
     establecimientos = Establecimiento.objects.all()
@@ -274,45 +276,6 @@ def buscar_establecimiento(request):
         data = {"existe": False}
 
     return JsonResponse(data)
-
-
-
-# # VISTA PARA CREAR ESTABLECIMIENTO PARTICULAR NO RECONOCIDO POR EL SENASA
-# def crear_establecimiento_auxiliar(request):
-#     if request.method == "POST":
-#         nombre = request.POST.get("nombre", "").strip()
-
-#         if not nombre:
-#             return JsonResponse({"error": "Debe indicar un nombre para el establecimiento."}, status=400)
-
-#         # Buscar el número máximo actual (parte numérica del CUIG)
-#         ultimo = (
-#             Establecimiento.objects
-#             .filter(CUIG__startswith="AUX")
-#             .annotate(num_part=Cast(Substr("CUIG", 4), IntegerField()))
-#             .aggregate(max_num=Max("num_part"))
-#             .get("max_num")
-#         )
-
-#         # Calcular el siguiente CUIG disponible
-#         next_num = (ultimo or 0) + 1
-#         nuevo_cuig = f"AUX{next_num:04d}"
-
-#         # Crear el nuevo establecimiento auxiliar
-#         establecimiento_aux = Establecimiento.objects.create(
-#             CUIG=nuevo_cuig,
-#             nombre=nombre
-#         )
-
-#         return JsonResponse({
-#             "success": True,
-#             "CUIG": establecimiento_aux.CUIG,
-#             "nombre": establecimiento_aux.nombre
-#         })
-
-#     #Si no es POST, devolver error
-#     return JsonResponse({"error": "Método no permitido."}, status=405)
-
 
 
 #VISTA PARA ESTABLECIMIENTOS PARTICULARES NO RECONOCIDOS POR EL SENASA
